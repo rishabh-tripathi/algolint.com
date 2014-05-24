@@ -1,0 +1,39 @@
+Connecting to database specified by database.yml
+Started GET "/assets/rails.png" for 223.239.159.13 at Sat May 24 01:20:39 -0700 2014
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  railties (3.2.11) lib/rails/railtie/configurable.rb:30:in `send'
+  railties (3.2.11) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  /dh/passenger/lib/phusion_passenger/rack/thread_handler_extension.rb:74:in `process_request'
+  /dh/passenger/lib/phusion_passenger/request_handler/thread_handler.rb:141:in `accept_and_process_next_request'
+  /dh/passenger/lib/phusion_passenger/request_handler/thread_handler.rb:109:in `main_loop'
+  /dh/passenger/lib/phusion_passenger/request_handler.rb:448:in `start_threads'
+  /dh/passenger/lib/phusion_passenger/request_handler.rb:442:in `initialize'
+  /dh/passenger/lib/phusion_passenger/request_handler.rb:442:in `new'
+  /dh/passenger/lib/phusion_passenger/request_handler.rb:442:in `start_threads'
+  /dh/passenger/lib/phusion_passenger/request_handler.rb:441:in `times'
+  /dh/passenger/lib/phusion_passenger/request_handler.rb:441:in `start_threads'
+  /dh/passenger/lib/phusion_passenger/request_handler.rb:440:in `synchronize'
+  /dh/passenger/lib/phusion_passenger/request_handler.rb:440:in `start_threads'
+  /dh/passenger/lib/phusion_passenger/request_handler.rb:205:in `main_loop'
+  /dh/passenger/helper-scripts/rack-preloader.rb:161
+
+
