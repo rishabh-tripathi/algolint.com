@@ -1,0 +1,23 @@
+<div class="main" style="width:350px">
+  <center><h3 class="muted">Join AlgoLint</h3></center>  
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <div><%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %></div>
+  <div class="sp10"></div>
+  
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+  <div class="sp10"></div>
+  
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  <div class="sp10"></div>
+  <div class="sp10"></div>
+  
+  <center><%= f.submit "Sign up", :class => "btn btn-lg btn-info" %></center>
+<% end %>
+</div>
+<div class="sp50"></div>
+<div class="sp30"></div>
