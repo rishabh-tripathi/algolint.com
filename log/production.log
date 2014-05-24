@@ -37,3 +37,26 @@ ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
   /dh/passenger/helper-scripts/rack-preloader.rb:161
 
 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Compiled jquery.js  (4ms)  (pid 9668)
+Compiled jquery_ujs.js  (0ms)  (pid 9668)
+Compiled bootstrap.min.js  (0ms)  (pid 9668)
+Compiled home.js  (165ms)  (pid 9668)
+Compiled application.js  (241ms)  (pid 9668)
+Compiled bootstrap-theme.min.css  (0ms)  (pid 9668)
+Compiled bootstrap.min.css  (1ms)  (pid 9668)
+Compiled flat-ui.css  (0ms)  (pid 9668)
+Compiled main.css  (0ms)  (pid 9668)
+Compiled application.css  (33ms)  (pid 9668)
+Connecting to database specified by database.yml
+Compiled jquery.js  (4ms)  (pid 9668)
+Compiled jquery_ujs.js  (0ms)  (pid 9668)
+Compiled bootstrap.min.js  (0ms)  (pid 9668)
+Compiled home.js  (121ms)  (pid 9668)
+Compiled application.js  (163ms)  (pid 9668)
+Compiled bootstrap-theme.min.css  (0ms)  (pid 9668)
+Compiled bootstrap.min.css  (1ms)  (pid 9668)
+Compiled flat-ui.css  (0ms)  (pid 9668)
+Compiled main.css  (0ms)  (pid 9668)
+Compiled application.css  (69ms)  (pid 9668)
