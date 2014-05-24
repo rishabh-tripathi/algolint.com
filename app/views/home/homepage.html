@@ -1,0 +1,12 @@
+<% if(current_user.present?) %>
+  <%= render(:partial => "home/start") %>
+<% else %>
+<center>
+  <h1>Algorithm Practice Tool</h1>
+  <p class="lead">Simple tool to practice algorithm on C/C++, Java and Ruby. Collect your algoritm code snippets here.</p>
+  <a href="<%= signin_user_url %>" class="btn btn-lg btn-info">Start Practicing Now</a>
+  &nbsp;&nbsp;<a href="<%= login_user_url %>" class="btn btn-lg btn-default">Login</a>
+</center>
+<div class="sp100"></div>
+<div class="sp100"></div>
+<% end %>

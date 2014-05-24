@@ -1,0 +1,182 @@
+/* spacing */
+.sp1 {
+    height: 1px;
+    line-height: 1px;
+}
+
+.sp2 {
+    height: 2px;
+    line-height: 2px;
+}
+
+.sp3 {
+    height: 3px;
+    line-height: 3px;
+}
+
+.sp5 {
+    height: 5px;
+    line-height: 5px;
+}
+
+.sp10 {
+    height: 10px;
+    line-height: 10px;
+}
+
+.sp15 {
+    height: 15px;
+    line-height: 15px;
+}
+
+.sp20 {
+    height: 20px;
+    line-height: 20px;
+}
+
+.sp25 {
+    height: 25px;
+    line-height: 25px;
+}
+
+.sp30 {
+    height: 30px;
+    line-height: 30px;
+}
+
+.sp50 {
+    height: 50px;
+    line-height: 50px;
+}
+
+.sp100 {
+    height: 100px;
+    line-height: 100px;
+}
+
+.sp200 {
+    height: 200px;
+    line-height: 200px;
+}
+
+.sp500 {
+    height: 500px;
+    line-height: 500px;
+}
+
+/* border classes */
+.b-top {
+    border-top: 1px solid #e0e0e0;
+}
+
+.b-right {
+    border-right: 1px solid #e0e0e0;
+}
+
+.b-left {
+    border-left: 1px solid #e0e0e0;
+}
+
+.b-bottom {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.b-top-left {
+    border-top: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+}
+
+.b-top-right {
+    border-top: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+
+.b-bottom-left {
+    border-top: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+}
+
+.b-bottom-right {
+    border-top: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+
+.b-all {
+    border: 1px solid #e0e0e0;
+}
+
+.p-null {
+    padding: 0px;
+}
+
+.p-2 {
+    padding: 2px;
+}
+
+.p-3 {
+    padding: 3px;
+}
+
+.p-5 {
+    padding: 5px;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.p-30 {
+    padding: 30px;
+}
+
+.m-null {
+    margin: 0px;
+}
+
+.m-5 {
+    margin: 5px;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.m-20 {
+    margin: 20px;
+}
+
+.m-30 {
+    margin: 30px;
+}
+
+.pm-null {
+    padding: 0px;
+    margin: 0px;
+}
+
+.error {
+    color: red;
+}
+
+body {
+    background-color: #fafafa;
+    color: #222222;
+    font-size: 10pt;
+}
+
+.fill-width {
+    width: 100%;
+}
+
+.fill-height {
+    height: 100%;
+}
+ 
+.main {
+    margin: 0px auto;
+    padding: 0px 20px;
+}
