@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def homepage
     if(current_user.present?)
       if(current_user.last_open_file.present?)
-        @file = Content.where(id: current_user.last_open_file).first
+        @file = Content.find(current_user.last_open_file)
       end
     end
   end
@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   def save_file
     if(current_user.present?) 
       if(params[:file_id].present?)
-        content = Content.where(id: params[:file_id].to_i).first        
+        content = Content.find(params[:file_id].to_i)        
       else
         content = Content.new
       end
