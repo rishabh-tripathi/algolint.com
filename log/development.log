@@ -45225,3 +45225,150 @@ Migrating to AddDefaultConfigToUser (20140524230347)
   [1m[36m (249.1ms)[0m  [1mALTER TABLE `users` ADD `default_theme` int(11)[0m
   [1m[35m (33.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140524230347')
   [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-25 23:18:19 +0530
+Processing by HomeController#homepage as HTML
+Completed 500 Internal Server Error in 1ms
+
+TypeError ([1] is not a symbol):
+  app/controllers/home_controller.rb:4:in `homepage'
+
+
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.8ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-25 23:46:22 +0530
+Processing by HomeController#homepage as HTML
+Completed 500 Internal Server Error in 1ms
+
+TypeError ([1] is not a symbol):
+  app/controllers/home_controller.rb:4:in `homepage'
+
+
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-25 23:46:53 +0530
+Processing by HomeController#homepage as HTML
+Completed 500 Internal Server Error in 1ms
+
+TypeError ([1] is not a symbol):
+  app/controllers/home_controller.rb:4:in `homepage'
+
+
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-25 23:46:54 +0530
+Processing by HomeController#homepage as HTML
+Completed 500 Internal Server Error in 0ms
+
+TypeError ([1] is not a symbol):
+  app/controllers/home_controller.rb:4:in `homepage'
+
+
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-25 23:47:01 +0530
+Processing by HomeController#homepage as HTML
+  Rendered home/homepage.html within layouts/application (26.0ms)
+Completed 500 Internal Server Error in 76ms
+
+ActionView::Template::Error ([1] is not a symbol):
+    1: <% if(current_user.present?) %>
+    2:   <%= render(:partial => "home/start") %>
+    3: <% else %>
+    4: <center>
+  app/views/home/homepage.html:1:in `_app_views_home_homepage_html__752077659_72525870'
+
+
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-25 23:47:13 +0530
+Processing by HomeController#homepage as HTML
+Completed 500 Internal Server Error in 1ms
+
+TypeError ([1] is not a symbol):
+  app/controllers/home_controller.rb:4:in `homepage'
+
+
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/rishabh/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-25 23:56:34 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (93.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.1ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 15 LIMIT 1
+  Rendered home/_start.html (2.4ms)
+  Rendered home/homepage.html within layouts/application (64.4ms)
+Compiled jquery.js  (2ms)  (pid 29647)
+Compiled jquery_ujs.js  (0ms)  (pid 29647)
+Compiled application.js  (132ms)  (pid 29647)
+  Rendered home/_file_name.html (1.0ms)
+  Rendered home/_top_buttons.html (1.0ms)
+  Rendered layouts/_header.html (46.6ms)
+  Rendered layouts/_footer.html (0.5ms)
+Completed 200 OK in 1376ms (Views: 669.3ms | ActiveRecord: 440.8ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-05-25 23:56:36 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-05-25 23:56:36 +0530
+Served asset /main.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-05-25 23:56:36 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-05-25 23:56:36 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-05-25 23:56:36 +0530
+Served asset /flat-ui.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-25 23:56:36 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-25 23:56:36 +0530
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-05-25 23:56:36 +0530
+Served asset /main.js - 304 Not Modified (2ms)
+
+
+Started GET "/save-file?file_id=15&file_name=asdfasdfa+Rishabh+tripathi&file_desc=&file_content=Rishabh+Tripathi+Blog%3Cbr%3Esdfa%26nbsp%3B+dsfas%3Cbr%3E" for 127.0.0.1 at 2014-05-25 23:56:42 +0530
+Processing by HomeController#save_file as HTML
+  Parameters: {"file_id"=>"15", "file_name"=>"asdfasdfa Rishabh tripathi", "file_desc"=>"", "file_content"=>"Rishabh Tripathi Blog<br>sdfa&nbsp; dsfas<br>"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 15 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  Rendered home/_save_file_res.html (0.6ms)
+Completed 200 OK in 42ms (Views: 14.0ms | ActiveRecord: 1.1ms)
