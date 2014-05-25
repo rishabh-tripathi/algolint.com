@@ -29,7 +29,6 @@ production:
   encoding: utf8
   database: algolint_prod
   pool: 5
-  username: codeuser23
-  password: codeadmin2319$
-  host: db.algolint.com
+  username: root
+  password:
   socket: /var/run/mysqld/mysqld.sock
