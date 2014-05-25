@@ -23,7 +23,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'devise', '1.4.5'
+gem 'devise', '~> 2.2.3'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
