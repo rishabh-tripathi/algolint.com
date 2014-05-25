@@ -1,0 +1,4 @@
+class AddDefaultConfigToUser < ActiveRecord::Migration
+  def change
+  end
+end

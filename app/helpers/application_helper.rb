@@ -14,7 +14,7 @@ module ApplicationHelper
                   #{options[:conditions] if(!options[:conditions].blank?)}
                   #{options[:loading] if(!options[:loading].blank?)}
                 }).bind(\"ajax:success\", function(evt, data, status, xhr){
-                  #{res_format}
+                   #{res_format}
                 }).bind(\"ajax:complete\", function(evt, xhr, status){
                   #{options[:complete]}
                 }).bind(\"ajax:error\", function(evt, xhr, status, error){

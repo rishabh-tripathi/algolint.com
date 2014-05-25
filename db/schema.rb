@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140524092439) do
+ActiveRecord::Schema.define(:version => 20140524230347) do
+
+  create_table "contents", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "desc"
+    t.text     "content"
+    t.integer  "type"
+    t.integer  "compile"
+    t.integer  "status"
+    t.integer  "sharability"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -27,6 +40,9 @@ ActiveRecord::Schema.define(:version => 20140524092439) do
     t.integer  "is_admin",               :default => 0,  :null => false
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "last_open_file"
+    t.integer  "default_font_size"
+    t.integer  "default_theme"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -187,3 +187,19 @@ body {
 .clear {
     clear:both;
 }
+
+.footer {
+    position: fixed;
+    right: 20px;
+    bottom: 0px;
+}
+
+#content-editor {
+    min-height: 500px;
+    border: 0px;
+    outline: 0px solid transparent;
+}
+
+.file-path {
+    cursor: pointer;
+}

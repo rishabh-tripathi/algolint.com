@@ -1,21 +1,22 @@
 <div class="main" style="width:350px">
-  <center><h3 class="muted">Login</h3></center>  
+  <center><p class="lead m-null" style="font-size:50px;">Login</p></center>  
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <div><%= f.label :email, :class => "m-null" %><br />
+  <%= f.email_field :email, autofocus: true, :class => "form-control" %></div>
   <div class="sp10"></div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <div><%= f.label :password, :class => "m-null"  %><br />
+    <%= f.password_field :password, autocomplete: "off", :class => "form-control" %></div>
   <div class="sp10"></div>
 
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
   <% end -%>
   <div class="sp10"></div>
-  <div class="sp10"></div>
   
-  <center><%= f.submit "Login", :class => "btn btn-lg btn-info" %></center>
+  <center><%= f.submit "Login", :class => "btn btn-lg btn-info", :style => "width:130px;" %>
+    &nbsp;&nbsp;<a href="<%= signin_user_url %>">Sign Up</a>
+  </center>
   <% end %>
   <div class="sp10"></div>
 <% if(false) %>
