@@ -11,9 +11,9 @@ fonts/glyphicons-halflings-regular.woff: fonts/glyphicons-halflings-regular-26a4
 fonts/glyphicons-halflings-regular/index.woff: fonts/glyphicons-halflings-regular-26a4cf908d46a31304c50b30b5696da5.woff
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
-application.js: application-715120e749234daa0dd6243ca323dfc2.js
-application/index.js: application-715120e749234daa0dd6243ca323dfc2.js
-application.css: application-bc780b328f9f48a698b7df36f8896502.css
-application/index.css: application-bc780b328f9f48a698b7df36f8896502.css
+application.js: application-0096858ff71db1713829dbc5d7fde898.js
+application/index.js: application-0096858ff71db1713829dbc5d7fde898.js
+application.css: application-c7c83629367d7529222fcdd76d5a311d.css
+application/index.css: application-c7c83629367d7529222fcdd76d5a311d.css
 jquery.min.map: jquery.min-388372ef65cc311f6a3df4a6ceac8d22.map
 jquery/index.min.map: jquery.min-388372ef65cc311f6a3df4a6ceac8d22.map
