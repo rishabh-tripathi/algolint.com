@@ -59,6 +59,8 @@ AlgolintCom::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'home#homepage'
 
+  match '/save-file'=>'home#save_file', :as => 'save_file'
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

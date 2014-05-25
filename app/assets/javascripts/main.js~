@@ -1,0 +1,9 @@
+function ele(id) {
+    return document.getElementById(id);
+}
+
+
+function save_failed() {
+  $('#error-div').show();
+  	 
+}

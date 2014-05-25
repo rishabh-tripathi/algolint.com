@@ -1,0 +1,16 @@
+class CreateContents < ActiveRecord::Migration
+  def change
+    create_table :contents do |t|
+      t.Integer :user_id
+      t.String :name
+      t.String :desc
+      t.Text :content
+      t.Integer :type
+      t.Integer :compile
+      t.Integer :status
+      t.Integer :sharability
+
+      t.timestamps
+    end
+  end
+end

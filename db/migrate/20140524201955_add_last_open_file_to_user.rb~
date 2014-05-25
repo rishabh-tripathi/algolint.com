@@ -1,0 +1,4 @@
+class AddLastOpenFileToUser < ActiveRecord::Migration
+  def change
+  end
+end
