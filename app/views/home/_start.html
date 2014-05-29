@@ -3,7 +3,7 @@
   <strong>Error!</strong> Something went wrong, your changes are not saved. Please reload.
 </div>
 
-<div id="content-editor" class="fill-width lead" contenteditable="true" onclick="clearEditor();"><% if(@file.present?) %><%=raw @file.content %><% else %>Click to add note<% end %></div>
+<div id="content-editor" class="fill-width lead" contenteditable="true" onclick="clearEditor();hideAll();"><% if(@file.present?) %><%=raw @file.content %><% else %>Click to add note<% end %></div>
 <div id="update-id"></div>
 
 <%= form_remote_tag :url => save_file_url,                              

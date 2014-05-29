@@ -66,7 +66,7 @@
 
 /* border classes */
 .b-top {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #2C3E50;
 }
 
 .b-right {
@@ -202,4 +202,14 @@ body {
 
 .file-path {
     cursor: pointer;
+}
+
+.top-popup {
+    top: 48px;
+    width: 325px;
+}
+
+.top-popup .tooltip-inner {
+    max-width: 400px;
+    width: 325px;
 }

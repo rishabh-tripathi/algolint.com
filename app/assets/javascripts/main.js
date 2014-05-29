@@ -15,10 +15,10 @@ function submit_ajax_form(id) {
 }
 
 
-function clearEditor() {
+function clearEditor() {    
     if(ele('content-editor').innerHTML == "Click to add note") {
 	ele('content-editor').innerHTML = "";
-    }
+    }    
 }
 
 function save_failed() {
@@ -49,6 +49,42 @@ function change_file_name() {
     ele('file_name').innerHTML = ele('file-name-tb').value;
     ele_hide('edit-file-name');
     save_file(true);
+}
+
+function addNewNote() {
+    save_file(true);
+    ele("sfile_id").value = "";
+    ele("sfile_name").value = "";
+    ele("sfile_desc").value = "";
+    ele("sfile_content").value = "";
+    ele("content-editor").innerHTML = "Click to add note";
+    ele("file_name").innerHTML = "New Note";
+    selectBtn("addNote");
+}
+
+function addNewCode() {
+    selectBtn("addCode");
+}
+
+function viewFiles() {
+    selectBtn("viewFile");
+}
+
+function viewSettings() {
+    selectBtn("viewSetting");
+}
+
+function selectBtn(id) {
+    $(".btn-group a").removeClass("active");
+    $("#"+id).addClass("active");
+    $(".top-popup").hide();
+    if(ele(id+"-popup") != null) {
+	$("#"+id+"-popup").show();
+    }
+}
+
+function hideAll() {
+    $(".top-popup").hide();    
 }
 
 setInterval(function() {
