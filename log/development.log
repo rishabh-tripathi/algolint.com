@@ -54096,3 +54096,194 @@ Processing by HomeController#save_file as HTML
   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
   Rendered home/_save_file_res.html (0.1ms)
 Completed 200 OK in 9ms (Views: 3.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Processing by HomeController#homepage as HTML
+  [1m[35mUser Load (13.9ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 15 LIMIT 1[0m
+  Rendered home/_start.html (0.7ms)
+  Rendered home/homepage.html within layouts/application (1.6ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.5ms)
+  Rendered home/_top_buttons.html (2.9ms)
+  Rendered layouts/_header.html (4.8ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 54ms (Views: 37.1ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:28 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/save-file?file_id=15&file_name=New+Note&file_desc=&file_content=sdfasdf" for 127.0.0.1 at 2014-05-30 00:16:35 +0530
+Processing by HomeController#save_file as HTML
+  Parameters: {"file_id"=>"15", "file_name"=>"New Note", "file_desc"=>"", "file_content"=>"sdfasdf"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (1.6ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 15 LIMIT 1[0m
+  [1m[35m (18.7ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  Rendered home/_save_file_res.html (0.1ms)
+Completed 200 OK in 46ms (Views: 17.0ms | ActiveRecord: 21.4ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (122.0ms)[0m  UPDATE `users` SET `remember_created_at` = NULL, `updated_at` = '2014-05-29 18:46:37' WHERE `users`.`id` = 1
+  [1m[36m (51.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 353ms (ActiveRecord: 173.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Processing by HomeController#homepage as HTML
+  Rendered home/homepage.html within layouts/application (1.0ms)
+  Rendered layouts/_header.html (0.4ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-05-30 00:16:37 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
