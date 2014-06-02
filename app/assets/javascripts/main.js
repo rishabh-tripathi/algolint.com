@@ -67,6 +67,10 @@ Code.Logic.loadSuccess = function() {
     Code.Var.openFileId = lastOpenFile;
     Code.Event.Onclick();
     Code.Event.Scheduled();
+    Code.Event.Keyboard();
+    if(objDef(Code.Var.openFileId)) {
+	Code.Logic.openFile(Code.Var.openFileId);
+    }
 };
 
 Code.Logic.loadFailure = function() {
@@ -97,6 +101,7 @@ Code.Logic.openFile = function(id) {
     var file = Code.Var.myContentHash[id];
     ele("content-editor").innerHTML = file.get("content");
     ele("file_name").innerHTML = file.get("name");
+    Code.Var.openFileId = id;
 };
 
 Code.Logic.removeFile = function(id) {
@@ -129,9 +134,22 @@ Code.Logic.save_success = function() {
 };
 
 Code.Logic.save_file = function(force) {
-    var content = ele('content-editor').innerHTML;
-    if(((content != "Click to add note") && (content.length > 0) && (content != ele("sfile_content").value)) || force) {
-	// rish to add save code here
+    var content = ele('content-editor').innerHTML;    
+    if(objDef(Code.Var.openFileId)) {
+	var fileObj = Code.Var.myContentHash[Code.Var.openFileId];
+	if(objDef(fileObj)) {
+	    if(((content != "Click to add note") && (content.length > 0) && (content != fileObj.get("content"))) || force) {
+		fileObj.set({name: ele("file_name").innerHTML, content: content})
+		fileObj.save({}, {
+		    success: function(model, response) {
+			Code.Logic.prepareFileList();
+		    }, 
+		    error: function(response) {
+			ele_show("error-div");
+		    }
+		});		    		
+	    }
+	}
     }
 };
 
@@ -154,18 +172,41 @@ Code.Logic.addNewFile = function(type, name, desc, content) {
 	    Code.Var.myContents.push(model);
 	    Code.Logic.updateMyContentHash();
 	    Code.Logic.prepareFileList();
+	    Code.Var.openFileId = model.get("id"); 
 	}, 
 	error: function(response) {
+	    ele_show("error-div");
 	}
-    })
+    });
 };
 
 Code.Logic.addNewNote = function() {
-    // save_file(true);
+    Code.Logic.save_file(true);
     Code.Logic.addNewFile(0, "New Note", "", "");
     ele("content-editor").innerHTML = "Click to add note";
     ele("file_name").innerHTML = "New Note";
     Code.Logic.selectBtn("addNote");
+};
+
+Code.Logic.addCPPFile = function() {
+    Code.Logic.save_file(true);
+    Code.Logic.addNewFile(0, "NewCode.cpp", "", "");
+    ele("content-editor").innerHTML = "void main() { }";
+    ele("file_name").innerHTML = "NewCode.cpp";
+};
+
+Code.Logic.addJavaFile = function() {
+    Code.Logic.save_file(true);
+    Code.Logic.addNewFile(0, "NewCode.java", "", "");
+    ele("content-editor").innerHTML = "public static void main(args[]) { }";
+    ele("file_name").innerHTML = "NewCode.java";
+};
+
+Code.Logic.addRubyFile = function() {
+    Code.Logic.save_file(true);
+    Code.Logic.addNewFile(0, "NewCode.rb", "", "");
+    ele("content-editor").innerHTML = "def newAction \n end";
+    ele("file_name").innerHTML = "NewCode.rb";
 };
 
 Code.Logic.addNewCode = function() {
@@ -200,7 +241,7 @@ Code.Event = {
 	    Code.Logic.hideAll();
 	});
 	$("#file_name").click(function() {
-	    Code.Logic.open_file_name_editor	    
+	    Code.Logic.open_file_name_editor();	    
 	});
 	$("#update-file-name").click(function() {	   
 	    Code.Logic.change_file_name();
@@ -217,6 +258,24 @@ Code.Event = {
 	$("#viewSetting").click(function() {	   
 	    Code.Logic.viewSettings();
 	});
+	$("#nf-cpp").click(function() {
+	    alert(33);
+	    Code.Logic.addCPPFile();
+	});
+	$("#nf-java").click(function() {
+	    Code.Logic.addJavaFile();
+	});
+	$("#nf-ruby").click(function() {
+	    Code.Logic.addRubyFile();
+	});
+    },
+    Keyboard: function() {
+	$('#content-editor').bind('keyup mouseup',
+				  function(e) {
+				      if(e.which == 9) {					  
+					  e.preventDefault();
+				      }
+				  });    
     },
     Scheduled: function() {
 	setInterval(function() {

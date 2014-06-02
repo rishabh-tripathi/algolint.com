@@ -19,3 +19,7 @@ function get_hash_keys(hsh) {
     for(var i in hsh) { if (hsh.hasOwnProperty(i)) keys.push(i); }
     return keys;
 }
+
+function objDef(obj) {
+    return ((obj != undefined) && (obj != null))? true : false;
+}

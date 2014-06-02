@@ -73927,3 +73927,3834 @@ Processing by ContentsController#create as JSON
   [1m[36m (0.4ms)[0m  [1mUPDATE `users` SET `last_open_file` = 28, `updated_at` = '2014-06-02 20:16:46' WHERE `users`.`id` = 1[0m
   [1m[35m (30.8ms)[0m  COMMIT
 Completed 201 Created in 92ms (Views: 1.3ms | ActiveRecord: 81.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.4ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 28 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (1.1ms)
+  Rendered home/homepage.html within layouts/application (2.1ms)
+Compiled util.js  (0ms)  (pid 23789)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (15ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.3ms)
+  Rendered layouts/_header.html (4.3ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 144ms (Views: 135.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /flat-ui.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:56 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:57 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:57 +0530
+Served asset /util.js - 200 OK (2ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:57 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:57 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 01:58:57 +0530
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 01:58:57 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 01:58:57 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 01:59:53 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 28 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (1.0ms)
+  Rendered home/homepage.html within layouts/application (1.8ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (15ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.1ms)
+  Rendered layouts/_header.html (4.2ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 122ms (Views: 116.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /backbone-min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /application.js - 304 Not Modified (65ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 01:59:54 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.4ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 28 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (0.9ms)
+  Rendered home/homepage.html within layouts/application (1.8ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (15ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.3ms)
+  Rendered layouts/_header.html (3.9ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 119ms (Views: 115.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:00:40 +0530
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:00:41 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:00:41 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:00:41 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Processing by HomeController#homepage as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 28 LIMIT 1[0m
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (0.9ms)
+  Rendered home/homepage.html within layouts/application (2.7ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (15ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.0ms)
+  Rendered layouts/_header.html (3.7ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 126ms (Views: 122.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /flat-ui.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /main.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:42 +0530
+Served asset /application.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:03:43 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:03:43 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:03:43 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started PUT "/contents/28" for 127.0.0.1 at 2014-06-03 02:03:48 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"compile"=>0, "content"=>"sdfasf <br>", "created_at"=>"2014-06-02T20:16:46Z", "desc"=>"", "file_type"=>nil, "id"=>"28", "name"=>"New Note", "sharability"=>0, "status"=>0, "updated_at"=>"2014-06-02T20:16:46Z", "user_id"=>1}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 28 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE `contents` SET `content` = 'sdfasf <br>', `updated_at` = '2014-06-02 20:33:48' WHERE `contents`.`id` = 28
+  [1m[36m (49.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 59ms (ActiveRecord: 50.9ms)
+
+
+Started PUT "/contents/28" for 127.0.0.1 at 2014-06-03 02:03:53 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"compile"=>0, "content"=>"sdfasf asdf asdf asdf asdf asdf asdf asdfasdf asdfasd fasdf asdf<br>", "created_at"=>"2014-06-02T20:16:46Z", "desc"=>"", "file_type"=>nil, "id"=>"28", "name"=>"New Note", "sharability"=>0, "status"=>0, "updated_at"=>"2014-06-02T20:16:46Z", "user_id"=>1}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 28 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `contents` SET `content` = 'sdfasf asdf asdf asdf asdf asdf asdf asdfasdf asdfasd fasdf asdf<br>', `updated_at` = '2014-06-02 20:33:53' WHERE `contents`.`id` = 28[0m
+  [1m[35m (66.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 204 No Content in 73ms (ActiveRecord: 67.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:04:04 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.6ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 28 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (0.8ms)
+  Rendered home/homepage.html within layouts/application (1.7ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.2ms)
+  Rendered layouts/_header.html (3.9ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 27ms (Views: 23.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:04:05 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Processing by HomeController#homepage as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.5ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 28 LIMIT 1[0m
+  Rendered home/_templates.html (0.1ms)
+  Rendered home/_start.html (3.3ms)
+  Rendered home/homepage.html within layouts/application (5.9ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.1ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (3.3ms)
+  Rendered layouts/_header.html (5.1ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /flat-ui.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:04:08 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/contents" for 127.0.0.1 at 2014-06-03 02:04:13 +0530
+Processing by ContentsController#create as JSON
+  Parameters: {"name"=>"New Note", "content"=>"", "desc"=>"", "file_type"=>0, "compile"=>0, "status"=>0, "sharability"=>0}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `contents` (`compile`, `content`, `created_at`, `desc`, `file_type`, `name`, `sharability`, `status`, `updated_at`, `user_id`) VALUES (0, '', '2014-06-02 20:34:13', '', NULL, 'New Note', 0, 0, '2014-06-02 20:34:13', 1)[0m
+  [1m[35m (47.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  UPDATE `users` SET `last_open_file` = 29, `updated_at` = '2014-06-02 20:34:13' WHERE `users`.`id` = 1
+  [1m[36m (42.2ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 99ms (Views: 1.4ms | ActiveRecord: 90.9ms)
+
+
+Started PUT "/contents/29" for 127.0.0.1 at 2014-06-03 02:04:18 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"name"=>"New Note", "content"=>"fasdfasdfas dfasdf asdf<br>", "desc"=>"", "file_type"=>nil, "compile"=>0, "status"=>0, "sharability"=>0, "created_at"=>"2014-06-02T20:34:13Z", "id"=>"29", "updated_at"=>"2014-06-02T20:34:13Z", "user_id"=>1}
+  [1m[35mUser Load (1.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.5ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mUPDATE `contents` SET `content` = 'fasdfasdfas dfasdf asdf<br>', `updated_at` = '2014-06-02 20:34:18' WHERE `contents`.`id` = 29[0m
+  [1m[35m (44.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 204 No Content in 53ms (ActiveRecord: 47.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:04:37 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.7ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1
+  Rendered home/_templates.html (0.1ms)
+  Rendered home/_start.html (1.1ms)
+  Rendered home/homepage.html within layouts/application (2.5ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (15ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.3ms)
+  Rendered layouts/_header.html (4.4ms)
+  Rendered layouts/_footer.html (0.1ms)
+Completed 200 OK in 129ms (Views: 124.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /flat-ui.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.5ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:04:38 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started PUT "/contents/29" for 127.0.0.1 at 2014-06-03 02:04:44 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"compile"=>0, "content"=>"fasdfasdfas dfasdf asdf<br>", "created_at"=>"2014-06-02T20:34:13Z", "desc"=>"", "file_type"=>nil, "id"=>"29", "name"=>"New Note sdfsdffasdf", "sharability"=>0, "status"=>0, "updated_at"=>"2014-06-02T20:34:18Z", "user_id"=>1}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `contents` SET `name` = 'New Note sdfsdffasdf', `updated_at` = '2014-06-02 20:34:44' WHERE `contents`.`id` = 29[0m
+  [1m[35m (36.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 204 No Content in 44ms (ActiveRecord: 37.5ms)
+
+
+Started PUT "/contents/29" for 127.0.0.1 at 2014-06-03 02:04:48 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"compile"=>0, "content"=>"fasdfasdfas dfasdf asdf<br>", "created_at"=>"2014-06-02T20:34:13Z", "desc"=>"", "file_type"=>nil, "id"=>"29", "name"=>"New Note sdfsdffasdf", "sharability"=>0, "status"=>0, "updated_at"=>"2014-06-02T20:34:18Z", "user_id"=>1}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.4ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Completed 204 No Content in 9ms (ActiveRecord: 2.7ms)
+
+
+Started PUT "/contents/29" for 127.0.0.1 at 2014-06-03 02:04:53 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"compile"=>0, "content"=>"fasdfasdfas dfasdf asdf<br>", "created_at"=>"2014-06-02T20:34:13Z", "desc"=>"", "file_type"=>nil, "id"=>"29", "name"=>"New Note sdfsdsdfdffasdf", "sharability"=>0, "status"=>0, "updated_at"=>"2014-06-02T20:34:18Z", "user_id"=>1}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  UPDATE `contents` SET `name` = 'New Note sdfsdsdfdffasdf', `updated_at` = '2014-06-02 20:34:53' WHERE `contents`.`id` = 29
+  [1m[36m (38.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 46ms (ActiveRecord: 40.3ms)
+
+
+Started PUT "/contents/29" for 127.0.0.1 at 2014-06-03 02:05:03 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"compile"=>0, "content"=>"fasdfasdfas dfasdf asdf rishabh tripathi<br><br>asdf asdf as<br>a<br>sdfasd<br>", "created_at"=>"2014-06-02T20:34:13Z", "desc"=>"", "file_type"=>nil, "id"=>"29", "name"=>"New Note sdfsdsdfdffasdf", "sharability"=>0, "status"=>0, "updated_at"=>"2014-06-02T20:34:18Z", "user_id"=>1}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `contents` SET `content` = 'fasdfasdfas dfasdf asdf rishabh tripathi<br><br>asdf asdf as<br>a<br>sdfasd<br>', `updated_at` = '2014-06-02 20:35:03' WHERE `contents`.`id` = 29[0m
+  [1m[35m (75.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 204 No Content in 82ms (ActiveRecord: 76.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:07:05 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.5ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (1.1ms)
+  Rendered home/homepage.html within layouts/application (2.0ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.6ms)
+  Rendered home/_list_menu.html (0.1ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (3.5ms)
+  Rendered layouts/_header.html (5.7ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:05 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:07:06 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:07:29 +0530
+Processing by HomeController#homepage as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1[0m
+  Rendered home/_templates.html (0.1ms)
+  Rendered home/_start.html (1.2ms)
+  Rendered home/homepage.html within layouts/application (1.9ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.5ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.8ms)
+  Rendered layouts/_header.html (4.6ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /main.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:07:30 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 10ms (Views: 1.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (0.9ms)
+  Rendered home/homepage.html within layouts/application (1.8ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (1.9ms)
+  Rendered layouts/_header.html (3.9ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:07:35 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:07:36 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:07:36 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:07:36 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Processing by HomeController#homepage as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.7ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1[0m
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (1.0ms)
+  Rendered home/homepage.html within layouts/application (4.3ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (14ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.1ms)
+  Rendered layouts/_header.html (4.0ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 123ms (Views: 119.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /jquery.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:14 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /application.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:14:15 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:14:37 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (1.3ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (1.2ms)
+  Rendered home/homepage.html within layouts/application (2.7ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (14ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.1ms)
+  Rendered layouts/_header.html (3.9ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 131ms (Views: 126.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /application.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:14:38 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 10ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Processing by HomeController#homepage as HTML
+  [1m[35mUser Load (2.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1[0m
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (1.0ms)
+  Rendered home/homepage.html within layouts/application (1.8ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.5ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (3.1ms)
+  Rendered layouts/_header.html (4.8ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /flat-ui.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:15:10 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/contents/29" for 127.0.0.1 at 2014-06-03 02:15:14 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"compile"=>0, "content"=>"fasdfasdfas dfasdf asdf rishabh tripathi<br><br>asdf asdf as<br>a<br>sdfasd<br>", "created_at"=>"2014-06-02T20:34:13Z", "desc"=>"", "file_type"=>nil, "id"=>"29", "name"=>"New Note sdfsdsdfdffasdf", "sharability"=>0, "status"=>0, "updated_at"=>"2014-06-02T20:35:03Z", "user_id"=>1}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 29 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.3ms)[0m  COMMIT
+Completed 204 No Content in 13ms (ActiveRecord: 7.4ms)
+
+
+Started POST "/contents" for 127.0.0.1 at 2014-06-03 02:15:14 +0530
+Processing by ContentsController#create as JSON
+  Parameters: {"name"=>"NewCode.cpp", "content"=>"", "desc"=>"", "file_type"=>0, "compile"=>0, "status"=>0, "sharability"=>0}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `contents` (`compile`, `content`, `created_at`, `desc`, `file_type`, `name`, `sharability`, `status`, `updated_at`, `user_id`) VALUES (0, '', '2014-06-02 20:45:14', '', NULL, 'NewCode.cpp', 0, 0, '2014-06-02 20:45:14', 1)[0m
+  [1m[35m (70.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  UPDATE `users` SET `last_open_file` = 30, `updated_at` = '2014-06-02 20:45:14' WHERE `users`.`id` = 1
+  [1m[36m (42.5ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 123ms (Views: 1.2ms | ActiveRecord: 115.3ms)
+
+
+Started PUT "/contents/30" for 127.0.0.1 at 2014-06-03 02:15:15 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"name"=>"NewCode.cpp", "content"=>"void main() { }", "desc"=>"", "file_type"=>nil, "compile"=>0, "status"=>0, "sharability"=>0, "created_at"=>"2014-06-02T20:45:14Z", "id"=>"30", "updated_at"=>"2014-06-02T20:45:14Z", "user_id"=>1}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.3ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 30 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `contents` SET `content` = 'void main() { }', `updated_at` = '2014-06-02 20:45:15' WHERE `contents`.`id` = 30[0m
+  [1m[35m (45.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 204 No Content in 52ms (ActiveRecord: 46.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.4ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 30 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (0.8ms)
+  Rendered home/homepage.html within layouts/application (1.5ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.5ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (3.2ms)
+  Rendered layouts/_header.html (4.9ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 29ms (Views: 23.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:15:36 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:15:37 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:15:37 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:15:37 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.8ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 13ms (Views: 2.2ms | ActiveRecord: 2.5ms)
+
+
+Started PUT "/contents/28" for 127.0.0.1 at 2014-06-03 02:15:47 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"compile"=>0, "content"=>"sdfasf asdf asdf asdf asdf asdf asdf asdfasdf asdfasd fasdf asdf<br>", "created_at"=>"2014-06-02T20:16:46Z", "desc"=>"", "file_type"=>nil, "id"=>"28", "name"=>"New Note", "sharability"=>0, "status"=>0, "updated_at"=>"2014-06-02T20:33:53Z", "user_id"=>1}
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 28 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mUPDATE `users` SET `last_open_file` = 28, `updated_at` = '2014-06-02 20:45:47' WHERE `users`.`id` = 1[0m
+  [1m[35m (45.6ms)[0m  COMMIT
+Completed 204 No Content in 55ms (ActiveRecord: 47.8ms)
+
+
+Started POST "/contents" for 127.0.0.1 at 2014-06-03 02:15:47 +0530
+Processing by ContentsController#create as JSON
+  Parameters: {"name"=>"NewCode.java", "content"=>"", "desc"=>"", "file_type"=>0, "compile"=>0, "status"=>0, "sharability"=>0}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `contents` (`compile`, `content`, `created_at`, `desc`, `file_type`, `name`, `sharability`, `status`, `updated_at`, `user_id`) VALUES (0, '', '2014-06-02 20:45:47', '', NULL, 'NewCode.java', 0, 0, '2014-06-02 20:45:47', 1)[0m
+  [1m[35m (34.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  UPDATE `users` SET `last_open_file` = 31, `updated_at` = '2014-06-02 20:45:47' WHERE `users`.`id` = 1
+  [1m[36m (42.5ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 87ms (Views: 1.2ms | ActiveRecord: 79.2ms)
+
+
+Started PUT "/contents/31" for 127.0.0.1 at 2014-06-03 02:15:50 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"name"=>"NewCode.java", "content"=>"public static void main(args[]) { }", "desc"=>"", "file_type"=>nil, "compile"=>0, "status"=>0, "sharability"=>0, "created_at"=>"2014-06-02T20:45:47Z", "id"=>"31", "updated_at"=>"2014-06-02T20:45:47Z", "user_id"=>1}
+  [1m[35mUser Load (1.9ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (2.7ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 31 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `contents` SET `content` = 'public static void main(args[]) { }', `updated_at` = '2014-06-02 20:45:50' WHERE `contents`.`id` = 31[0m
+  [1m[35m (64.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 204 No Content in 76ms (ActiveRecord: 70.3ms)
+
+
+Started POST "/contents" for 127.0.0.1 at 2014-06-03 02:15:50 +0530
+Processing by ContentsController#create as JSON
+  Parameters: {"name"=>"NewCode.rb", "content"=>"", "desc"=>"", "file_type"=>0, "compile"=>0, "status"=>0, "sharability"=>0}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `contents` (`compile`, `content`, `created_at`, `desc`, `file_type`, `name`, `sharability`, `status`, `updated_at`, `user_id`) VALUES (0, '', '2014-06-02 20:45:50', '', NULL, 'NewCode.rb', 0, 0, '2014-06-02 20:45:50', 1)[0m
+  [1m[35m (34.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE `users` SET `last_open_file` = 32, `updated_at` = '2014-06-02 20:45:50' WHERE `users`.`id` = 1
+  [1m[36m (42.3ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 85ms (Views: 1.0ms | ActiveRecord: 78.4ms)
+
+
+Started PUT "/contents/32" for 127.0.0.1 at 2014-06-03 02:15:52 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"name"=>"NewCode.rb", "content"=>"def newAction \n end", "desc"=>"", "file_type"=>nil, "compile"=>0, "status"=>0, "sharability"=>0, "created_at"=>"2014-06-02T20:45:50Z", "id"=>"32", "updated_at"=>"2014-06-02T20:45:50Z", "user_id"=>1}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.3ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 32 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `contents` SET `content` = 'def newAction \n end', `updated_at` = '2014-06-02 20:45:52' WHERE `contents`.`id` = 32[0m
+  [1m[35m (49.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 204 No Content in 56ms (ActiveRecord: 50.7ms)
+
+
+Started PUT "/contents/32" for 127.0.0.1 at 2014-06-03 02:16:07 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"name"=>"NewCode.rb", "content"=>"def newAction \n <br>end", "desc"=>"", "file_type"=>nil, "compile"=>0, "status"=>0, "sharability"=>0, "created_at"=>"2014-06-02T20:45:50Z", "id"=>"32", "updated_at"=>"2014-06-02T20:45:50Z", "user_id"=>1}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.4ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 32 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  UPDATE `contents` SET `content` = 'def newAction \n <br>end', `updated_at` = '2014-06-02 20:46:07' WHERE `contents`.`id` = 32
+  [1m[36m (46.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 53ms (ActiveRecord: 48.2ms)
+
+
+Started PUT "/contents/32" for 127.0.0.1 at 2014-06-03 02:16:12 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"name"=>"NewCode.rb", "content"=>"def newAction \n <br><br>end", "desc"=>"", "file_type"=>nil, "compile"=>0, "status"=>0, "sharability"=>0, "created_at"=>"2014-06-02T20:45:50Z", "id"=>"32", "updated_at"=>"2014-06-02T20:45:50Z", "user_id"=>1}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 32 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `contents` SET `content` = 'def newAction \n <br><br>end', `updated_at` = '2014-06-02 20:46:12' WHERE `contents`.`id` = 32[0m
+  [1m[35m (87.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 204 No Content in 94ms (ActiveRecord: 88.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (1.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 32 LIMIT 1
+  Rendered home/_templates.html (0.1ms)
+  Rendered home/_start.html (1.2ms)
+  Rendered home/homepage.html within layouts/application (2.7ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (19ms)  (pid 23789)
+  Rendered home/_file_name.html (0.2ms)
+  Rendered home/_code_menu.html (0.6ms)
+  Rendered home/_list_menu.html (0.1ms)
+  Rendered home/_setting_menu.html (0.1ms)
+  Rendered home/_top_buttons.html (4.0ms)
+  Rendered layouts/_header.html (6.6ms)
+  Rendered layouts/_footer.html (0.1ms)
+Completed 200 OK in 182ms (Views: 176.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /main.js - 200 OK (3ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:24 +0530
+Served asset /application.js - 304 Not Modified (77ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:21:25 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:21:25 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 32 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (0.8ms)
+  Rendered home/homepage.html within layouts/application (1.5ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (17ms)  (pid 23789)
+  Rendered home/_file_name.html (0.3ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.6ms)
+  Rendered layouts/_header.html (5.1ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 134ms (Views: 129.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:21:43 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.8ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 32 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (3.4ms)
+  Rendered home/homepage.html within layouts/application (4.3ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.2ms)
+  Rendered layouts/_header.html (3.9ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:51 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:52 +0530
+Served asset /underscore-min.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:52 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:52 +0530
+Served asset /util.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:52 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:52 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:21:52 +0530
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:21:52 +0530
+Served asset /Algolint.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:21:52 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:22:07 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.6ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 32 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (0.9ms)
+  Rendered home/homepage.html within layouts/application (2.0ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (18ms)  (pid 23789)
+  Rendered home/_file_name.html (0.2ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.8ms)
+  Rendered layouts/_header.html (5.0ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 137ms (Views: 133.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /main.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /flat-ui.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /application.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 9ms (Views: 2.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:22:08 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:22:29 +0530
+Processing by HomeController#homepage as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 32 LIMIT 1[0m
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (1.0ms)
+  Rendered home/homepage.html within layouts/application (1.9ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (14ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.3ms)
+  Rendered layouts/_header.html (13.2ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 139ms (Views: 136.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /main.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /application.js - 304 Not Modified (80ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:22:30 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/contents/32" for 127.0.0.1 at 2014-06-03 02:24:07 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"compile"=>0, "content"=>"def newAction \n <br><br>end", "created_at"=>"2014-06-02T20:45:50Z", "desc"=>"", "file_type"=>nil, "id"=>"32", "name"=>"NewCode.rb", "sharability"=>0, "status"=>0, "updated_at"=>"2014-06-02T20:46:12Z", "user_id"=>1}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.5ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 32 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 204 No Content in 9ms (ActiveRecord: 1.5ms)
+
+
+Started POST "/contents" for 127.0.0.1 at 2014-06-03 02:24:07 +0530
+Processing by ContentsController#create as JSON
+  Parameters: {"name"=>"New Note", "content"=>"", "desc"=>"", "file_type"=>0, "compile"=>0, "status"=>0, "sharability"=>0}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `contents` (`compile`, `content`, `created_at`, `desc`, `file_type`, `name`, `sharability`, `status`, `updated_at`, `user_id`) VALUES (0, '', '2014-06-02 20:54:07', '', NULL, 'New Note', 0, 0, '2014-06-02 20:54:07', 1)[0m
+  [1m[35m (193.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  UPDATE `users` SET `last_open_file` = 33, `updated_at` = '2014-06-02 20:54:07' WHERE `users`.`id` = 1
+  [1m[36m (42.0ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 247ms (Views: 1.2ms | ActiveRecord: 236.5ms)
+
+
+Started PUT "/contents/33" for 127.0.0.1 at 2014-06-03 02:24:08 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"name"=>"New Note", "content"=>"Click to add note", "desc"=>"", "file_type"=>nil, "compile"=>0, "status"=>0, "sharability"=>0, "created_at"=>"2014-06-02T20:54:07Z", "id"=>"33", "updated_at"=>"2014-06-02T20:54:07Z", "user_id"=>1}
+  [1m[35mUser Load (2.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.6ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 33 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mUPDATE `contents` SET `content` = 'Click to add note', `updated_at` = '2014-06-02 20:54:08' WHERE `contents`.`id` = 33[0m
+  [1m[35m (47.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 204 No Content in 60ms (ActiveRecord: 54.5ms)
+
+
+Started POST "/contents" for 127.0.0.1 at 2014-06-03 02:24:08 +0530
+Processing by ContentsController#create as JSON
+  Parameters: {"name"=>"New Note", "content"=>"", "desc"=>"", "file_type"=>0, "compile"=>0, "status"=>0, "sharability"=>0}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `contents` (`compile`, `content`, `created_at`, `desc`, `file_type`, `name`, `sharability`, `status`, `updated_at`, `user_id`) VALUES (0, '', '2014-06-02 20:54:08', '', NULL, 'New Note', 0, 0, '2014-06-02 20:54:08', 1)[0m
+  [1m[35m (44.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE `users` SET `last_open_file` = 34, `updated_at` = '2014-06-02 20:54:08' WHERE `users`.`id` = 1
+  [1m[36m (30.9ms)[0m  [1mCOMMIT[0m
+Completed 201 Created in 85ms (Views: 1.2ms | ActiveRecord: 76.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:24:19 +0530
+Processing by HomeController#homepage as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.4ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 34 LIMIT 1[0m
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (1.3ms)
+  Rendered home/homepage.html within layouts/application (2.2ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.1ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.1ms)
+  Rendered home/_top_buttons.html (2.9ms)
+  Rendered layouts/_header.html (5.3ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.5ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 18ms (Views: 4.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:24:20 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started DELETE "/contents/34" for 127.0.0.1 at 2014-06-03 02:24:25 +0530
+Processing by ContentsController#destroy as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `users` SET `last_open_file` = NULL, `updated_at` = '2014-06-02 20:54:25' WHERE `users`.`id` = 1[0m
+  [1m[35m (48.8ms)[0m  COMMIT
+  [1m[36mContent Load (0.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 34 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM `contents` WHERE `contents`.`id` = 34[0m
+  [1m[35m (42.2ms)[0m  COMMIT
+Completed 204 No Content in 98ms (ActiveRecord: 92.5ms)
+
+
+Started DELETE "/contents/33" for 127.0.0.1 at 2014-06-03 02:24:25 +0530
+Processing by ContentsController#destroy as JSON
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.4ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 33 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `contents` WHERE `contents`.`id` = 33
+  [1m[36m (44.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 52ms (ActiveRecord: 47.7ms)
+
+
+Started DELETE "/contents/28" for 127.0.0.1 at 2014-06-03 02:24:29 +0530
+Processing by ContentsController#destroy as JSON
+  Parameters: {"id"=>"28"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.8ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 28 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `contents` WHERE `contents`.`id` = 28[0m
+  [1m[35m (46.1ms)[0m  COMMIT
+Completed 204 No Content in 52ms (ActiveRecord: 48.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:26:01 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (0.8ms)
+  Rendered home/homepage.html within layouts/application (1.6ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (19ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.3ms)
+  Rendered layouts/_header.html (4.5ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 145ms (Views: 143.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /flat-ui.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /application.js - 304 Not Modified (79ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.5ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 10ms (Views: 2.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:26:02 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (1.1ms)
+  Rendered home/homepage.html within layouts/application (2.0ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (15ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.1ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.7ms)
+  Rendered layouts/_header.html (4.5ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 142ms (Views: 139.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /main.js - 200 OK (4ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:18 +0530
+Served asset /application.js - 304 Not Modified (39ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:26:19 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:26:19 +0530
+Served asset /loader.gif - 304 Not Modified (1ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:26:19 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/contents/31" for 127.0.0.1 at 2014-06-03 02:26:34 +0530
+Processing by ContentsController#update as JSON
+  Parameters: {"compile"=>0, "content"=>"public static void main(args[]) { } <br>", "created_at"=>"2014-06-02T20:45:47Z", "desc"=>"", "file_type"=>nil, "id"=>"31", "name"=>"NewCode.java", "sharability"=>0, "status"=>0, "updated_at"=>"2014-06-02T20:45:50Z", "user_id"=>1}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.4ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 31 LIMIT 1
+  [1m[36m (2.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  UPDATE `contents` SET `content` = 'public static void main(args[]) { } <br>', `updated_at` = '2014-06-02 20:56:34' WHERE `contents`.`id` = 31
+  [1m[36m (39.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `users` SET `last_open_file` = 31, `updated_at` = '2014-06-02 20:56:34' WHERE `users`.`id` = 1[0m
+  [1m[35m (53.6ms)[0m  COMMIT
+Completed 204 No Content in 104ms (ActiveRecord: 96.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.7ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 31 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (1.0ms)
+  Rendered home/homepage.html within layouts/application (2.2ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (17ms)  (pid 23789)
+  Rendered home/_file_name.html (0.2ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.3ms)
+  Rendered layouts/_header.html (5.0ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 149ms (Views: 144.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /application.js - 304 Not Modified (69ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.7ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 10ms (Views: 3.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:26:45 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Processing by HomeController#homepage as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (1.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 31 LIMIT 1[0m
+  Rendered home/_templates.html (0.1ms)
+  Rendered home/_start.html (1.5ms)
+  Rendered home/homepage.html within layouts/application (2.4ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (16ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.1ms)
+  Rendered home/_top_buttons.html (2.9ms)
+  Rendered layouts/_header.html (5.1ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 137ms (Views: 132.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:27:22 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:27:23 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:27:23 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 9ms (Views: 2.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:27:23 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 31 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (3.0ms)
+  Rendered home/homepage.html within layouts/application (3.9ms)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.0ms)
+  Rendered layouts/_header.html (3.8ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /respond.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /underscore-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /util.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:28:48 +0530
+Served asset /application.js - 304 Not Modified (61ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:28:49 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:28:49 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:28:49 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:29:27 +0530
+Processing by HomeController#homepage as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContent Load (0.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 31 LIMIT 1[0m
+  Rendered home/_templates.html (0.1ms)
+  Rendered home/_start.html (3.1ms)
+  Rendered home/homepage.html within layouts/application (3.8ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (16ms)  (pid 23789)
+  Rendered home/_file_name.html (0.1ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.3ms)
+  Rendered layouts/_header.html (4.3ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 126ms (Views: 123.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /main.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /respond.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /underscore-min.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /main.js - 200 OK (4ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:29:28 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE (user_id = 1)
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Processing by HomeController#homepage as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContent Load (0.2ms)[0m  SELECT `contents`.* FROM `contents` WHERE `contents`.`id` = 31 LIMIT 1
+  Rendered home/_templates.html (0.0ms)
+  Rendered home/_start.html (0.8ms)
+  Rendered home/homepage.html within layouts/application (1.9ms)
+Compiled main.js  (0ms)  (pid 23789)
+Compiled application.js  (15ms)  (pid 23789)
+  Rendered home/_file_name.html (0.2ms)
+  Rendered home/_code_menu.html (0.0ms)
+  Rendered home/_list_menu.html (0.0ms)
+  Rendered home/_setting_menu.html (0.0ms)
+  Rendered home/_top_buttons.html (2.3ms)
+  Rendered layouts/_header.html (4.7ms)
+  Rendered layouts/_footer.html (0.0ms)
+Completed 200 OK in 138ms (Views: 135.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /bootstrap-theme.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /flat-ui.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-checkbox.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /flatui-checkbox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-select.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /bootstrap-select.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/html5shiv.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /html5shiv.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.placeholder.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /jquery.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flatui-radio.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /flatui-radio.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tagsinput.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /jquery.tagsinput.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.touch-punch.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /jquery.ui.touch-punch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.10.3.custom.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /jquery-ui-1.10.3.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /respond.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /underscore-min.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/custom-scroller.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /custom-scroller.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:46 +0530
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/backbone-min.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:47 +0530
+Served asset /backbone-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/util.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:47 +0530
+Served asset /util.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:29:47 +0530
+Served asset /application.js - 304 Not Modified (33ms)
+
+
+Started GET "/assets/Algolint.png" for 127.0.0.1 at 2014-06-03 02:29:47 +0530
+Served asset /Algolint.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loader.gif" for 127.0.0.1 at 2014-06-03 02:29:47 +0530
+Served asset /loader.gif - 304 Not Modified (0ms)
+
+
+Started GET "/contents?uid=Dv9j141Zfpy3DjBoCeP0" for 127.0.0.1 at 2014-06-03 02:29:47 +0530
+Processing by ContentsController#index as JSON
+  Parameters: {"uid"=>"Dv9j141Zfpy3DjBoCeP0"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`unique_key` = 'Dv9j141Zfpy3DjBoCeP0' LIMIT 1
+  [1m[36mContent Load (0.2ms)[0m  [1mSELECT `contents`.* FROM `contents` WHERE (user_id = 1)[0m
+Completed 200 OK in 9ms (Views: 2.1ms | ActiveRecord: 0.7ms)
