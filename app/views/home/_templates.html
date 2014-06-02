@@ -1,0 +1,10 @@
+<script type="text/template" id="fileLinkTemp">
+  <tr>
+    <td class="p-5 lead file-link">
+      <a href="javascript:void(0);" onclick="Code.Logic.openFile({{= file_id }});">{{= file_name }}</a>
+    </td>
+    <td class="p-5">
+      <span class="fui-cross pointer" onclick="Code.Logic.removeFile({{= file_id }});"></span>
+    </td>
+  </tr>  
+</script>

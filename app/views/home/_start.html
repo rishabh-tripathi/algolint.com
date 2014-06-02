@@ -1,11 +1,21 @@
+<div id="loading" style="display:none;">
+  <div class="sp100"></div>
+  <center>
+    <span class="lead" style="color:#ffffff;font-size:60px;">Preparing Algolint for You</span>
+    <div class="sp30"></div>
+    <img src="/assets/loader.gif" title="loading"/>
+  </center>
+</div>
+
 <div id="error-div" class="alert alert-warning" style="display:none;">
   <button type="button" class="close" onclick="ele_hide('error-div')">×</button>
   <strong>Error!</strong> Something went wrong, your changes are not saved. Please reload.
 </div>
 
-<div id="content-editor" class="fill-width lead" contenteditable="true" onclick="clearEditor();hideAll();"><% if(@file.present?) %><%=raw @file.content %><% else %>Click to add note<% end %></div>
-<div id="update-id"></div>
+<div id="content-editor" class="fill-width lead" contenteditable="true">Click to add note</div>
 
+<% if(false) %>
+<div id="update-id"></div>
 <%= form_remote_tag :url => save_file_url,                              
                     :loading => "",                     
                     :complete => "save_success()",                                                                
@@ -17,3 +27,16 @@
 <input type="hidden" id="sfile_desc" name="file_desc" value="" />   
 <input type="hidden" id="sfile_content" name="file_content" value="" />   
 <%= end_form %> 
+<% end %>
+
+<script type="text/javascript">
+  var uid = "<%= @uid %>";
+  <% if(@file.present?) %>
+  var lastOpenFile = <%= @file.id %>;
+  <% else %>
+  var lastOpenFile = null;
+  <% end %>
+  Code.Logic.load();
+</script>
+
+<%= render(:partial => "home/templates") %>

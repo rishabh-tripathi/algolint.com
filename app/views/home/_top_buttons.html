@@ -1,9 +1,19 @@
 <div class="btn-group">
-  <a id="addNote" class="btn btn-primary active" href="javascript:void(0);" title="New Note" onclick="addNewNote();"><span class="fui-new"></span>&nbsp;&nbsp;Note</a>
-  <a id="addCode" class="btn btn-primary" href="javascript:void(0);" title="New Code File" onclick="addNewCode();"><span class="fui-cmd"></span>&nbsp;&nbsp;Code</a>
-  <a id="viewFile" class="btn btn-primary" href="javascript:void(0);" title="All Files" onclick="viewFiles();"><span class="fui-list"></span></a>
-  <a id="viewSetting" class="btn btn-primary" href="javascript:void(0);" title="Setting" onclick="viewSettings()"><span class="fui-gear"></span></a>
-  <a class="btn btn-primary" href="<%= logout_user_path %>" title="Logout"><span class="fui-cross"></span></a>
+  <a id="addNote" class="btn btn-primary active" href="javascript:void(0);" title="New Note">
+    <span class="fui-new"></span>&nbsp;&nbsp;Note
+  </a>
+  <a id="addCode" class="btn btn-primary" href="javascript:void(0);" title="New Code File">
+    <span class="fui-cmd"></span>&nbsp;&nbsp;Code
+  </a>
+  <a id="viewFile" class="btn btn-primary" href="javascript:void(0);" title="All Files">
+    <span class="fui-list"></span>
+  </a>
+  <a id="viewSetting" class="btn btn-primary" href="javascript:void(0);" title="Setting" onclick="">
+    <span class="fui-gear"></span>
+  </a>
+  <a class="btn btn-primary" href="<%= logout_user_path %>" title="Logout">
+    <span class="fui-cross"></span>
+  </a>
 </div>
 
 <div id="addCode-popup" class="tooltip fade bottom in top-popup" style="display:none;">
