@@ -4,7 +4,7 @@
       <span class="file-path"><%= current_user.email.split("@").first %></span>&nbsp;/&nbsp; 
     </td>
     <td class="lead">
-      <span id="file_name" class="file-path" style="<% if(!@file.present?) %>color:#FF2A68<% end %>" onclick="open_file_name_editor()"><%= (@file.present?)? @file.name : "New Note" %></span>
+      <span id="file_name" class="file-path" style="<% if(!@file.present?) %>color:#FF2A68<% end %>"></span>
       <div id="edit-file-name" class="share mrl" style="position:absolute;z-index:10;display:none;">
 	<ul>
 	  <li>
@@ -14,7 +14,7 @@
 		  <input type="text" id="file-name-tb" class="form-control" style="width:200px;font-size:20px;" />
 		</td>
 		<td style="padding-left:10px;">
-		  <button class="btn btn-success" style="border-radius:6px;" onclick="change_file_name();">Done</button>
+		  <button id="update-file-name" class="btn btn-success" style="border-radius:6px;">Done</button>
 		</td>
 	      </tr>
 	    </table>

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @content.user_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @content.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @content.desc %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @content.content %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @content.type %>
+</p>
+
+<p>
+  <b>Compile:</b>
+  <%= @content.compile %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @content.status %>
+</p>
+
+<p>
+  <b>Sharability:</b>
+  <%= @content.sharability %>
+</p>
+
+
+<%= link_to 'Edit', edit_content_path(@content) %> |
+<%= link_to 'Back', contents_path %>

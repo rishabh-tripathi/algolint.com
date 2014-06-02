@@ -1,5 +1,6 @@
 AlgolintCom::Application.routes.draw do
 
+  resources :contents
   devise_for :users, :skip => [:sessions]
   as :user do
     get 'join' => 'devise/registrations#new', :as => :signin_user
@@ -58,8 +59,6 @@ AlgolintCom::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'home#homepage'
-
-  match '/save-file'=>'home#save_file', :as => 'save_file'
 
   # See how all your routes lay out with "rake routes"
 

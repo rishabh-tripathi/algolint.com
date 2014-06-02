@@ -12,4 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require bootstrap.min
+//= require bootstrap-select
+//= require flatui-checkbox
+//= require flatui-radio
+//= require html5shiv
+//= require jquery.placeholder
+//= require jquery.tagsinput
+//= require jquery.ui.touch-punch.min
+//= require jquery-ui-1.10.3.custom.min
+//= require respond.min
+//= require typeahead
+//= require underscore-min
+//= require backbone-min
+//= require util
+//= require main
+//= require custom-scroller

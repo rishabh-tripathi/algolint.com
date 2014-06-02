@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140524230347) do
+ActiveRecord::Schema.define(:version => 20140602164521) do
 
   create_table "contents", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.string   "desc"
     t.text     "content"
-    t.integer  "type"
+    t.integer  "file_type"
     t.integer  "compile"
     t.integer  "status"
     t.integer  "sharability"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20140524230347) do
     t.integer  "last_open_file"
     t.integer  "default_font_size"
     t.integer  "default_theme"
+    t.string   "unique_key"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
