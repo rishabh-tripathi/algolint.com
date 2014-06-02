@@ -1,6 +1,8 @@
 ---
-Algolint.png: Algolint-66e5eb7f9cbfa155636cdd56678e485b.png
-Algolint/index.png: Algolint-66e5eb7f9cbfa155636cdd56678e485b.png
+Algolint.png: Algolint-de809ec53ba90079dbd2ec8abf61560d.png
+Algolint/index.png: Algolint-de809ec53ba90079dbd2ec8abf61560d.png
+algolint-logo-big.png: algolint-logo-big-1051046527d49047398d01b7a2a78704.png
+algolint-logo-big/index.png: algolint-logo-big-1051046527d49047398d01b7a2a78704.png
 fonts/glyphicons-halflings-regular.eot: fonts/glyphicons-halflings-regular-34c3e2fce2eed3de1bb998bae0e4e0de.eot
 fonts/glyphicons-halflings-regular/index.eot: fonts/glyphicons-halflings-regular-34c3e2fce2eed3de1bb998bae0e4e0de.eot
 fonts/glyphicons-halflings-regular.svg: fonts/glyphicons-halflings-regular-a20f1f0c23f592f30c37f1b6ce7dac09.svg
@@ -9,11 +11,13 @@ fonts/glyphicons-halflings-regular.ttf: fonts/glyphicons-halflings-regular-89ac6
 fonts/glyphicons-halflings-regular/index.ttf: fonts/glyphicons-halflings-regular-89ac66980d09bf7e4619976d2fa08de1.ttf
 fonts/glyphicons-halflings-regular.woff: fonts/glyphicons-halflings-regular-26a4cf908d46a31304c50b30b5696da5.woff
 fonts/glyphicons-halflings-regular/index.woff: fonts/glyphicons-halflings-regular-26a4cf908d46a31304c50b30b5696da5.woff
+loader.gif: loader-2f99a7ca7730e98eb35460cce0ae3cec.gif
+loader/index.gif: loader-2f99a7ca7730e98eb35460cce0ae3cec.gif
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
-application.js: application-d5c3781ede3e882ca3279b9780e64798.js
-application/index.js: application-d5c3781ede3e882ca3279b9780e64798.js
-application.css: application-33b1548bc64018ea3ea4529c5aeefde5.css
-application/index.css: application-33b1548bc64018ea3ea4529c5aeefde5.css
+application.js: application-1ffe00820ba94df884cccd6f0a118247.js
+application/index.js: application-1ffe00820ba94df884cccd6f0a118247.js
+application.css: application-a2c85dfca6ab141429a642f37df2b4a4.css
+application/index.css: application-a2c85dfca6ab141429a642f37df2b4a4.css
 jquery.min.map: jquery.min-388372ef65cc311f6a3df4a6ceac8d22.map
 jquery/index.min.map: jquery.min-388372ef65cc311f6a3df4a6ceac8d22.map
