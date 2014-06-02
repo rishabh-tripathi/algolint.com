@@ -2,11 +2,11 @@
   <center><p class="lead m-null" style="font-size:50px;">Login</p></center>  
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email, :class => "m-null" %><br />
-  <%= f.email_field :email, autofocus: true, :class => "form-control" %></div>
+  <%= f.email_field :email, :autofocus => true, :class => "form-control" %></div>
   <div class="sp10"></div>
 
   <div><%= f.label :password, :class => "m-null"  %><br />
-    <%= f.password_field :password, autocomplete: "off", :class => "form-control" %></div>
+    <%= f.password_field :password, :autocomplete => "off", :class => "form-control" %></div>
   <div class="sp10"></div>
 
   <% if devise_mapping.rememberable? -%>
