@@ -15,7 +15,7 @@ class ContentsController < ApplicationController
     end
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @contents }
+      format.json { render :json => @contents }
     end
   end
 
@@ -26,7 +26,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @content }
+      format.json { render :json => @content }
     end
   end
 
@@ -37,7 +37,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @content }
+      format.json { render :json => @content }
     end
   end
 
@@ -62,11 +62,11 @@ class ContentsController < ApplicationController
       if(@content.save)
         current_user.last_open_file = @content.id
         current_user.save
-        format.html { redirect_to @content, notice: 'Content was successfully created.' }
-        format.json { render json: @content, status: :created, location: @content }
+        format.html { redirect_to @content, :notice => 'Content was successfully created.' }
+        format.json { render :json => @content, :status => :created, :location => @content }
       else
-        format.html { render action: "new" }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @content.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -87,11 +87,11 @@ class ContentsController < ApplicationController
       if(@content.save)
         current_user.last_open_file = @content.id
         current_user.save        
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
+        format.html { redirect_to @content, :notice => 'Content was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @content.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -104,8 +104,7 @@ class ContentsController < ApplicationController
       current_user.save
     end
     @content = Content.find(params[:id])
-    @content.destroy
-    
+    @content.destroy    
     respond_to do |format|
       format.html { redirect_to contents_url }
       format.json { head :no_content }
