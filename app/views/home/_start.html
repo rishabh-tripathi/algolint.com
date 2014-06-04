@@ -1,4 +1,4 @@
-<div id="loading" style="display:none;">
+<div id="loading" style="display:none;z-index:22;">
   <div class="sp100"></div>
   <center>
     <span class="lead" style="color:#ffffff;font-size:60px;">Preparing Algolint for You</span>
@@ -7,27 +7,14 @@
   </center>
 </div>
 
+<%= render(:partial => "home/compile_code") %>
+
 <div id="error-div" class="alert alert-warning" style="display:none;">
   <button type="button" class="close" onclick="ele_hide('error-div')">×</button>
   <strong>Error!</strong> Something went wrong, your changes are not saved. Please reload.
 </div>
 
 <div id="content-editor" class="fill-width lead" contenteditable="true">Click to add note</div>
-
-<% if(false) %>
-<div id="update-id"></div>
-<%= form_remote_tag :url => save_file_url,                              
-                    :loading => "",                     
-                    :complete => "save_success()",                                                                
-                    :failure => "save_failed()",
-                    :update => "update-id",                                 
-                    :html => {:id => "save_content"} %>           
-<input type="hidden" id="sfile_id" name="file_id" value="<%= (@file.present?)? @file.id : '' %>" />   
-<input type="hidden" id="sfile_name" name="file_name" value="" />   
-<input type="hidden" id="sfile_desc" name="file_desc" value="" />   
-<input type="hidden" id="sfile_content" name="file_content" value="" />   
-<%= end_form %> 
-<% end %>
 
 <script type="text/javascript">
   var uid = "<%= @uid %>";

@@ -249,3 +249,27 @@ body {
 .tab-sp {
     width: 30px;
 }
+
+#compile {
+    position: relative;
+    z-index: 22;
+}
+
+#compileLoad {
+    width: 100px;
+}
+
+#compileStatus {
+    font-size: 60px;
+    color: #ffffff;
+}
+
+#output-window {
+    width: 60%;
+    min-width: 300px;
+    min-height: 350px;
+    background: #2B2B2B;
+    color: #ffffff;
+    text-align: left;
+    overflow: auto;
+}

@@ -147,6 +147,7 @@ Code.Logic.getMyTemplate = function() {
 
 Code.Logic.save_file = function(force) {
     var content = ele('content-editor').innerHTML;    
+    content = Code.Logic.getCode(content);
     if(objDef(Code.Var.openFileId)) {
 	var fileObj = Code.Var.myContentHash[Code.Var.openFileId];
 	if(objDef(fileObj)) {
@@ -294,13 +295,27 @@ Code.Logic.setDarkTheme = function() {
 };
 
 Code.Logic.compileCode = function() {
+    Code.Logic.save_file(true);
     Code.Logic.hideAll();
     showTrans();
+    ele_show("compile");
+    if(objDef(Code.Var.openFileId)) {
+	var fileObj = Code.Var.myContentHash[Code.Var.openFileId];
+	ele("compileStatus").innerHTML = "Testing <i>"+fileObj.get("name")+"</i>";
+	ele("cfile_id").value = Code.Var.openFileId;
+    }
+    ele_show("compileStatus");
+    ele_hide("output-window");
+    ele_show("compileLoad");   
+    submit_ajax_form("compile_code");
 };
 
 Code.Logic.showOutput = function() {
     Code.Logic.hideAll();
     showTrans();
+    ele_show("compile");
+    ele_show("compileStatus");
+    ele_show("output-window");
 };
 
 Code.Event = {

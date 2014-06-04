@@ -10,10 +10,10 @@ class Content < ActiveRecord::Base
   
   TYPE_NAMES = {
     TYPE_NOTE => "Notes",
-    TYPE_CODE_CPP => "C/C++ Code",
-    TYPE_CODE_JAVA => "Java Code",
-    TYPE_CODE_RUBY => "Ruby Code",
-    TYPE_CODE_PYTHON => "Python Code"
+    TYPE_CODE_CPP => "C++",
+    TYPE_CODE_JAVA => "Java",
+    TYPE_CODE_RUBY => "Ruby",
+    TYPE_CODE_PYTHON => "Python"
   }
 
   TYPE_EXT = {
@@ -59,4 +59,35 @@ class Content < ActiveRecord::Base
   TEMPLATE_CAT_STACK = 20
   TEMPLATE_CAT_QUEUE = 30
   
+  def get_folder_path
+    return "./user_codes/#{self.user_id}/#{Content::TYPE_NAMES[self.file_type]}"
+  end
+  
+  def get_file_path
+    "#{self.get_folder_path}/#{self.name}"
+  end
+
+  def get_final_code
+    content = self.content
+    content = content.gsub(/<br>/,"\n").gsub("&nbsp;"," ").gsub("&lt;","<").gsub("&gt;",">")
+    return content
+  end
+
+  def compile_code
+    output = ""
+    if(self.file_type == Content::TYPE_CODE_CPP)
+      system("cc -o #{self.get_folder_path}/compile/#{self.id} #{self.get_file_path}")
+      system("#{self.get_folder_path}/compile/#{self.id} > #{self.get_folder_path}/compile/op/#{self.id}")
+      output = File.read("#{self.get_folder_path}/compile/op/#{self.id}")      
+    elsif(self.file_type == Content::TYPE_CODE_JAVA)
+      system("javac #{self.get_file_path}")
+      system("java #{self.get_file_path.gsub(/.java/,'')} > #{self.get_folder_path}/compile/op/#{self.id}")
+    elsif(self.file_type == Content::TYPE_CODE_RUBY)
+      system("ruby #{self.get_file_path} > #{self.get_folder_path}/compile/op/#{self.id}")      
+      output = File.read("#{self.get_folder_path}/compile/op/#{self.id}")         
+    elsif(self.file_type == Content::TYPE_CODE_PYTHON)            
+    end
+    return output
+  end
+
 end

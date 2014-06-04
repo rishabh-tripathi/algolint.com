@@ -1,0 +1,15 @@
+<div id="compile" style="">
+  <div class="sp20"></div>
+  <center>
+    <span id="compileStatus" class="lead" style="">
+      Compiling NewFile.java
+    </span>    
+    <div class="sp30"></div>
+    <img id="compileLoad" src="/assets/loadingBig.gif" style="display:none;" title="loading"/>
+    <div id="output-window" class="p-20">
+      daf
+    </div>
+  </center>
+</div>
+
+
