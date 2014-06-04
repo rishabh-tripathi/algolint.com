@@ -231,7 +231,7 @@ body {
     color: #16A085;
 }
 
-#loading {
+#transLayer {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -244,4 +244,8 @@ body {
 
 .pointer {
     cursor: pointer;
+}
+
+.tab-sp {
+    width: 30px;
 }

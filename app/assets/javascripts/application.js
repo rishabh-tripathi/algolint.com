@@ -28,3 +28,8 @@
 //= require util
 //= require main
 //= require custom-scroller
+//= require prettify
+//= require run_prettify
+//= require rangy-core
+//= require rangy-textrange
+

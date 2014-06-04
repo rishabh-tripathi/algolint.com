@@ -1,5 +1,5 @@
 class Content < ActiveRecord::Base
-  attr_accessible :compile, :content, :desc, :name, :sharability, :status, :type, :user_id
+  attr_accessible :compile, :content, :desc, :name, :sharability, :status, :file_type, :user_id, :template, :template_cat
   belongs_to :user
 
   TYPE_NOTE = 0
@@ -43,6 +43,20 @@ class Content < ActiveRecord::Base
     SHARE_PRIVATE => "Private",
     SHARE_PUBLIC => "Public"
   }
+  
+  TEMPLATE_NO = 0
+  TEMPLATE_AL = 10
+  TEMPLATE_USER = 20
 
+  TEMPLATE_NAMES = {
+    TEMPLATE_NO => "Not a template",
+    TEMPLATE_AL => "Algolint Template",
+    TEMPLATE_USER => "User Template"
+  }
+
+  TEMPLATE_CAT_NONE = 0
+  TEMPLATE_CAT_LINKEDLIST = 10
+  TEMPLATE_CAT_STACK = 20
+  TEMPLATE_CAT_QUEUE = 30
   
 end

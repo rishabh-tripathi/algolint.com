@@ -26,8 +26,13 @@
   </table>
   <div class="sp10"></div>
   <a href="#fakelink" class="btn btn-block btn-lg btn-primary">Choose Code Template</a>
+
   <label class="checkbox" for="checkbox2" style="width:210px;margin-left:40px;">
-    <span class="icons"><span class="first-icon fui-checkbox-unchecked"></span><span class="second-icon fui-checkbox-checked"></span></span><input type="checkbox" value="" id="checkbox2" data-toggle="checkbox">
+    <span class="icons">
+      <span class="first-icon fui-checkbox-unchecked"></span>
+      <span class="second-icon fui-checkbox-checked"></span>
+    </span>
+    <input id="my-template" type="checkbox" data-toggle="checkbox">
     <span style="font-size:16px;">Save in my code template</span>
   </label>
   <div class="sp1 b-top"></div>
@@ -35,10 +40,10 @@
   <table class="fill-width">
     <tr>
       <td class="p-5">
-	<a href="#fakelink" class="btn btn-block btn-lg btn-danger">Compile Code</a>
+	<a id="compileBtn" href="javascript:void(0);" class="btn btn-block btn-lg btn-danger">Compile Code</a>
       </td>
       <td class="p-5">
-	<a href="#fakelink" class="btn btn-block btn-lg btn-success">View Output</a>
+	<a id="outputBtn" href="javascript:void(0);" class="btn btn-block btn-lg btn-success">View Output</a>
       </td>
     </tr>
   </table>

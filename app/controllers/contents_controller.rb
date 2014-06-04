@@ -54,10 +54,11 @@ class ContentsController < ApplicationController
     @content.name = params[:name]
     @content.desc = params[:desc]
     @content.content = params[:content]
-    @content.file_type = params[:type]
-    @content.compile = params[:compile]
-    @content.status = params[:status]
-    @content.sharability = params[:sharability]       
+    @content.file_type = params[:file_type].to_i
+    @content.compile = params[:compile].to_i
+    @content.status = params[:status].to_i
+    @content.sharability = params[:sharability].to_i       
+    @content.template = params[:template].to_i       
     respond_to do |format|
       if(@content.save)
         current_user.last_open_file = @content.id
@@ -79,10 +80,11 @@ class ContentsController < ApplicationController
     @content.name = params[:name]
     @content.desc = params[:desc]
     @content.content = params[:content]
-    @content.file_type = params[:type]
-    @content.compile = params[:compile]
-    @content.status = params[:status]
-    @content.sharability = params[:sharability]       
+    @content.file_type = params[:file_type].to_i
+    @content.compile = params[:compile].to_i
+    @content.status = params[:status].to_i
+    @content.sharability = params[:sharability].to_i       
+    @content.template = params[:template].to_i       
     respond_to do |format|
       if(@content.save)
         current_user.last_open_file = @content.id

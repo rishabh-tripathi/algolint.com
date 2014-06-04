@@ -15,7 +15,7 @@ var Code = {
 Code.Var = {
     myContents: [],
     myContentHash: {},
-    openFileId: null
+    openFileId: null,
 };
 
 Code.Def.Model = {
@@ -47,6 +47,7 @@ Code.Def.Collection = {
 };	    
 
 Code.Logic.load = function() {
+    showTrans();
     ele_show("loading");
     Code.Var.myContents = new Code.Def.Collection.Contents(uid);
     Code.Var.myContents.setUid(uid);
@@ -63,6 +64,7 @@ Code.Logic.load = function() {
 Code.Logic.loadSuccess = function() {
     Code.Logic.updateMyContentHash();
     Code.Logic.prepareFileList();
+    hideTrans();
     ele_hide("loading");
     Code.Var.openFileId = lastOpenFile;
     Code.Event.Onclick();
@@ -78,8 +80,8 @@ Code.Logic.loadFailure = function() {
 };
 
 Code.Logic.updateMyContentHash = function() {
-    if(Code.Var.myContents.length > 0) {
-	Code.Var.myContentHash = {};
+    Code.Var.myContentHash = {};
+    if(Code.Var.myContents.length > 0) {	
 	Code.Var.myContents.each(function(obj) {
 	    Code.Var.myContentHash[obj.get('id')] = obj;
 	});    
@@ -88,11 +90,13 @@ Code.Logic.updateMyContentHash = function() {
 
 Code.Logic.prepareFileList = function() {
     var allFileIds = get_hash_keys(Code.Var.myContentHash);
-    var html = "";
-    for(var i=0;i<allFileIds.length;i++) {
-	var fileObj = Code.Var.myContentHash[allFileIds[i]];
-	var variable = { file_id: fileObj.get("id"), file_name: fileObj.get("name") };
-	html += _.template($("#fileLinkTemp").html(), variable);	
+    var html = "";    
+    if(objDef(allFileIds) && (allFileIds.length > 0)) {
+	for(var i=0;i<allFileIds.length;i++) {
+	    var fileObj = Code.Var.myContentHash[allFileIds[i]];
+	    var variable = { file_id: fileObj.get("id"), file_name: fileObj.get("name") };
+	    html += _.template($("#fileLinkTemp").html(), variable);	
+	}
     }
     ele("file-list").innerHTML = html;
 };
@@ -126,11 +130,19 @@ Code.Logic.clearEditor = function() {
 Code.Logic.save_failed = function() {
     ele_show('error-div');
     ele('file_name').style.color = "#FF2A68";
-};
+};   
 
 Code.Logic.save_success = function() {
     ele_hide('error-div');
     ele('file_name').style.color = "#0BD318";
+};
+
+Code.Logic.getMyTemplate = function() {
+    if($("#my-template").is(":checked")) { 
+	return 20;
+    } else {
+	return 0;
+    }    
 };
 
 Code.Logic.save_file = function(force) {
@@ -139,13 +151,14 @@ Code.Logic.save_file = function(force) {
 	var fileObj = Code.Var.myContentHash[Code.Var.openFileId];
 	if(objDef(fileObj)) {
 	    if(((content != "Click to add note") && (content.length > 0) && (content != fileObj.get("content"))) || force) {
-		fileObj.set({name: ele("file_name").innerHTML, content: content})
+		fileObj.set({name: ele("file_name").innerHTML, content: content, template: Code.Logic.getMyTemplate()})
 		fileObj.save({}, {
 		    success: function(model, response) {
 			Code.Logic.prepareFileList();
+			Code.Logic.save_success();
 		    }, 
 		    error: function(response) {
-			ele_show("error-div");
+			Code.Logic.save_failed();
 		    }
 		});		    		
 	    }
@@ -166,7 +179,7 @@ Code.Logic.change_file_name = function() {
 
 Code.Logic.addNewFile = function(type, name, desc, content) {
     var newFile = new Code.Def.Model.Content();
-    newFile.set({name: name, content: content, desc: desc, file_type: type, compile: 0, status: 0, sharability: 0});    
+    newFile.set({name: name, content: content, desc: desc, file_type: type, compile: 0, status: 0, sharability: 0, template: Code.Logic.getMyTemplate()});    
     newFile.save({}, {
 	success: function(model, response) {
 	    Code.Var.myContents.push(model);
@@ -190,23 +203,30 @@ Code.Logic.addNewNote = function() {
 
 Code.Logic.addCPPFile = function() {
     Code.Logic.save_file(true);
-    Code.Logic.addNewFile(0, "NewCode.cpp", "", "");
+    Code.Logic.addNewFile(10, "NewCode.cpp", "", "");
     ele("content-editor").innerHTML = "void main() { }";
     ele("file_name").innerHTML = "NewCode.cpp";
 };
 
 Code.Logic.addJavaFile = function() {
     Code.Logic.save_file(true);
-    Code.Logic.addNewFile(0, "NewCode.java", "", "");
+    Code.Logic.addNewFile(20, "NewCode.java", "", "");
     ele("content-editor").innerHTML = "public static void main(args[]) { }";
     ele("file_name").innerHTML = "NewCode.java";
 };
 
 Code.Logic.addRubyFile = function() {
     Code.Logic.save_file(true);
-    Code.Logic.addNewFile(0, "NewCode.rb", "", "");
+    Code.Logic.addNewFile(30, "NewCode.rb", "", "");
     ele("content-editor").innerHTML = "def newAction \n end";
     ele("file_name").innerHTML = "NewCode.rb";
+};
+
+Code.Logic.addPythonFile = function() {
+    Code.Logic.save_file(true);
+    Code.Logic.addNewFile(40, "NewCode.py", "", "");
+    ele("content-editor").innerHTML = "";
+    ele("file_name").innerHTML = "NewCode.py";
 };
 
 Code.Logic.addNewCode = function() {
@@ -232,7 +252,56 @@ Code.Logic.selectBtn = function(id) {
 
 Code.Logic.hideAll = function() {
     $(".top-popup").hide();    
-}				
+};				
+
+Code.Logic.getCode = function(text) {
+    return text.replace(/(<span) class="(\w)+">/g, "").replace(/<\/span>/g,"");
+};
+
+Code.Logic.formatText = function() {
+    var el = ele("content-editor");    
+    var userInput = Code.Logic.getCode(el.innerHTML);     
+    var sel = rangy.getSelection();
+    var range = sel.getRangeAt(0);    
+    var rangePrecedingBoundary = range.cloneRange();
+    rangePrecedingBoundary.setStart(el, 0);
+    var selEndOffset = rangePrecedingBoundary.text().length;
+    rangePrecedingBoundary.setEnd(range.startContainer, range.startOffset);
+    var selStartOffset = rangePrecedingBoundary.text().length;
+    rangePrecedingBoundary.detach();
+    var newHTML = prettyPrintOne(userInput);
+    el.innerHTML = newHTML;    
+    range.selectCharacters(el, selStartOffset, selEndOffset);
+    sel.setSingleRange(range);
+};
+
+Code.Logic.setFontSize = function(size) {
+    ele("content-editor").style.fontSize = size+"px";
+};
+
+Code.Logic.setLightTheme = function() {
+    $("body").css({"background":"#FAFAFA"});
+    $("#content-editor").css({"color":"#34495E"});
+    $("#user_name").css({"color":"#34495E"});
+    $("#file_name").css({"color":"#34495E"});
+};
+
+Code.Logic.setDarkTheme = function() {
+    $("body").css({"background":"#8E8E93"});
+    $("#content-editor").css({"color":"#ffffff"});
+    $("#user_name").css({"color":"#ffffff"});
+    $("#file_name").css({"color":"#ffffff"});
+};
+
+Code.Logic.compileCode = function() {
+    Code.Logic.hideAll();
+    showTrans();
+};
+
+Code.Logic.showOutput = function() {
+    Code.Logic.hideAll();
+    showTrans();
+};
 
 Code.Event = {
     Onclick: function() {	    
@@ -259,7 +328,6 @@ Code.Event = {
 	    Code.Logic.viewSettings();
 	});
 	$("#nf-cpp").click(function() {
-	    alert(33);
 	    Code.Logic.addCPPFile();
 	});
 	$("#nf-java").click(function() {
@@ -268,12 +336,42 @@ Code.Event = {
 	$("#nf-ruby").click(function() {
 	    Code.Logic.addRubyFile();
 	});
+	$("#smallFont").click(function() {
+	    Code.Logic.setFontSize(20);
+	});
+	$("#mediumFont").click(function() {
+	    Code.Logic.setFontSize(30);
+	});
+	$("#largeFont").click(function() {
+	    Code.Logic.setFontSize(50);
+	});
+	$("#lightTheme").click(function() {
+	    Code.Logic.setLightTheme();
+	});
+	$("#darkTheme").click(function() {
+	    Code.Logic.setDarkTheme();
+	});
+	$("#compileBtn").click(function() {
+	    Code.Logic.compileCode();
+	});
+	$("#outputBtn").click(function() {
+	    Code.Logic.showOutput();
+	});
     },
     Keyboard: function() {
-	$('#content-editor').bind('keyup mouseup',
+	$('#content-editor').bind('keydown mouseup',
 				  function(e) {
-				      if(e.which == 9) {					  
-					  e.preventDefault();
+				      var code = e.keyCode || e.which;
+				      if(objDef(Code.Var.myContentHash[Code.Var.openFileId]) && (Code.Var.myContentHash[Code.Var.openFileId].get("file_type") != 0)) {
+					  if((code == 32) || (code == 9) || (code == 13)) { // on space, tab and enter key
+					      Code.Logic.formatText();			    		
+					  }			
+				      }	      
+				      if(code == 9) {	
+					  e.preventDefault();					  
+					  // Insert tab space
+					  pasteHtmlAtCaret('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					  return;
 				      }
 				  });    
     },
