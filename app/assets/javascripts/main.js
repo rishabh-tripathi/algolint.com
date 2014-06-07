@@ -15,8 +15,8 @@ var Code = {
 Code.Var = {
     myContents: [],
     myContentHash: {},
-    myTemplateHash: {},
-    alTemplateHash: {},
+    templateHash: {},
+    myTemplates: [],
     alTemplateCat : {},
     openFileId: null,
 };
@@ -83,13 +83,13 @@ Code.Logic.loadFailure = function() {
 };
 
 Code.Logic.updateMyContentHash = function() {
-    Code.Var.myContentHash = {};    
-    Code.Var.myTemplateHash = {};
-    Code.Var.alTemplateHash = {};
+    Code.Var.templateHash = {};    
+    Code.Var.myTemplates = [];
+    Code.Var.alTemplateCat = {};
     if(Code.Var.myContents.length > 0) {	
 	Code.Var.myContents.each(function(obj) {
 	    if(obj.get("template") == 10) {				
-		Code.Var.alTemplateHash[obj.get('id')] = obj;
+		Code.Var.templateHash[obj.get('id')] = obj;
 		if(objDef(obj.get('template_cat'))) {
 		    if(!(Code.Var.alTemplateCat.hasOwnProperty(obj.get('template_cat')))) {
 			Code.Var.alTemplateCat[obj.get('template_cat')] = [];
@@ -97,7 +97,8 @@ Code.Logic.updateMyContentHash = function() {
 		    Code.Var.alTemplateCat[obj.get('template_cat')].push(obj);
 		}
 	    } else if(obj.get("template") == 20) {
-		Code.Var.myTemplateHash[obj.get('id')] = obj;
+		Code.Var.templateHash[obj.get('id')] = obj;		
+		Code.Var.myTemplates.push(obj);
 	    } else {	    
 		Code.Var.myContentHash[obj.get('id')] = obj;
 	    }
@@ -129,15 +130,20 @@ Code.Logic.openFile = function(id) {
 
 Code.Logic.removeFile = function(id) {
     var file = Code.Var.myContentHash[id];
-    file.destroy({
-	success: function(model, response) {     
-	    Code.Logic.updateMyContentHash();
-	    Code.Logic.prepareFileList();	    
-	},
-	error: function (model, response) {
-	    ele_show("error-div");
-	}
-    });    
+    if(!objDef(file)) {
+	var file = Code.Var.templateHash[id];
+    }
+    if(objDef(file)) {    
+	file.destroy({
+	    success: function(model, response) {     
+		Code.Logic.updateMyContentHash();
+		Code.Logic.prepareFileList();	    
+	    },
+	    error: function (model, response) {
+		ele_show("error-div");
+	    }
+	});    
+    }
 };
 
 Code.Logic.clearEditor = function() {    
@@ -304,6 +310,7 @@ Code.Logic.setLightTheme = function() {
     $("#content-editor").css({"color":"#34495E"});
     $("#user_name").css({"color":"#34495E"});
     $("#file_name").css({"color":"#34495E"});
+    $("#al-top-bar").css({"background":"#FAFAFA"});    
 };
 
 Code.Logic.setDarkTheme = function() {
@@ -311,6 +318,7 @@ Code.Logic.setDarkTheme = function() {
     $("#content-editor").css({"color":"#ffffff"});
     $("#user_name").css({"color":"#ffffff"});
     $("#file_name").css({"color":"#ffffff"});
+    $("#al-top-bar").css({"background":"#8E8E93"});    
 };
 
 Code.Logic.compileCode = function() {
@@ -348,20 +356,20 @@ Code.Logic.openTemplates = function() {
 	var buttonHtml = "";	
 	for(var j=0;j<allTempOfCat.length;j++) {
 	    var tempObj = allTempOfCat[j];
-	    var variable = { name: tempObj.get("name"), id: tempObj.get("template_cat") };
+	    var variable = { name: tempObj.get("name"), id: tempObj.get("template_cat"), code_id: tempObj.get("id"), removable: false };
 	    buttonHtml += _.template($("#templateListButton").html(), variable);		    
 	}
 	var variable = { category_name: Code.Logic.getTemplateCategoryName(getAllCats[i]), button_html: buttonHtml };
 	html += _.template($("#templateListSection").html(), variable);		    	
     }
     ele("temp-list").innerHTML = html;
-    var myTempIds = get_hash_keys(Code.Var.myTemplateHash);
+    var myTempIds = Code.Var.myTemplates;
     if(myTempIds.length > 0) {
 	var html = "";
 	var buttonHtml = "";	
 	for(var i=0;i<myTempIds.length;i++) {
-	    var tempObj = Code.Var.myTemplateHash[myTempIds[i]];
-	    var variable = { name: tempObj.get("name"), id: "my-temp" };
+	    var tempObj = myTempIds[i];
+	    var variable = { name: tempObj.get("name"), id: "my-temp", code_id: tempObj.get("id"), removable: true };
 	    buttonHtml += _.template($("#templateListButton").html(), variable);		    
 	}
 	var variable = { category_name: "My Template", button_html: buttonHtml };
@@ -383,6 +391,20 @@ Code.Logic.getTemplateCategoryName = function(cat_id) {
 	30 : "Queue"
     }   
     return cat_hash[cat_id]
+};
+
+Code.Logic.chooseTemplate = function(id) {
+    var tempObj = Code.Var.templateHash[id];
+    var currText = ele('content-editor').innerHTML;
+    if((currText == "Click to add note") || (currText == "")) {
+	ele('content-editor').innerHTML = tempObj.get("content");
+    } else {
+	var r = confirm("Your editor area is not empty, this will replace your current content with the template code. Do you want to continue?");
+	if(r == true) {
+	    ele('content-editor').innerHTML = tempObj.get("content");
+	} 
+    }
+    Code.Logic.closeTemplates();
 };
 
 Code.Event = {

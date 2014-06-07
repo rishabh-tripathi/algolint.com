@@ -11,13 +11,16 @@
 
 <script type="text/template" id="templateListButton">
   <dd>
-    <label class="radio">
+    <label class="radio" onclick="Code.Logic.chooseTemplate({{= code_id }});">
       <span class="icons">
 	<span class="first-icon fui-radio-unchecked"></span>
 	<span class="second-icon fui-radio-checked"></span>
       </span>
-      <input type="radio" data-toggle="radio" value="" name="{{= id }}">
+      <input type="radio" data-toggle="radio" value="" name="{{= id }}">      
       {{= name }}
+      {{ if(removable == true) { }}
+      <span onclick="event.cancelBubble=true;Code.Logic.removeFile({{= code_id }});" class="fui-cross pointer pull-right"></span>
+      {{ } }}
     </label>
   </dd>  
 </script>
