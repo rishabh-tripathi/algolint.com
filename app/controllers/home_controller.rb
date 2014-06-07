@@ -1,5 +1,14 @@
 class HomeController < ApplicationController
+  before_filter :check_for_admin, :only => [:admin, :list_codes, :make_template, :set_template_cat]
   
+  def check_for_admin
+    if(current_user.present? && current_user.is_admin_user)
+      return true
+    else
+      redirect_to root_path
+    end
+  end
+
   def homepage
     if(current_user.present?)
       if(!current_user.unique_key.present?)
@@ -24,6 +33,27 @@ class HomeController < ApplicationController
     else
       render(:text => "No file to compile :(")
     end
+  end
+
+  def admin    
+  end
+
+  def list_codes
+    @all_codes = Content.get_all_codes(current_user.id)
+  end
+
+  def make_template
+    content = Content.find(params[:id])
+    content.template = (content.template == Content::TEMPLATE_AL)? Content::TEMPLATE_NO : Content::TEMPLATE_AL
+    content.save
+    redirect_to list_codes_url
+  end
+
+  def set_template_cat    
+    content = Content.find(params[:id])
+    content.template_cat = params[:cat].to_i
+    content.save    
+    redirect_to list_codes_url    
   end
 
 end

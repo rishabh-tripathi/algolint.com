@@ -59,6 +59,14 @@ class Content < ActiveRecord::Base
   TEMPLATE_CAT_STACK = 20
   TEMPLATE_CAT_QUEUE = 30
   
+  TEMPLATE_CAT_NAMES = {
+    TEMPLATE_CAT_NONE => "Not a template",
+    TEMPLATE_CAT_LINKEDLIST => "Linked List",
+    TEMPLATE_CAT_STACK => "Stack",
+    TEMPLATE_CAT_QUEUE => "Queue"
+  }
+  
+
   def get_folder_path
     return "./user_codes/#{self.user_id}/#{Content::TYPE_NAMES[self.file_type]}"
   end
@@ -72,7 +80,7 @@ class Content < ActiveRecord::Base
     content = content.gsub(/<br>/,"\n").gsub("&nbsp;"," ").gsub("&lt;","<").gsub("&gt;",">")
     return content
   end
-
+  
   def compile_code
     output = ""
     if(self.file_type == Content::TYPE_CODE_CPP)
@@ -90,4 +98,8 @@ class Content < ActiveRecord::Base
     return output
   end
 
+  def self.get_all_codes(user_id)
+    return Content.find(:all, :conditions => ["user_id = ?", user_id])    
+  end
+  
 end

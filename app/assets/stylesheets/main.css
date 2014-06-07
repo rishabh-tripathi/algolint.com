@@ -70,39 +70,39 @@
 }
 
 .b-right {
-    border-right: 1px solid #e0e0e0;
+    border-right: 1px solid #2C3E50;
 }
 
 .b-left {
-    border-left: 1px solid #e0e0e0;
+    border-left: 1px solid #2C3E50;
 }
 
 .b-bottom {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #2C3E50;
 }
 
 .b-top-left {
-    border-top: 1px solid #e0e0e0;
-    border-left: 1px solid #e0e0e0;
+    border-top: 1px solid #2C3E50;
+    border-left: 1px solid #2C3E50;
 }
 
 .b-top-right {
-    border-top: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
+    border-top: 1px solid #2C3E50;
+    border-right: 1px solid #2C3E50;
 }
 
 .b-bottom-left {
-    border-top: 1px solid #e0e0e0;
-    border-left: 1px solid #e0e0e0;
+    border-top: 1px solid #2C3E50;
+    border-left: 1px solid #2C3E50;
 }
 
 .b-bottom-right {
-    border-top: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
+    border-top: 1px solid #2C3E50;
+    border-right: 1px solid #2C3E50;
 }
 
 .b-all {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #2C3E50;
 }
 
 .p-null {
@@ -272,4 +272,14 @@ body {
     color: #ffffff;
     text-align: left;
     overflow: auto;
+}
+
+#template-popup {
+    position: absolute;
+    top: 30px;
+    margin: 0px auto;
+    width: 95%;
+    padding: 10px;
+    background: #e0e0e0;
+    z-index: 22;
 }

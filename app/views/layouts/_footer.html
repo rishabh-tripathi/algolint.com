@@ -1,1 +1,1 @@
-<div class="footer"><small>&copy;&nbsp;AlgoLint.com</small></div>
+<div class="footer"><small>&copy;&nbsp;AlgoLint.com<% if(current_user.present? && current_user.is_admin_user) %>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%= admin_url %>">Admin</a><% end %></small></div>

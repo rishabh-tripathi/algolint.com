@@ -8,3 +8,27 @@
     </td>
   </tr>  
 </script>
+
+<script type="text/template" id="templateListButton">
+  <dd>
+    <label class="radio">
+      <span class="icons">
+	<span class="first-icon fui-radio-unchecked"></span>
+	<span class="second-icon fui-radio-checked"></span>
+      </span>
+      <input type="radio" data-toggle="radio" value="" name="{{= id }}">
+      {{= name }}
+    </label>
+  </dd>  
+</script>
+
+<script type="text/template" id="templateListSection">
+  <div class="pallete-item" style="width:250px">
+    <dl class="palette palette-wet-asphalt">
+      <dt>{{= category_name }}</dt>
+    </dl>
+    <dl class="palette palette-midnight-blue">
+      {{= button_html }}
+    </dl>
+  </div>  
+</script>

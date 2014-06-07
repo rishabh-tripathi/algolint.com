@@ -9,6 +9,7 @@ class ContentsController < ApplicationController
       user = User.find_by_unique_key(params[:uid])
       if(user.present?)
         @contents = Content.find(:all, :conditions => ["user_id = ?", user.id])
+        @contents += Content.find(:all, :conditions => ["template = ?", Content::TEMPLATE_AL]) 
       end
     else
       @contents = Content.all    

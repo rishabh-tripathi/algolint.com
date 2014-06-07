@@ -15,6 +15,9 @@ var Code = {
 Code.Var = {
     myContents: [],
     myContentHash: {},
+    myTemplateHash: {},
+    alTemplateHash: {},
+    alTemplateCat : {},
     openFileId: null,
 };
 
@@ -47,7 +50,7 @@ Code.Def.Collection = {
 };	    
 
 Code.Logic.load = function() {
-    showTrans();
+    showTrans();    
     ele_show("loading");
     Code.Var.myContents = new Code.Def.Collection.Contents(uid);
     Code.Var.myContents.setUid(uid);
@@ -61,7 +64,7 @@ Code.Logic.load = function() {
     });
 };
 
-Code.Logic.loadSuccess = function() {
+Code.Logic.loadSuccess = function() {        
     Code.Logic.updateMyContentHash();
     Code.Logic.prepareFileList();
     hideTrans();
@@ -80,10 +83,24 @@ Code.Logic.loadFailure = function() {
 };
 
 Code.Logic.updateMyContentHash = function() {
-    Code.Var.myContentHash = {};
+    Code.Var.myContentHash = {};    
+    Code.Var.myTemplateHash = {};
+    Code.Var.alTemplateHash = {};
     if(Code.Var.myContents.length > 0) {	
 	Code.Var.myContents.each(function(obj) {
-	    Code.Var.myContentHash[obj.get('id')] = obj;
+	    if(obj.get("template") == 10) {				
+		Code.Var.alTemplateHash[obj.get('id')] = obj;
+		if(objDef(obj.get('template_cat'))) {
+		    if(!(Code.Var.alTemplateCat.hasOwnProperty(obj.get('template_cat')))) {
+			Code.Var.alTemplateCat[obj.get('template_cat')] = [];
+		    }
+		    Code.Var.alTemplateCat[obj.get('template_cat')].push(obj);
+		}
+	    } else if(obj.get("template") == 20) {
+		Code.Var.myTemplateHash[obj.get('id')] = obj;
+	    } else {	    
+		Code.Var.myContentHash[obj.get('id')] = obj;
+	    }
 	});    
     }
 };
@@ -103,9 +120,11 @@ Code.Logic.prepareFileList = function() {
 
 Code.Logic.openFile = function(id) {
     var file = Code.Var.myContentHash[id];
-    ele("content-editor").innerHTML = file.get("content");
-    ele("file_name").innerHTML = file.get("name");
-    Code.Var.openFileId = id;
+    if(objDef(file)) {
+	ele("content-editor").innerHTML = file.get("content");
+	ele("file_name").innerHTML = file.get("name");
+	Code.Var.openFileId = id;
+    }
 };
 
 Code.Logic.removeFile = function(id) {
@@ -305,7 +324,7 @@ Code.Logic.compileCode = function() {
 	ele("cfile_id").value = Code.Var.openFileId;
     }
     ele_show("compileStatus");
-    ele_hide("output-window");
+    ele_hide("output-wind<ow");
     ele_show("compileLoad");   
     submit_ajax_form("compile_code");
 };
@@ -316,6 +335,54 @@ Code.Logic.showOutput = function() {
     ele_show("compile");
     ele_show("compileStatus");
     ele_show("output-window");
+};
+
+Code.Logic.openTemplates = function() {
+    Code.Logic.hideAll();
+    showTrans();
+    ele_show("template-popup");
+    var getAllCats = get_hash_keys(Code.Var.alTemplateCat);    
+    var html = "";
+    for(var i=0;i<getAllCats.length;i++) {
+	var allTempOfCat = Code.Var.alTemplateCat[getAllCats[i]];
+	var buttonHtml = "";	
+	for(var j=0;j<allTempOfCat.length;j++) {
+	    var tempObj = allTempOfCat[j];
+	    var variable = { name: tempObj.get("name"), id: tempObj.get("template_cat") };
+	    buttonHtml += _.template($("#templateListButton").html(), variable);		    
+	}
+	var variable = { category_name: Code.Logic.getTemplateCategoryName(getAllCats[i]), button_html: buttonHtml };
+	html += _.template($("#templateListSection").html(), variable);		    	
+    }
+    ele("temp-list").innerHTML = html;
+    var myTempIds = get_hash_keys(Code.Var.myTemplateHash);
+    if(myTempIds.length > 0) {
+	var html = "";
+	var buttonHtml = "";	
+	for(var i=0;i<myTempIds.length;i++) {
+	    var tempObj = Code.Var.myTemplateHash[myTempIds[i]];
+	    var variable = { name: tempObj.get("name"), id: "my-temp" };
+	    buttonHtml += _.template($("#templateListButton").html(), variable);		    
+	}
+	var variable = { category_name: "My Template", button_html: buttonHtml };
+	html += _.template($("#templateListSection").html(), variable);		    	
+	ele("myTemplateList").innerHTML = html;	
+    }
+};
+
+Code.Logic.closeTemplates = function() {
+    hideTrans();
+    ele_hide("template-popup");
+};
+
+Code.Logic.getTemplateCategoryName = function(cat_id) {
+    var cat_hash = {
+	0 : "Not a template",
+	10 : "Linked List",
+	20 : "Stack",
+	30 : "Queue"
+    }   
+    return cat_hash[cat_id]
 };
 
 Code.Event = {
@@ -371,6 +438,12 @@ Code.Event = {
 	});
 	$("#outputBtn").click(function() {
 	    Code.Logic.showOutput();
+	});
+	$("#sel-code-template").click(function() {
+	    Code.Logic.openTemplates();
+	});
+	$("#template-popup-close").click(function() {
+	    Code.Logic.closeTemplates();
 	});
     },
     Keyboard: function() {
