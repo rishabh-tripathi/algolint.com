@@ -332,7 +332,7 @@ Code.Logic.compileCode = function() {
 	ele("cfile_id").value = Code.Var.openFileId;
     }
     ele_show("compileStatus");
-    ele_hide("output-wind<ow");
+    ele_hide("output-window");
     ele_show("compileLoad");   
     submit_ajax_form("compile_code");
 };

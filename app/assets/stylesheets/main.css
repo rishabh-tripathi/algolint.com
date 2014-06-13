@@ -260,7 +260,10 @@ body {
 }
 
 #compile {
-    position: relative;
+    position: fixed;
+    top: 30px;
+    left: 0px;
+    width: 100%;
     z-index: 22;
 }
 
