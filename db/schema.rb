@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140602164521) do
+ActiveRecord::Schema.define(:version => 20140603045819) do
 
   create_table "contents", :force => true do |t|
     t.integer  "user_id"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(:version => 20140602164521) do
     t.integer  "compile"
     t.integer  "status"
     t.integer  "sharability"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "template"
+    t.integer  "template_cat"
   end
 
   create_table "users", :force => true do |t|
