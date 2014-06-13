@@ -1,0 +1,22 @@
+<table class="table">
+  <tr>
+    <td>Name</td>
+    <td>Content</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <% @all_codes.each do|code| %>
+  <tr>
+    <td><%= code.name %></td>
+    <td><%= code.content %></td>
+    <td><a href="<%= make_template_url(code.id) %>"><%= (code.template == Content::TEMPLATE_AL)? "Remove From Template" : "Make Template" %></a></td>
+    <td>
+      <select onchange="window.open('<%= set_template_cat_url(:id => code.id) %>?cat='+this.value, '_self')">
+      <% Content::TEMPLATE_CAT_NAMES.each do |id, name| %>
+      <option value="<%= id %>" <% if(code.template_cat == id) %>selected<% end %>><%= name %></option>
+      <% end %>
+      </select>
+    </td>
+  </tr>
+  <% end %>
+</table>

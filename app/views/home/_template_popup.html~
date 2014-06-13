@@ -1,0 +1,8 @@
+<div id="template-popup" style="display:none;">
+  <span id="template-popup-close" class="fui-cross pull-right pointer"></span>
+  <center><span class="lead">Choose Code Template</span></center>  
+  <div class="sp20"></div>
+  <div id="temp-list">
+    <center><span class="lead error" style="font-size:25px;" >No Templates Available</span></center>
+  </div>
+</div>
