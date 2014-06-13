@@ -70,6 +70,7 @@ class Content < ActiveRecord::Base
   def get_final_code
     content = self.content
     content = content.gsub(/<br>/,"\n").gsub("&nbsp;"," ").gsub("&lt;","<").gsub("&gt;",">").gsub("<div>","").gsub("</div>","")
+    logger.info("\n\n#{content}\n\n")
     return content
   end
 
