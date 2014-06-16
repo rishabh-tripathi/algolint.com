@@ -24,6 +24,10 @@ function objDef(obj) {
     return ((obj != undefined) && (obj != null))? true : false;
 }
 
+function hasLen(obj) {
+    return (obj.length > 0)? true : false;
+}
+
 function showTrans() {
     ele_show("transLayer");
 }

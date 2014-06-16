@@ -66,43 +66,43 @@
 
 /* border classes */
 .b-top {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #2C3E50;
 }
 
 .b-right {
-    border-right: 1px solid #e0e0e0;
+    border-right: 1px solid #2C3E50;
 }
 
 .b-left {
-    border-left: 1px solid #e0e0e0;
+    border-left: 1px solid #2C3E50;
 }
 
 .b-bottom {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #2C3E50;
 }
 
 .b-top-left {
-    border-top: 1px solid #e0e0e0;
-    border-left: 1px solid #e0e0e0;
+    border-top: 1px solid #2C3E50;
+    border-left: 1px solid #2C3E50;
 }
 
 .b-top-right {
-    border-top: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
+    border-top: 1px solid #2C3E50;
+    border-right: 1px solid #2C3E50;
 }
 
 .b-bottom-left {
-    border-top: 1px solid #e0e0e0;
-    border-left: 1px solid #e0e0e0;
+    border-top: 1px solid #2C3E50;
+    border-left: 1px solid #2C3E50;
 }
 
 .b-bottom-right {
-    border-top: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
+    border-top: 1px solid #2C3E50;
+    border-right: 1px solid #2C3E50;
 }
 
 .b-all {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #2C3E50;
 }
 
 .p-null {
@@ -164,8 +164,6 @@
 
 body {
     background-color: #fafafa;
-    color: #222222;
-    font-size: 10pt;
 }
 
 .fill-width {
@@ -179,4 +177,125 @@ body {
 .main {
     margin: 0px auto;
     padding: 0px 20px;
+}
+
+.logo-text {
+    font-size: 40px;
+    color: #34AADC;
+}
+
+#al-top-bar {
+    margin-bottom: 0px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 20;
+    background: #fafafa;
+}
+
+.clear {
+    clear:both;
+}
+
+.footer {
+    position: fixed;
+    right: 20px;
+    bottom: 0px;
+}
+
+#content-editor {
+    min-height: 500px;
+    border: 0px;
+    outline: 0px solid transparent;
+}
+
+.file-path {
+    cursor: pointer;
+}
+
+.top-popup {
+    top: 48px;
+    width: 325px;
+}
+
+.top-popup .tooltip-inner {
+    max-width: 400px;
+    width: 325px;
+}
+
+.file-link {
+    text-align:left;
+    font-size: 18px; 
+}
+
+.file-link a {
+    color: #ffffff;
+}
+
+.file-link a:hover {
+    border-bottom: 1px solid #16A085;
+}
+
+.file-link-active a {
+    color: #16A085;
+}
+
+#transLayer {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background: #2B2B2B;
+    opacity: 0.9;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.tab-sp {
+    width: 30px;
+}
+
+#compile {
+    position: fixed;
+    top: 30px;
+    left: 0px;
+    width: 100%;
+    z-index: 22;
+}
+
+#compileLoad {
+    width: 100px;
+}
+
+#compileStatus {
+    font-size: 60px;
+    color: #ffffff;
+}
+
+#output-window {
+    width: 60%;
+    min-width: 300px;
+    min-height: 350px;
+    background: #2B2B2B;
+    color: #ffffff;
+    text-align: left;
+    overflow: auto;
+}
+
+#template-popup {
+    position: absolute;
+    top: 30px;
+    margin: 0px auto;
+    width: 95%;
+    padding: 10px;
+    background: #e0e0e0;
+    z-index: 22;
+}
+
+#desc-area textarea {
+  
 }

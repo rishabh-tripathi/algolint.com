@@ -86,6 +86,7 @@ Code.Logic.updateMyContentHash = function() {
     Code.Var.templateHash = {};    
     Code.Var.myTemplates = [];
     Code.Var.alTemplateCat = {};
+    Code.Var.myContentHash = {};	
     if(Code.Var.myContents.length > 0) {	
 	Code.Var.myContents.each(function(obj) {
 	    if(obj.get("template") == 10) {				
@@ -124,7 +125,15 @@ Code.Logic.openFile = function(id) {
     if(objDef(file)) {
 	ele("content-editor").innerHTML = file.get("content");
 	ele("file_name").innerHTML = file.get("name");
+	if(objDef(file.get("desc")) && hasLen(file.get("desc"))) {
+	  ele("desc-area-te").value = file.get("desc");
+          ele_show("desc-area");	
+	} else {
+	  ele("desc-area-te").value = "";          
+	  ele_hide("desc-area");
+	}
 	Code.Var.openFileId = id;
+	Code.Logic.formatText();
     }
 };
 
@@ -172,12 +181,13 @@ Code.Logic.getMyTemplate = function() {
 
 Code.Logic.save_file = function(force) {
     var content = ele('content-editor').innerHTML;    
+    var desc = ele("desc-area-te").value;
     content = Code.Logic.getCode(content);
     if(objDef(Code.Var.openFileId)) {
 	var fileObj = Code.Var.myContentHash[Code.Var.openFileId];
 	if(objDef(fileObj)) {
 	    if(((content != "Click to add note") && (content.length > 0) && (content != fileObj.get("content"))) || force) {
-		fileObj.set({name: ele("file_name").innerHTML, content: content, template: Code.Logic.getMyTemplate()})
+		fileObj.set({name: ele("file_name").innerHTML, desc: desc, content: content, template: Code.Logic.getMyTemplate()})
 		fileObj.save({}, {
 		    success: function(model, response) {
 			Code.Logic.prepareFileList();
@@ -224,6 +234,8 @@ Code.Logic.addNewNote = function() {
     Code.Logic.addNewFile(0, "New Note", "", "");
     ele("content-editor").innerHTML = "Click to add note";
     ele("file_name").innerHTML = "New Note";
+    ele("desc-area-te").value = "";
+    ele_hide("desc-area");
     Code.Logic.selectBtn("addNote");
 };
 
@@ -232,6 +244,8 @@ Code.Logic.addCPPFile = function() {
     Code.Logic.addNewFile(10, "NewCode.cpp", "", "");
     ele("content-editor").innerHTML = "void main() { }";
     ele("file_name").innerHTML = "NewCode.cpp";
+    ele("desc-area-te").value = "";
+    ele_hide("desc-area");
 };
 
 Code.Logic.addJavaFile = function() {
@@ -239,6 +253,8 @@ Code.Logic.addJavaFile = function() {
     Code.Logic.addNewFile(20, "NewCode.java", "", "");
     ele("content-editor").innerHTML = "public static void main(args[]) { }";
     ele("file_name").innerHTML = "NewCode.java";
+    ele("desc-area-te").value = "";
+    ele_hide("desc-area");
 };
 
 Code.Logic.addRubyFile = function() {
@@ -246,6 +262,8 @@ Code.Logic.addRubyFile = function() {
     Code.Logic.addNewFile(30, "NewCode.rb", "", "");
     ele("content-editor").innerHTML = "def newAction \n end";
     ele("file_name").innerHTML = "NewCode.rb";
+    ele("desc-area-te").value = "";
+    ele_hide("desc-area");
 };
 
 Code.Logic.addPythonFile = function() {
@@ -253,6 +271,8 @@ Code.Logic.addPythonFile = function() {
     Code.Logic.addNewFile(40, "NewCode.py", "", "");
     ele("content-editor").innerHTML = "";
     ele("file_name").innerHTML = "NewCode.py";
+    ele("desc-area-te").value = "";
+    ele_hide("desc-area");
 };
 
 Code.Logic.addNewCode = function() {
@@ -407,6 +427,10 @@ Code.Logic.chooseTemplate = function(id) {
     Code.Logic.closeTemplates();
 };
 
+Code.Logic.addDescription = function() {
+    ele_show("desc-area");
+};
+
 Code.Event = {
     Onclick: function() {	    
 	$("#content-editor").click(function() {
@@ -466,6 +490,9 @@ Code.Event = {
 	});
 	$("#template-popup-close").click(function() {
 	    Code.Logic.closeTemplates();
+	});
+	$("#add-desc-btn").click(function() {
+	    Code.Logic.addDescription();
 	});
     },
     Keyboard: function() {

@@ -1,1 +1,34 @@
-hhh
+<div id="loading" style="display:none;z-index:22;">
+  <div class="sp100"></div>
+  <center>
+    <span class="lead" style="color:#ffffff;font-size:60px;">Preparing Algolint for You</span>
+    <div class="sp30"></div>
+    <img src="/assets/loader.gif" title="loading"/>
+  </center>
+</div>
+
+<%= render(:partial => "home/compile_code") %>
+<%= render(:partial => "home/template_popup") %>
+
+<div id="error-div" class="alert alert-warning" style="display:none;">
+  <button type="button" class="close" onclick="ele_hide('error-div')">×</button>
+  <strong>Error!</strong> Something went wrong, your changes are not saved. Please reload.
+</div>
+
+<div id="desc-area" style="display:none;">
+  <div class="sp10"></div>
+  <textarea id="desc-area-te" class="fill-width" placeholder="Add description to your file"></textarea>
+</div>
+<div id="content-editor" class="fill-width lead" contenteditable="true">Click to add note</div>
+
+<script type="text/javascript">
+  var uid = "<%= @uid %>";
+  <% if(@file.present?) %>
+  var lastOpenFile = <%= @file.id %>;
+  <% else %>
+  var lastOpenFile = null;
+  <% end %>
+  Code.Logic.load();
+</script>
+
+<%= render(:partial => "home/templates") %>
