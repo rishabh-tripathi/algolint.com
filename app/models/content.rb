@@ -88,19 +88,22 @@ class Content < ActiveRecord::Base
       system("rm #{self.get_folder_path}/#{self.id}.op") 
       system("rm #{self.get_folder_path}/#{self.id}")       
       system("gcc -o #{self.get_folder_path}/#{self.id} #{self.get_file_path} 2> #{self.get_folder_path}/#{self.id}.compilestat")
-      system("#{self.get_folder_path}/#{self.id} > #{self.get_folder_path}/#{self.id}.op")
-      output = "<span class='error'>"+File.read("#{self.get_folder_path}/#{self.id}.compilestat")+"</span>"      
-      output += File.read("#{self.get_folder_path}/#{self.id}.op")      
+      system("#{self.get_folder_path}/#{self.id} > #{self.get_folder_path}/#{self.id}.op")      
     elsif(self.file_type == Content::TYPE_CODE_JAVA)
-      system("javac #{self.get_file_path}")
-      system("java #{self.get_file_path.gsub(/.java/,'')} > #{self.get_folder_path}/compile/op/#{self.id}")
+      system("rm #{self.get_folder_path}/#{self.id}.compilestat")
+      system("rm #{self.get_folder_path}/#{self.id}.op") 
+      system("rm #{self.get_folder_path}/#{self.name.gsub(/.java/,'.class')}")  
+      system("cd #{self.get_folder_path} && javac #{self.name} 2> #{self.id}.compilestat")
+      system("cd #{self.get_folder_path} && java #{self.name.gsub(/.java/,'')} 1> #{self.id}.op")      
     elsif(self.file_type == Content::TYPE_CODE_RUBY)
       system("ruby #{self.get_file_path} 2> #{self.get_folder_path}/#{self.id}.compilestat")            
       system("ruby #{self.get_file_path} 1> #{self.get_folder_path}/#{self.id}.op")      
-      output = "<span class='error'>"+File.read("#{self.get_folder_path}/#{self.id}.compilestat")+"</span>"      
-      output += File.read("#{self.get_folder_path}/#{self.id}.op")              
     elsif(self.file_type == Content::TYPE_CODE_PYTHON)            
     end
+    output = "<span class='error'>"+File.read("#{self.get_folder_path}/#{self.id}.compilestat")+"</span>"      
+    output += File.read("#{self.get_folder_path}/#{self.id}.op")      
+    output = output.gsub("#{self.get_folder_path}","")
+    output = output.gsub("/#{self.name}","<br>/#{self.name}")
     return output
   end
 
