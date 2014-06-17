@@ -26,7 +26,7 @@ class HomeController < ApplicationController
     if(current_user.present? && params[:file_id].present?)
       fileObj = Content.find(params[:file_id].to_i)
       file_path = fileObj.get_folder_path
-      FileUtils.mkdir_p("#{file_path}/compile/op")      
+      FileUtils.mkdir_p("#{file_path}")      
       File.open(fileObj.get_file_path, 'w') { |file| file.write(fileObj.get_final_code) }
       @output = fileObj.compile_code
       render(:text => @output)

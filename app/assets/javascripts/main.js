@@ -123,15 +123,22 @@ Code.Logic.prepareFileList = function() {
 Code.Logic.openFile = function(id) {
     var file = Code.Var.myContentHash[id];
     if(objDef(file)) {
-	ele("content-editor").innerHTML = file.get("content");
+	var content = file.get("content");
 	ele("file_name").innerHTML = file.get("name");
 	if(objDef(file.get("desc")) && hasLen(file.get("desc"))) {
-	  ele("desc-area-te").value = file.get("desc");
-          ele_show("desc-area");	
+	      ele("desc-area-te").value = file.get("desc");
+          ele_show("desc-area");	          
 	} else {
 	  ele("desc-area-te").value = "";          
-	  ele_hide("desc-area");
+	  ele_hide("desc-area");	  
 	}
+	if(file.get("file_type") == 0) {
+		ele_hide("add-desc-btn");
+	} else {
+		ele_show("add-desc-btn");
+		content = Code.Logic.getFormattedText(content);
+	}
+	ele("content-editor").innerHTML = content;
 	Code.Var.openFileId = id;
 	Code.Logic.formatText();
     }
@@ -236,6 +243,7 @@ Code.Logic.addNewNote = function() {
     ele("file_name").innerHTML = "New Note";
     ele("desc-area-te").value = "";
     ele_hide("desc-area");
+    ele_hide("add-desc-btn");
     Code.Logic.selectBtn("addNote");
 };
 
@@ -319,6 +327,11 @@ Code.Logic.formatText = function() {
     el.innerHTML = newHTML;    
     range.selectCharacters(el, selStartOffset, selEndOffset);
     sel.setSingleRange(range);
+};
+
+Code.Logic.getFormattedText = function(text) {
+  	var newHTML = prettyPrintOne(text);
+    return newHTML;        
 };
 
 Code.Logic.setFontSize = function(size) {

@@ -68,7 +68,7 @@ class Content < ActiveRecord::Base
   
 
   def get_folder_path
-    return "./user_codes/#{self.user_id}/#{Content::TYPE_NAMES[self.file_type]}"
+    return "./user_codes/#{self.user_id}/#{Content::TYPE_NAMES[self.file_type]}/#{self.id}"
   end
   
   def get_file_path
@@ -77,23 +77,28 @@ class Content < ActiveRecord::Base
 
   def get_final_code
     content = self.content
-    content = content.gsub(/<br>/,"\n").gsub("&nbsp;"," ").gsub("&lt;","<").gsub("&gt;",">").gsub("<div>","").gsub("</div>","")
-    logger.info("\n\n#{content}\n\n")
+    content = content.gsub(/<br>/,"\n").gsub("&nbsp;"," ").gsub("&lt;","<").gsub("&gt;",">").gsub("<div>","").gsub("</div>","")    
     return content
   end
   
   def compile_code
     output = ""
     if(self.file_type == Content::TYPE_CODE_CPP)
-      system("cc -o #{self.get_folder_path}/compile/#{self.id} #{self.get_file_path}")
-      system("#{self.get_folder_path}/compile/#{self.id} > #{self.get_folder_path}/compile/op/#{self.id}")
-      output = File.read("#{self.get_folder_path}/compile/op/#{self.id}")      
+      system("rm #{self.get_folder_path}/#{self.id}.compilestat")
+      system("rm #{self.get_folder_path}/#{self.id}.op") 
+      system("rm #{self.get_folder_path}/#{self.id}")       
+      system("gcc -o #{self.get_folder_path}/#{self.id} #{self.get_file_path} 2> #{self.get_folder_path}/#{self.id}.compilestat")
+      system("#{self.get_folder_path}/#{self.id} > #{self.get_folder_path}/#{self.id}.op")
+      output = "<span class='error'>"+File.read("#{self.get_folder_path}/#{self.id}.compilestat")+"</span>"      
+      output += File.read("#{self.get_folder_path}/#{self.id}.op")      
     elsif(self.file_type == Content::TYPE_CODE_JAVA)
       system("javac #{self.get_file_path}")
       system("java #{self.get_file_path.gsub(/.java/,'')} > #{self.get_folder_path}/compile/op/#{self.id}")
     elsif(self.file_type == Content::TYPE_CODE_RUBY)
-      system("ruby #{self.get_file_path} > #{self.get_folder_path}/compile/op/#{self.id}")      
-      output = File.read("#{self.get_folder_path}/compile/op/#{self.id}")         
+      system("ruby #{self.get_file_path} 2> #{self.get_folder_path}/#{self.id}.compilestat")            
+      system("ruby #{self.get_file_path} 1> #{self.get_folder_path}/#{self.id}.op")      
+      output = "<span class='error'>"+File.read("#{self.get_folder_path}/#{self.id}.compilestat")+"</span>"      
+      output += File.read("#{self.get_folder_path}/#{self.id}.op")              
     elsif(self.file_type == Content::TYPE_CODE_PYTHON)            
     end
     return output
