@@ -98,7 +98,9 @@ class Content < ActiveRecord::Base
     elsif(self.file_type == Content::TYPE_CODE_RUBY)
       system("ruby #{self.get_file_path} 2> #{self.get_folder_path}/#{self.id}.compilestat")            
       system("ruby #{self.get_file_path} 1> #{self.get_folder_path}/#{self.id}.op")      
-    elsif(self.file_type == Content::TYPE_CODE_PYTHON)            
+    elsif(self.file_type == Content::TYPE_CODE_PYTHON)    
+      system("python #{self.get_file_path} 2> #{self.get_folder_path}/#{self.id}.compilestat")            
+      system("python #{self.get_file_path} 1> #{self.get_folder_path}/#{self.id}.op")        
     end
     output = "<span class='error'>"+File.read("#{self.get_folder_path}/#{self.id}.compilestat")+"</span>"      
     output += File.read("#{self.get_folder_path}/#{self.id}.op")      

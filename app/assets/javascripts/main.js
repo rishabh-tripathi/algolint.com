@@ -277,7 +277,7 @@ Code.Logic.addRubyFile = function() {
 Code.Logic.addPythonFile = function() {
     Code.Logic.save_file(true);
     Code.Logic.addNewFile(40, "NewCode.py", "", "");
-    ele("content-editor").innerHTML = "";
+    ele("content-editor").innerHTML = "print(\"Hello, World!\")";
     ele("file_name").innerHTML = "NewCode.py";
     ele("desc-area-te").value = "";
     ele_hide("desc-area");
@@ -476,6 +476,9 @@ Code.Event = {
 	});
 	$("#nf-ruby").click(function() {
 	    Code.Logic.addRubyFile();
+	});
+	$("#nf-py").click(function() {
+	    Code.Logic.addPythonFile();
 	});
 	$("#smallFont").click(function() {
 	    Code.Logic.setFontSize(20);
