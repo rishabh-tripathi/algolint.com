@@ -35,6 +35,10 @@ class HomeController < ApplicationController
     end
   end
 
+  def profile
+    @user = User.find(:first, :conditions => ["email like ?", params[:uid]])
+  end
+
   def admin    
   end
 

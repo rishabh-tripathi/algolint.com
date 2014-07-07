@@ -1,22 +1,25 @@
-<div class="main" style="width:350px">
-  <center><p class="lead m-null" style="font-size:50px;">Login</p></center>  
+
+<div class="main" style="width:400px">
+  <center><p class="lead m-null" style="font-size:40px;">Login</p></center>  
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email, :class => "m-null" %><br />
-  <%= f.email_field :email, :autofocus => true, :class => "form-control" %></div>
-  <div class="sp10"></div>
 
-  <div><%= f.label :password, :class => "m-null"  %><br />
-    <%= f.password_field :password, :autocomplete => "off", :class => "form-control" %></div>
-  <div class="sp10"></div>
+          <div class="login-form">
+            <div class="form-group">
+              <%= f.email_field :email, :autofocus => true, :class => "form-control login-field", :placeholder => "Enter Email" %>
+              <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-  <div class="sp10"></div>
-  
-  <center><%= f.submit "Login", :class => "btn btn-lg btn-info", :style => "width:130px;" %>
-    &nbsp;&nbsp;<a href="<%= signin_user_url %>">Sign Up</a>
-  </center>
+            <div class="form-group">
+              <%= f.password_field :password, :autocomplete => "off", :class => "form-control login-field", :placeholder => "Password" %>              
+              <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+            <% if devise_mapping.rememberable? && false -%>
+            <%= f.check_box :remember_me %> <%= f.label :remember_me, :style => "color:#16A085" %>
+            <% end -%>
+            <%= f.submit "Login", :class => "btn btn-info btn-lg btn-block" %>            
+            <a class="login-link" style="font-size:18px;" href="<%= signin_user_url %>">Get Started with Algolint</a>
+          </div>
+
   <% end %>
   <div class="sp10"></div>
 <% if(false) %>

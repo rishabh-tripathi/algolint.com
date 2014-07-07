@@ -32,4 +32,3 @@
 //= require run_prettify
 //= require rangy-core
 //= require rangy-textrange
-
