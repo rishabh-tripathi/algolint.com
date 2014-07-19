@@ -36,9 +36,29 @@ class HomeController < ApplicationController
   end
 
   def profile
-    @user = User.find(:first, :conditions => ["email like ?", params[:uid]])
+    @user = User.find(:first, :conditions => ["email like ?", "#{params[:uid]}%"])
+    if(@user.present?)
+      @content = Content.get_all_public_codes(@user.id)
+    end
+    render :layout => "profile"
   end
 
+  def content_public
+    @user = User.find(:first, :conditions => ["email like ?", "#{params[:uid]}%"])
+    if(@user.present?)
+      @content = Content.find(params[:file_id])
+      if(!@content.present?)
+        redirect_to profile_url(:uid => params[:uid])
+      else
+        render :layout => "profile"
+      end
+    else      
+      redirect_to root_path
+    end
+  end
+
+
+  # Admin Methods ###################################################################
   def admin    
   end
 
@@ -59,5 +79,5 @@ class HomeController < ApplicationController
     content.save    
     redirect_to list_codes_url    
   end
-
+  ###################################################################################
 end

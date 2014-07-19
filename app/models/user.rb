@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     self.save
   end
   
+  def get_display_name 
+    return self.email.split("@").first
+  end
+
   def is_admin_user
     return (self.is_admin == User::ADMIN_USER)? true : false
   end

@@ -68,8 +68,9 @@ AlgolintCom::Application.routes.draw do
   match "/make-tempate/:id" => "home#make_template", :as => :make_template
   match "/set-tempate-cat/:id/(:cat)" => "home#set_template_cat", :as => :set_template_cat
   
-  match "/:uid" => "home#profile", :as => :admin
-
+  match "/:uid" => "home#profile", :as => :profile
+  match "/:uid/:file_name-:file_id" => "home#content_public", :as => :content_public
+  
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

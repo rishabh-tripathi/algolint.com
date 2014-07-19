@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <td class="lead" id="user_name">
+      <a href="/" style="padding-top:5px;padding-right:10px;">
+	<img alt="AlgoLint" title="AlgoLint" src="/assets/Algolint.png" style="width:35px;">	
+      </a>
+      <span class="file-path">
+	<% if(user_profile.present?) %>
+	<a href="<%= user_profile %>"><%= user_display_name %></a>
+        <% else %>
+	<%= user_display_name %>
+	<% end %>
+      </span>&nbsp;/&nbsp;<span class="file-path"><%= file_name %></span> 
+    </td>
+    <td>            
+    </td>
+  </tr>
+</table>

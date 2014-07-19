@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <td class="lead" id="user_name">
+    	<a href="/" style="padding-top:5px;padding-right:10px;">
+	       <img alt="AlgoLint" title="AlgoLint" src="/assets/Algolint.png" style="width:35px;">	
+      </a>
+      <span class="file-path"><%= @user.email.split("@").first %></span>&nbsp;/&nbsp; 
+    </td>
+   <td>
+
+   </td>
+  </tr>
+</table>

@@ -1,0 +1,28 @@
+<%= render(:partial => "public_top_nav", :locals => {:user_display_name => @user.get_display_name, :user_profile => nil, :file_name => ""}) %>
+
+<div class="sp20"></div>
+<% if(@content.present?) 
+     for c in @content
+%>
+<a href="<%= content_public_url(:uid => @user.get_display_name, :file_name => c.get_file_name_for_url, :file_id => c.id) %>">
+  <div class="pallete-item" style="width:250px">
+    <dl class="palette palette-wet-asphalt">
+      <dt><%= c.name %></dt>
+    </dl>
+    <dl class="palette palette-midnight-blue">    
+      <dd>
+	<% if(c.desc.present?) %>
+	<%= c.desc %>
+	<% else %>
+	<%=raw c.content %>
+	<% end %>
+      </dd>  
+    </dl>
+  </div>
+</a>
+<% 
+     end
+   else %>
+<div class="sp50"></div>
+<center><%= @user.get_display_name %> has not shared any code so far</center>
+<% end %>

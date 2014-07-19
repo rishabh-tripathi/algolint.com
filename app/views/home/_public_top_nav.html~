@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <td class="lead" id="user_name">
+      <a href="/" style="padding-top:5px;padding-right:10px;">
+	<img alt="AlgoLint" title="AlgoLint" src="/assets/Algolint.png" style="width:35px;">	
+      </a>
+      <span class="file-path"><%= user_display_name %></span>&nbsp;/&nbsp;<span class="file-path"><%= file_name %></span> 
+    </td>
+    <td>            
+    </td>
+  </tr>
+</table>

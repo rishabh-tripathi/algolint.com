@@ -1,7 +1,7 @@
 <table>
   <tr>
     <td class="lead" id="user_name">
-      <span class="file-path"><%= current_user.email.split("@").first %></span>&nbsp;/&nbsp; 
+      <span class="file-path"><%= current_user.get_display_name %></span>&nbsp;/&nbsp; 
     </td>
     <td class="lead">
       <span id="file_name" class="file-path" style="<% if(!@file.present?) %>color:#FF2A68<% end %>"></span>

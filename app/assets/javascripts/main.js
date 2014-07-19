@@ -330,7 +330,7 @@ Code.Logic.formatText = function() {
 };
 
 Code.Logic.getFormattedText = function(text) {
-  	var newHTML = prettyPrintOne(text);
+    var newHTML = prettyPrintOne(text);
     return newHTML;        
 };
 

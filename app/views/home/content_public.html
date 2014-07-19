@@ -1,0 +1,11 @@
+<%= render(:partial => "public_top_nav", :locals => {:user_display_name => @user.get_display_name, :user_profile => profile_url(:uid => @user.get_display_name), :file_name => @content.name }) %>
+<div id="content" class="fill-width lead">
+  <%=raw @content.content %>
+</div>
+
+<script type="text/javascript">  
+  $(document).ready(function() {
+    ele("content").innerHTML = prettyPrintOne(ele("content").innerHTML);
+  });
+</script>
+
