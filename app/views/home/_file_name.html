@@ -1,7 +1,7 @@
 <table>
   <tr>
     <td class="lead" id="user_name">
-      <span class="file-path"><%= current_user.get_display_name %></span>&nbsp;/&nbsp; 
+      <span class="file-path"><a href="<%= profile_url(:uid => current_user.get_display_name) %>"><%= current_user.get_display_name %></a></span>&nbsp;/&nbsp; 
     </td>
     <td class="lead">
       <span id="file_name" class="file-path" style="<% if(!@file.present?) %>color:#FF2A68<% end %>"></span>
@@ -12,7 +12,7 @@
 	    <table>
 	      <tr>
 		<td>
-		  <input type="text" id="file-name-tb" class="form-control" style="width:200px;font-size:20px;" />
+		  <input type="text" id="file-name-tb" onclick="return false;" class="form-control" style="width:200px;font-size:20px;" />
 		</td>
 		<td style="padding-left:10px;">
 		  <button id="update-file-name" class="btn btn-success" style="border-radius:6px;">Done</button>

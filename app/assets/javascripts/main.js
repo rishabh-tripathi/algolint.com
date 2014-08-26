@@ -2,6 +2,7 @@ _.templateSettings = {
     interpolate: /\{\{\=(.+?)\}\}/g,
     evaluate: /\{\{(.+?)\}\}/g
 };
+
 var Code = {
     Var: {},
     Def: {
@@ -19,6 +20,7 @@ Code.Var = {
     myTemplates: [],
     alTemplateCat : {},
     openFileId: null,
+    codeEditor: null
 };
 
 Code.Def.Model = {
@@ -76,6 +78,14 @@ Code.Logic.loadSuccess = function() {
     if(objDef(Code.Var.openFileId)) {
 	Code.Logic.openFile(Code.Var.openFileId);
     }
+    // Setting User Preferences
+    Code.Logic.setFontSize(ele('size-pref').value, false);
+    var curTheme = ele('theme-pref').value;
+    if(curTheme == 0) {
+	Code.Logic.setLightTheme(false);
+    } else {
+	Code.Logic.setDarkTheme(true);
+    }
 };
 
 Code.Logic.loadFailure = function() {
@@ -126,23 +136,98 @@ Code.Logic.openFile = function(id) {
 	var content = file.get("content");
 	ele("file_name").innerHTML = file.get("name");
 	if(objDef(file.get("desc")) && hasLen(file.get("desc"))) {
-	      ele("desc-area-te").value = file.get("desc");
-          ele_show("desc-area");	          
+	    ele("desc-area-te").value = file.get("desc");
+            ele_show("desc-area");	          
 	} else {
-	  ele("desc-area-te").value = "";          
-	  ele_hide("desc-area");	  
+	    ele("desc-area-te").value = "";          
+	    ele_hide("desc-area");	  
 	}
 	if(file.get("file_type") == 0) {
-		ele_hide("add-desc-btn");
+	    ele_hide("add-desc-btn");
 	} else {
-		ele_show("add-desc-btn");
-		content = Code.Logic.getFormattedText(content);
+	    ele_show("add-desc-btn");
 	}
-	ele("content-editor").innerHTML = content;
+	Code.Logic.loadEditor(file.get("file_type"), content)
 	Code.Var.openFileId = id;
-	Code.Logic.formatText();
     }
 };
+
+Code.Logic.getCode = function() {
+    return Code.Var.codeEditor.getValue();    
+}
+
+Code.Logic.setCode = function(code) {
+    Code.Var.codeEditor.setValue(code);        
+}
+
+Code.Logic.clearEditor = function() {    
+    Code.Logic.setCode("");
+};
+
+Code.Logic.setFontSize = function(size, save) {
+    ele("editor-area").style.fontSize = size+"px";
+    if(save) {
+	ele('size-pref').value = size
+	submit_ajax_form("save-user-pref");
+    }
+};
+
+Code.Logic.setKeyBinding = function(type) { 
+    Code.Var.codeEditor.setOption("keyMap", type);	    
+    if(type == "emacs")
+	key = 10;
+    else if(type == "vim")
+	key = 20;
+    else if(type == "sublime")
+	key = 30;
+    ele('key-pref').value = key;
+    submit_ajax_form("save-user-pref");
+};
+
+Code.Logic.initEditor = function(mode, value) {
+    Code.Var.codeEditor = CodeMirror.fromTextArea(ele("code-editor"), {
+	mode: mode,
+	value: value,
+	indentUnit: 4,
+	smartIndent: true,
+	indentWithTabs: true,
+	tabSize: 4,
+	lineWrapping: true,
+	lineNumbers: true,
+	autofocus: true,
+	dragDrop: true,
+	autoCloseBrackets: true,
+	matchBrackets: true,
+	showCursorWhenSelecting: true,
+	keyMap: ele("key-name").value,
+	viewportMargin: Infinity
+    });
+};
+
+Code.Logic.removeLineNumber = function() {
+    Code.Var.codeEditor.setOption("lineNumbers", false);	
+}
+
+Code.Logic.loadEditor = function(file_type, value) {
+    var mode = "";
+    if(file_type == 0) {
+	mode = "text/plain";
+    } else if(file_type == 10) {
+	mode = "text/x-c++src";
+    } else if(file_type == 20) {    	
+	mode = "text/x-java";
+    } else if(file_type == 30) {
+	mode = "text/x-ruby";
+    } else if(file_type == 40) {
+	mode = "{name: 'python', version: 2, singleLineStringErrors: false}";
+    }
+    if(Code.Var.codeEditor == null) {	
+	Code.Logic.initEditor(mode, value);
+    } else {
+	Code.Var.codeEditor.setOption("mode", mode);	
+    }
+    Code.Logic.setCode(value);
+}
 
 Code.Logic.removeFile = function(id) {
     var file = Code.Var.myContentHash[id];
@@ -160,12 +245,6 @@ Code.Logic.removeFile = function(id) {
 	    }
 	});    
     }
-};
-
-Code.Logic.clearEditor = function() {    
-    if(ele('content-editor').innerHTML == "Click to add note") {
-	ele('content-editor').innerHTML = "";
-    }    
 };
 
 Code.Logic.save_failed = function() {
@@ -187,13 +266,12 @@ Code.Logic.getMyTemplate = function() {
 };
 
 Code.Logic.save_file = function(force) {
-    var content = ele('content-editor').innerHTML;    
     var desc = ele("desc-area-te").value;
-    content = Code.Logic.getCode(content);
+    var content = Code.Logic.getCode();
     if(objDef(Code.Var.openFileId)) {
 	var fileObj = Code.Var.myContentHash[Code.Var.openFileId];
 	if(objDef(fileObj)) {
-	    if(((content != "Click to add note") && (content.length > 0) && (content != fileObj.get("content"))) || force) {
+	    if(((content != "") && (content.length > 0) && (content != fileObj.get("content"))) || force) {
 		fileObj.set({name: ele("file_name").innerHTML, desc: desc, content: content, template: Code.Logic.getMyTemplate()})
 		fileObj.save({}, {
 		    success: function(model, response) {
@@ -239,7 +317,7 @@ Code.Logic.addNewFile = function(type, name, desc, content) {
 Code.Logic.addNewNote = function() {
     Code.Logic.save_file(true);
     Code.Logic.addNewFile(0, "New Note", "", "");
-    ele("content-editor").innerHTML = "Click to add note";
+    Code.Logic.setCode("");
     ele("file_name").innerHTML = "New Note";
     ele("desc-area-te").value = "";
     ele_hide("desc-area");
@@ -250,7 +328,7 @@ Code.Logic.addNewNote = function() {
 Code.Logic.addCPPFile = function() {
     Code.Logic.save_file(true);
     Code.Logic.addNewFile(10, "NewCode.cpp", "", "");
-    ele("content-editor").innerHTML = "void main() { }";
+    Code.Logic.setCode("");
     ele("file_name").innerHTML = "NewCode.cpp";
     ele("desc-area-te").value = "";
     ele_hide("desc-area");
@@ -259,7 +337,7 @@ Code.Logic.addCPPFile = function() {
 Code.Logic.addJavaFile = function() {
     Code.Logic.save_file(true);
     Code.Logic.addNewFile(20, "NewCode.java", "", "");
-    ele("content-editor").innerHTML = "public static void main(args[]) { }";
+    Code.Logic.setCode("");
     ele("file_name").innerHTML = "NewCode.java";
     ele("desc-area-te").value = "";
     ele_hide("desc-area");
@@ -268,7 +346,7 @@ Code.Logic.addJavaFile = function() {
 Code.Logic.addRubyFile = function() {
     Code.Logic.save_file(true);
     Code.Logic.addNewFile(30, "NewCode.rb", "", "");
-    ele("content-editor").innerHTML = "def newAction \n end";
+    Code.Logic.setCode("");
     ele("file_name").innerHTML = "NewCode.rb";
     ele("desc-area-te").value = "";
     ele_hide("desc-area");
@@ -277,7 +355,7 @@ Code.Logic.addRubyFile = function() {
 Code.Logic.addPythonFile = function() {
     Code.Logic.save_file(true);
     Code.Logic.addNewFile(40, "NewCode.py", "", "");
-    ele("content-editor").innerHTML = "print(\"Hello, World!\")";
+    Code.Logic.setCode("");
     ele("file_name").innerHTML = "NewCode.py";
     ele("desc-area-te").value = "";
     ele_hide("desc-area");
@@ -306,52 +384,29 @@ Code.Logic.selectBtn = function(id) {
 
 Code.Logic.hideAll = function() {
     $(".top-popup").hide();    
+    // ele_hide('edit-file-name');    
 };				
 
-Code.Logic.getCode = function(text) {
-    return text.replace(/(<span) class="(\w)+">/g, "").replace(/<\/span>/g,"");
-};
-
-Code.Logic.formatText = function() {
-    var el = ele("content-editor");    
-    var userInput = Code.Logic.getCode(el.innerHTML);     
-    var sel = rangy.getSelection();
-    var range = sel.getRangeAt(0);    
-    var rangePrecedingBoundary = range.cloneRange();
-    rangePrecedingBoundary.setStart(el, 0);
-    var selEndOffset = rangePrecedingBoundary.text().length;
-    rangePrecedingBoundary.setEnd(range.startContainer, range.startOffset);
-    var selStartOffset = rangePrecedingBoundary.text().length;
-    rangePrecedingBoundary.detach();
-    var newHTML = prettyPrintOne(userInput);
-    el.innerHTML = newHTML;    
-    range.selectCharacters(el, selStartOffset, selEndOffset);
-    sel.setSingleRange(range);
-};
-
-Code.Logic.getFormattedText = function(text) {
-    var newHTML = prettyPrintOne(text);
-    return newHTML;        
-};
-
-Code.Logic.setFontSize = function(size) {
-    ele("content-editor").style.fontSize = size+"px";
-};
-
-Code.Logic.setLightTheme = function() {
+Code.Logic.setLightTheme = function(save) {
+    if(save) {
+	ele('theme-pref').value = 0;
+	submit_ajax_form("save-user-pref");
+    }
     $("body").css({"background":"#FAFAFA"});
-    $("#content-editor").css({"color":"#34495E"});
     $("#user_name").css({"color":"#34495E"});
     $("#file_name").css({"color":"#34495E"});
-    $("#al-top-bar").css({"background":"#FAFAFA"});    
+    $("#al-top-bar").css({"background":"#FAFAFA"});        
 };
 
-Code.Logic.setDarkTheme = function() {
-    $("body").css({"background":"#8E8E93"});
-    $("#content-editor").css({"color":"#ffffff"});
+Code.Logic.setDarkTheme = function(save) {
+    if(save) {
+	ele('theme-pref').value = 10;
+	submit_ajax_form("save-user-pref");
+    }
+    $("body").css({"background":"#000000"});
     $("#user_name").css({"color":"#ffffff"});
     $("#file_name").css({"color":"#ffffff"});
-    $("#al-top-bar").css({"background":"#8E8E93"});    
+    $("#al-top-bar").css({"background":"#000000"});    
 };
 
 Code.Logic.compileCode = function() {
@@ -428,30 +483,27 @@ Code.Logic.getTemplateCategoryName = function(cat_id) {
 
 Code.Logic.chooseTemplate = function(id) {
     var tempObj = Code.Var.templateHash[id];
-    var currText = ele('content-editor').innerHTML;
-    if((currText == "Click to add note") || (currText == "")) {
-	ele('content-editor').innerHTML = tempObj.get("content");
+    var currText = Code.Logic.getCode();
+    if(currText == "") {
+	Code.Logic.setCode(tempObj.get("content"));
     } else {
 	var r = confirm("Your editor area is not empty, this will replace your current content with the template code. Do you want to continue?");
 	if(r == true) {
-	    ele('content-editor').innerHTML = tempObj.get("content");
+	    Code.Logic.setCode(tempObj.get("content"));
 	} 
     }
     Code.Logic.closeTemplates();
 };
 
 Code.Logic.addDescription = function() {
-    ele_show("desc-area");
+    ele_toggle("desc-area");
 };
 
 Code.Event = {
     Onclick: function() {	    
-	$("#content-editor").click(function() {
-	    Code.Logic.clearEditor();
-	    Code.Logic.hideAll();
-	});
 	$("#file_name").click(function() {
 	    Code.Logic.open_file_name_editor();	    
+	    return false;
 	});
 	$("#update-file-name").click(function() {	   
 	    Code.Logic.change_file_name();
@@ -461,12 +513,15 @@ Code.Event = {
 	});
 	$("#addCode").click(function() {	   
 	    Code.Logic.addNewCode();
+	    return false;
 	});
 	$("#viewFile").click(function() {	   
 	    Code.Logic.viewFiles();
+	    return false;
 	});
 	$("#viewSetting").click(function() {	   
 	    Code.Logic.viewSettings();
+	    return false;
 	});
 	$("#nf-cpp").click(function() {
 	    Code.Logic.addCPPFile();
@@ -481,19 +536,19 @@ Code.Event = {
 	    Code.Logic.addPythonFile();
 	});
 	$("#smallFont").click(function() {
-	    Code.Logic.setFontSize(20);
+	    Code.Logic.setFontSize(20, true);
 	});
 	$("#mediumFont").click(function() {
-	    Code.Logic.setFontSize(30);
+	    Code.Logic.setFontSize(30, true);
 	});
 	$("#largeFont").click(function() {
-	    Code.Logic.setFontSize(50);
+	    Code.Logic.setFontSize(40, true);
 	});
 	$("#lightTheme").click(function() {
-	    Code.Logic.setLightTheme();
+	    Code.Logic.setLightTheme(true);
 	});
 	$("#darkTheme").click(function() {
-	    Code.Logic.setDarkTheme();
+	    Code.Logic.setDarkTheme(true);
 	});
 	$("#compileBtn").click(function() {
 	    Code.Logic.compileCode();
@@ -510,28 +565,39 @@ Code.Event = {
 	$("#add-desc-btn").click(function() {
 	    Code.Logic.addDescription();
 	});
+	$("#editor-area").click(function() {
+	    Code.Logic.hideAll();
+	});
+	$("#keyEmacs").click(function() {
+	    Code.Logic.setKeyBinding("emacs");
+	});
+	$("#keyVim").click(function() {
+	    Code.Logic.setKeyBinding("vim");
+	});
+	$("#keySublime").click(function() {
+	    Code.Logic.setKeyBinding("sublime");
+	});
     },
     Keyboard: function() {
-	$('#content-editor').bind('keydown mouseup',
-				  function(e) {
-				      var code = e.keyCode || e.which;
-				      if(objDef(Code.Var.myContentHash[Code.Var.openFileId]) && (Code.Var.myContentHash[Code.Var.openFileId].get("file_type") != 0)) {
-					  if((code == 32) || (code == 9) || (code == 13)) { // on space, tab and enter key
-					      Code.Logic.formatText();			    		
-					  }			
-				      }	      
-				      if(code == 9) {	
-					  e.preventDefault();					  
-					  // Insert tab space
-					  pasteHtmlAtCaret('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-					  return;
-				      }
-				  });    
-    },
+	$('body').bind('keydown mouseup',
+		       function(e) {
+			   var code = e.keyCode || e.which;
+			   if(e.ctrlKey && e.shiftKey) {
+			       if(code == 67) {
+				   Code.Logic.compileCode();
+			       } else if(code == 79) {
+				   Code.Logic.showOutput();
+			       }			 
+			   }      
+			   if(code == 27) { // esc
+			       ele_hide('compile');
+			       hideTrans();    
+			   }
+		       });    
+    },    
     Scheduled: function() {
 	setInterval(function() {
 	    Code.Logic.save_file(false);
 	}, 5000);    
     }
 };
-

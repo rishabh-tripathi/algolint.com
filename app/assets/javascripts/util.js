@@ -10,6 +10,14 @@ function ele_hide(id) {
     document.getElementById(id).style.display="none";
 }
 
+function ele_toggle(id) {
+    if(document.getElementById(id).style.display=="none") {
+	document.getElementById(id).style.display="";
+    } else {
+	document.getElementById(id).style.display="none";
+    }
+}
+
 function submit_ajax_form(id) {
     $("#"+id).trigger("submit.rails");
 }

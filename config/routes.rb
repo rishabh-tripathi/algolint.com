@@ -60,7 +60,7 @@ AlgolintCom::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'home#homepage'
   match "/compile-code" => "home#compile_code", :as => :compile_code
-
+  match "/set-user-config-editor" => "home#set_default_user_editor_setting", :as => :set_default_user_editor_setting
 
   # Admin Urls
   match "/admin" => "home#admin", :as => :admin

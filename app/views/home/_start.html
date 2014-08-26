@@ -19,7 +19,23 @@
   <div class="sp10"></div>
   <textarea id="desc-area-te" class="fill-width" placeholder="Add description to your file"></textarea>
 </div>
-<div id="content-editor" class="fill-width lead" contenteditable="true">Click to add note</div>
+<div class="sp10"></div>
+<div id="editor-area">
+  <textarea id="code-editor" placeholder="Write your code/note" style="width:100%;height:100%;"></textarea>
+</div>
+
+<%= form_remote_tag :url => set_default_user_editor_setting_url,                              
+                    :loading => "",                     
+                    :complete => "",
+                    :failure => "alert('error in saving your editor preference, this is really bad we know, we will fix it soon');",
+                    :update => "setting-res",                                 
+                    :html => {:id => "save-user-pref"} %>           
+<input type="hidden" id="key-pref" name="keybind" value="<%= (current_user.present? && !current_user.default_keybind.nil?)? current_user.default_keybind : '30' %>" />   
+<input type="hidden" id="key-name" value="<%= (current_user.present? && !current_user.default_keybind.nil?)? User::KEY_CODE[current_user.default_keybind] : 'sublime' %>" />   
+<input type="hidden" id="size-pref" name="fontsize" value="<%= (current_user.present? && !current_user.default_font_size.nil?)? current_user.default_font_size : '30' %>" />   
+<input type="hidden" id="theme-pref" name="theme" value="<%= (current_user.present? && !current_user.default_theme.nil?)? current_user.default_theme : '0' %>" />   
+<%= end_form %> 
+<div id="setting-res" style="display:none;"></div>
 
 <script type="text/javascript">
   var uid = "<%= @uid %>";
@@ -28,7 +44,8 @@
   <% else %>
   var lastOpenFile = null;
   <% end %>
-  Code.Logic.load();
+  Code.Logic.load();  
 </script>
 
 <%= render(:partial => "home/templates") %>
+

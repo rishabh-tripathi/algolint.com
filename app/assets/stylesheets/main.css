@@ -164,6 +164,7 @@
 
 body {
     background-color: #fafafa;
+    min-height: 630px;
 }
 
 .fill-width {
@@ -294,4 +295,12 @@ body {
     padding: 10px;
     background: #e0e0e0;
     z-index: 22;
+}
+
+.space {
+    width: 30px;    
+}
+
+#editor-area {
+    font-size: 30px;
 }

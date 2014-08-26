@@ -17,6 +17,20 @@ class User < ActiveRecord::Base
     ADMIN_NO => "Not admin",
     ADMIN_USER => "Admin User"
   }
+  
+  KEY_EMACS = 10
+  KEY_VIM = 20
+  KEY_SUBLIME = 30
+  
+  KEY_CODE = {
+    KEY_EMACS => "emacs",
+    KEY_VIM => "vim",
+    KEY_SUBLIME => "sublime" 
+  }
+
+  THEME_LIGHT = 0
+  THEME_DARK = 10
+
 
   def set_unique_key
     size = 20

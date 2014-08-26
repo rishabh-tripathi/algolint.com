@@ -21,6 +21,25 @@ class HomeController < ApplicationController
       @uid = current_user.unique_key
     end
   end
+
+  def set_default_user_editor_setting
+    if(current_user.present?)
+      if(params[:keybind].present?)
+        current_user.default_keybind = params[:keybind].to_i
+      end
+      if(params[:fontsize].present?)
+        current_user.default_font_size = params[:fontsize].to_i
+      end
+      if(params[:theme].present?) 
+        current_user.default_theme = params[:theme].to_i
+      end
+      if(current_user.save)
+        render(:text => "Preference has been saved")
+      else
+        render(:text => "Preference has not been saved")
+      end
+    end
+  end
   
   def compile_code 
     if(current_user.present? && params[:file_id].present?)

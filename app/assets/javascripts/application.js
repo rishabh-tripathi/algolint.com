@@ -28,7 +28,19 @@
 //= require util
 //= require main
 //= require custom-scroller
-//= require prettify
-//= require run_prettify
-//= require rangy-core
-//= require rangy-textrange
+//= require codemirror
+//= require clike
+//= require ruby
+//= require python
+//= require emacs
+//= require vim
+//= require sublime
+//= require match-highlighter
+//= require search
+//= require searchcursor
+//= require dialog
+//= require matchbrackets
+//= require closebrackets
+//= require mark-selection
+//= require placeholder
+
