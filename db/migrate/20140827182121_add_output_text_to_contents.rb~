@@ -1,0 +1,4 @@
+class AddOutputTextToContents < ActiveRecord::Migration
+  def change
+  end
+end

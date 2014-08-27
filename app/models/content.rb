@@ -102,10 +102,21 @@ class Content < ActiveRecord::Base
       system("python #{self.get_file_path} 2> #{self.get_folder_path}/#{self.id}.compilestat")            
       system("python #{self.get_file_path} 1> #{self.get_folder_path}/#{self.id}.op")        
     end
-    output = "<span class='error'>"+File.read("#{self.get_folder_path}/#{self.id}.compilestat")+"</span>"      
-    output += File.read("#{self.get_folder_path}/#{self.id}.op")      
+    output_text = File.read("#{self.get_folder_path}/#{self.id}.op")
+    error_text = File.read("#{self.get_folder_path}/#{self.id}.compilestat")
+    output = "<span class='error'>"+error_text+"</span>"      
+    output += output_text      
     output = output.gsub("#{self.get_folder_path}","")
-    output = output.gsub("/#{self.name}","<br>/#{self.name}")
+    output = output.gsub("/#{self.name}","<br>/#{self.name}")    
+    if(!output_text.blank?)
+      self.output_text = output_text.gsub("#{self.get_folder_path}","").gsub("/#{self.name}","<br>/#{self.name}")
+      self.status = Content::STATUS_COMPILED
+    elsif(!error_text.blank?)
+      self.output_text = error_text.gsub("#{self.get_folder_path}","").gsub("/#{self.name}","<br>/#{self.name}")
+      self.status = Content::STATUS_ERROR      
+    end
+    self.compile += 1
+    self.save    
     return output
   end
 

@@ -1,16 +1,31 @@
 <%= render(:partial => "public_top_nav", :locals => {:user_display_name => @user.get_display_name, :user_profile => nil, :file_name => ""}) %>
 
 <div class="sp20"></div>
-<% if(@content.present?) 
-     for c in @content
+<% if(@contents.present?) 
+     for c in @contents
+     if(c.status == Content::STATUS_COMPILED)
+       class1 = "emerald"
+       class2 = "nephritis"
+     elsif(c.status == Content::STATUS_ERROR)
+       class1 = "alizarin"
+       class2 = "pomegranate"
+     else
+       class1 = "wet-asphalt"
+       class2 = "midnight-blue"     
+     end     
+
 %>
 <a href="<%= content_public_url(:uid => @user.get_display_name, :file_name => c.get_file_name_for_url, :file_id => c.id) %>">
-  <div class="pallete-item" style="width:250px">
-    <dl class="palette palette-wet-asphalt">
-      <dt><%= c.name %></dt>
+  <div class="pallete-item" style="width:282px">
+    <dl class="palette palette-<%= class1 %>">
+      <dt>
+	<%= c.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="fui-eye"></span>&nbsp;&nbsp;<%= (c.view_count.present?)? c.view_count : 0 %>&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="fui-heart"></span>&nbsp;&nbsp;<%= (c.like_count.present?)? c.like_count : 0 %>      
+      </dt>
     </dl>
-    <dl class="palette palette-midnight-blue">    
-      <dd>
+    <dl class="palette palette-<%= class2 %>">    
+      <dd style="text-transform:none;">
 	<% if(c.desc.present?) %>
 	<%= c.desc %>
 	<% else %>

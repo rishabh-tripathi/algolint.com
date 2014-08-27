@@ -47,7 +47,7 @@ class HomeController < ApplicationController
       file_path = fileObj.get_folder_path
       FileUtils.mkdir_p("#{file_path}")      
       File.open(fileObj.get_file_path, 'w') { |file| file.write(fileObj.get_final_code) }
-      @output = fileObj.compile_code
+      @output = fileObj.compile_code      
       render(:text => @output)
     else
       render(:text => "No file to compile :(")
@@ -57,7 +57,7 @@ class HomeController < ApplicationController
   def profile
     @user = User.find(:first, :conditions => ["email like ?", "#{params[:uid]}%"])
     if(@user.present?)
-      @content = Content.get_all_public_codes(@user.id)
+      @contents = Content.get_all_public_codes(@user.id)
     end
     render :layout => "profile"
   end
@@ -66,6 +66,11 @@ class HomeController < ApplicationController
     @user = User.find(:first, :conditions => ["email like ?", "#{params[:uid]}%"])
     if(@user.present?)
       @content = Content.find(params[:file_id])
+      if(@content.view_count.nil?)
+        @content.view_count = 0
+      end
+      @content.view_count += 1 
+      @content.save
       if(!@content.present?)
         redirect_to profile_url(:uid => params[:uid])
       else
