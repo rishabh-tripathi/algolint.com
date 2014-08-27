@@ -1,4 +1,4 @@
-<table>
+<table class="fill-width">
   <tr>
     <td class="lead" id="user_name">
       <a href="/" style="padding-top:5px;padding-right:10px;">
@@ -12,7 +12,33 @@
 	<% end %>
       </span>&nbsp;/&nbsp;<span class="file-path"><%= file_name %></span> 
     </td>
-    <td>            
+    <td>           
+      <% if(@content.present?) %>
+      <div class="pull-right btn-toolbar m-5">
+        <div class="btn-group">
+          <a class="btn btn-primary" href="javascript:void(0);"><span class="fui-time"></span>&nbsp;&nbsp;<%= (@content.compile.present?)? @content.compile : 0 %></a>
+          <a class="btn btn-primary" href="javascript:void(0);"><span class="fui-eye"></span>&nbsp;&nbsp;<%= (@content.view_count.present?)? @content.view_count : 0 %></a>
+          <a class="btn btn-primary active" href="javascript:void(0);"><span class="fui-heart"></span>&nbsp;&nbsp;<%= (@content.like_count.present?)? @content.like_count : 0 %></a>
+        </div>
+      </div>
+      <% end %>
+      <% if(@contents.present?) %>
+      <div class="pull-right btn-toolbar m-5">
+        <div class="btn-group">
+          <a class="btn btn-primary" href="javascript:void(0);"><span class="fui-cmd"></span>&nbsp;&nbsp;<%= @contents.size %></a>
+	  <%
+	     view = 0
+	     like = 0
+	     @contents.each do|c|
+	       view += c.view_count if(!c.view_count.nil?)
+	       like += c.like_count if(!c.like_count.nil?)
+	     end
+	     %>
+          <a class="btn btn-primary" href="javascript:void(0);"><span class="fui-eye"></span>&nbsp;&nbsp;<%= view %></a>
+          <a class="btn btn-primary active" href="javascript:void(0);"><span class="fui-heart"></span>&nbsp;&nbsp;<%= like %></a>
+        </div>
+      </div>
+      <% end %>
     </td>
   </tr>
 </table>

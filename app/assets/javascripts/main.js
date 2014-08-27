@@ -147,7 +147,7 @@ Code.Logic.openFile = function(id) {
 	} else {
 	    ele_show("add-desc-btn");
 	}
-	Code.Logic.loadEditor(file.get("file_type"), content)
+	Code.Logic.loadEditor("code-editor", file.get("file_type"), content);
 	Code.Var.openFileId = id;
     }
 };
@@ -184,8 +184,8 @@ Code.Logic.setKeyBinding = function(type) {
     submit_ajax_form("save-user-pref");
 };
 
-Code.Logic.initEditor = function(mode, value) {
-    Code.Var.codeEditor = CodeMirror.fromTextArea(ele("code-editor"), {
+Code.Logic.initEditor = function(id, mode, value) {
+    Code.Var.codeEditor = CodeMirror.fromTextArea(ele(id), {
 	mode: mode,
 	value: value,
 	indentUnit: 4,
@@ -199,7 +199,7 @@ Code.Logic.initEditor = function(mode, value) {
 	autoCloseBrackets: true,
 	matchBrackets: true,
 	showCursorWhenSelecting: true,
-	keyMap: ele("key-name").value,
+	keyMap: (objDef(ele("key-name")))? ele("key-name").value : "sublime",
 	viewportMargin: Infinity
     });
 };
@@ -208,21 +208,10 @@ Code.Logic.removeLineNumber = function() {
     Code.Var.codeEditor.setOption("lineNumbers", false);	
 }
 
-Code.Logic.loadEditor = function(file_type, value) {
-    var mode = "";
-    if(file_type == 0) {
-	mode = "text/plain";
-    } else if(file_type == 10) {
-	mode = "text/x-c++src";
-    } else if(file_type == 20) {    	
-	mode = "text/x-java";
-    } else if(file_type == 30) {
-	mode = "text/x-ruby";
-    } else if(file_type == 40) {
-	mode = "{name: 'python', version: 2, singleLineStringErrors: false}";
-    }
+Code.Logic.loadEditor = function(id, file_type, value) {    
+    var mode = getCodeEditorMode(file_type);
     if(Code.Var.codeEditor == null) {	
-	Code.Logic.initEditor(mode, value);
+	Code.Logic.initEditor(id, mode, value);
     } else {
 	Code.Var.codeEditor.setOption("mode", mode);	
     }

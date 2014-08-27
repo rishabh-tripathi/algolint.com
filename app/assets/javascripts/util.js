@@ -44,6 +44,34 @@ function hideTrans() {
     ele_hide("transLayer");
 }
 
+function getCodeEditorMode(file_type) { 
+    var mode = "";
+    if(file_type == 0) {
+	mode = "text/plain";
+    } else if(file_type == 10) {
+	mode = "text/x-c++src";
+    } else if(file_type == 20) {    	
+	mode = "text/x-java";
+    } else if(file_type == 30) {
+	mode = "text/x-ruby";
+    } else if(file_type == 40) {
+	mode = "{name: 'python', version: 2, singleLineStringErrors: false}";
+    }
+    return mode;
+}
+
+function loadCodeEditorForView(id, file_type) {
+    var mode = getCodeEditorMode(file_type);
+    return CodeMirror.fromTextArea(ele(id), {
+	mode: mode,
+	indentUnit: 4,
+	readOnly: true,
+	smartIndent: true,
+	lineNumbers: true,
+	viewportMargin: Infinity
+    });
+}
+
 function pasteHtmlAtCaret(html) {
     var sel, range;
     if (window.getSelection) {

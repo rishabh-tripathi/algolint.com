@@ -304,3 +304,11 @@ body {
 #editor-area {
     font-size: 30px;
 }
+
+.code-public-desc {
+    background: #ECF0F1;
+    color: #34495E;
+    font-size: 25px;
+    margin: 0px;
+    padding: 5px 30px;
+}
