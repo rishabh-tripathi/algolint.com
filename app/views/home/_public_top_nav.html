@@ -18,7 +18,7 @@
         <div class="btn-group">
           <a class="btn btn-primary" href="javascript:void(0);"><span class="fui-time"></span>&nbsp;&nbsp;<%= (@content.compile.present?)? @content.compile : 0 %></a>
           <a class="btn btn-primary" href="javascript:void(0);"><span class="fui-eye"></span>&nbsp;&nbsp;<%= (@content.view_count.present?)? @content.view_count : 0 %></a>
-          <a class="btn btn-primary active" href="javascript:void(0);"><span class="fui-heart"></span>&nbsp;&nbsp;<%= (@content.like_count.present?)? @content.like_count : 0 %></a>
+          <a class="btn btn-primary active" href="javascript:void(0);" <% if(current_user.present?) %>onclick="submit_ajax_form('like_code');"<% end %>><span class="fui-heart"></span>&nbsp;&nbsp;<span id="like_count"><%= (@content.like_count.present?)? @content.like_count : 0 %></span></a>
         </div>
       </div>
       <% end %>

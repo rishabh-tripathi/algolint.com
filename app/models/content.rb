@@ -116,7 +116,8 @@ class Content < ActiveRecord::Base
       self.status = Content::STATUS_ERROR      
     end
     self.compile += 1
-    self.save    
+    self.save
+    self.reload
     return output
   end
 

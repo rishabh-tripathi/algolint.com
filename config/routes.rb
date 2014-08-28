@@ -1,5 +1,8 @@
 AlgolintCom::Application.routes.draw do
 
+  resources :likes
+
+
   resources :contents
   devise_for :users, :skip => [:sessions]
   as :user do
@@ -62,14 +65,15 @@ AlgolintCom::Application.routes.draw do
   match "/compile-code" => "home#compile_code", :as => :compile_code
   match "/set-user-config-editor" => "home#set_default_user_editor_setting", :as => :set_default_user_editor_setting
 
+  match "/like-code/:code_id" => "home#like_code", :as => :like_code
+  match "/:uid" => "home#profile", :as => :profile
+  match "/:uid/:file_name-:file_id" => "home#content_public", :as => :content_public
+  
   # Admin Urls
   match "/admin" => "home#admin", :as => :admin
   match "/list-codes-for-template" => "home#list_codes", :as => :list_codes
   match "/make-tempate/:id" => "home#make_template", :as => :make_template
   match "/set-tempate-cat/:id/(:cat)" => "home#set_template_cat", :as => :set_template_cat
-  
-  match "/:uid" => "home#profile", :as => :profile
-  match "/:uid/:file_name-:file_id" => "home#content_public", :as => :content_public
   
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,27 @@
+<h1>Listing likes</h1>
+
+<table>
+  <tr>
+    <th>Obj type</th>
+    <th>Obj</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @likes.each do |like| %>
+  <tr>
+    <td><%= like.obj_type %></td>
+    <td><%= like.obj_id %></td>
+    <td><%= like.user_id %></td>
+    <td><%= link_to 'Show', like %></td>
+    <td><%= link_to 'Edit', edit_like_path(like) %></td>
+    <td><%= link_to 'Destroy', like, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Like', new_like_path %>

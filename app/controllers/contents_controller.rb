@@ -2,6 +2,7 @@ class ContentsController < ApplicationController
   layout "blank"
   before_filter :check_credential, :except => []
   respond_to :html, :json
+  
   # GET /contents
   # GET /contents.json
   def index

@@ -7,6 +7,7 @@
 <div id="content" class="fill-width lead">
   <textarea id="code-viewer" placeholder="Write your code/note" style="width:100%;height:100%;"><%=raw @content.content %></textarea>
 </div>
+
 <% if(@content.output_text.present?) 
      if(@content.status == Content::STATUS_COMPILED)
        op_text = "Output - Compile Success"
@@ -34,3 +35,12 @@
   loadCodeEditorForView("code-viewer", <%= @content.file_type %>);
 </script>
 
+<% if(@content.present?) %>
+<%= form_remote_tag :url => like_code_url(@content.id),                              
+                    :loading => "",                     
+                    :complete => "",
+                    :failure => "alert('error in like, this is really bad we know, we will fix it soon');",
+                    :update => "like_count",                                 
+                    :html => {:id => "like_code"} %>           
+<%= end_form %> 
+<% end %>
