@@ -1,0 +1,11 @@
+class CreateLikes < ActiveRecord::Migration
+  def change
+    create_table :likes do |t|
+      t.Integer :obj_type
+      t.Integer :obj_id
+      t.Integer :user_id
+
+      t.timestamps
+    end
+  end
+end

@@ -5,19 +5,19 @@
     <tr>
       <td style="font-size:20px;">Emacs&nbsp;</td>
       <td>
-	<label id="keyEmacs" class="radio">
+	<label id="keyEmacs" class="radio<% if(!current_user.default_keybind.nil? && (current_user.default_keybind == User::KEY_EMACS)) %> checked<% end %>">
 	  <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="keyBind" data-toggle="radio">
 	</label>
       </td>
       <td style="font-size:20px;">Vim&nbsp;</td>
       <td>
-	<label id="keyVim" class="radio">
+	<label id="keyVim" class="radio<% if(!current_user.default_keybind.nil? && (current_user.default_keybind == User::KEY_VIM)) %> checked<% end %>">
 	  <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="keyBind" data-toggle="radio">
 	</label>
       </td>
       <td style="font-size:20px;">Sublime&nbsp;</td>
       <td>
-	<label id="keySublime" class="radio checked">
+	<label id="keySublime" class="radio<% if(current_user.default_keybind.nil? || (current_user.default_keybind == User::KEY_SUBLIME)) %> checked<% end %>">
 	  <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="keyBind" data-toggle="radio">
 	</label>
       </td>
@@ -29,19 +29,19 @@
     <tr>
       <td style="font-size:20px;">Small&nbsp;</td>
       <td>
-	<label id="smallFont" class="radio checked">
+	<label id="smallFont" class="radio<% if(!current_user.default_font_size.nil? && (current_user.default_font_size == 20)) %> checked<% end %>">
 	  <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="font-size" data-toggle="radio">
 	</label>
       </td>
       <td style="font-size:20px;">Medium&nbsp;</td>
       <td>
-	<label id="mediumFont" class="radio">
+	<label id="mediumFont" class="radio<% if(current_user.default_font_size.nil? || (current_user.default_font_size == 30)) %> checked<% end %>">
 	  <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="font-size" data-toggle="radio">
 	</label>
       </td>
       <td style="font-size:20px;">Large&nbsp;</td>
       <td>
-	<label id="largeFont" class="radio">
+	<label id="largeFont" class="radio<% if(!current_user.default_font_size.nil? && (current_user.default_font_size == 40)) %> checked<% end %>">
 	  <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="font-size" data-toggle="radio">
 	</label>
       </td>
@@ -53,21 +53,21 @@
     <tr>
       <td style="font-size:20px;">Light</td>
       <td>
-	<label id="lightTheme" class="radio">
+	<label id="lightTheme" class="radio<% if(current_user.default_theme.nil? || (current_user.default_theme == User::THEME_LIGHT)) %> checked<% end %>">
 	  <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="theme" data-toggle="radio">
 	</label>
       </td>
       <td style="font-size:20px;">Dark</td>
       <td>
-	<label id="darkTheme" class="radio checked">
+	<label id="darkTheme" class="radio<% if(!current_user.default_theme.nil? && (current_user.default_theme == User::THEME_DARK)) %> checked<% end %>">
 	  <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="theme" data-toggle="radio">
 	</label>
       </td>
     </tr>
   </table>
-<% if(false) %>
-  <div class="sp20"></div>
-  <a href="#fakelink" class="btn btn-block btn-lg btn-info">Connect with Dropbox</a>
-<% end %>
-  
+  <% if(false) %>
+  <div class="sp1 b-top"></div>
+  <a href="#fakelink" class="btn btn-block btn-lg btn-success">Connect with Dropbox</a>
+  <a href="#fakelink" class="btn btn-block btn-lg btn-success">Connect with Github</a>  
+  <% end %>
 </div>

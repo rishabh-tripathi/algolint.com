@@ -224,15 +224,37 @@ Code.Logic.removeFile = function(id) {
 	var file = Code.Var.templateHash[id];
     }
     if(objDef(file)) {    
-	file.destroy({
-	    success: function(model, response) {     
-		Code.Logic.updateMyContentHash();
-		Code.Logic.prepareFileList();	    
-	    },
-	    error: function (model, response) {
-		ele_show("error-div");
+	var destroy = false;
+	if(file.get("content").length > 0) {
+	    destroy = confirm("File "+file.get("name")+" is not empty, Do you really want to delete this?");
+	} else {
+	    destroy = true;
+	}
+	if(destroy) {
+	    if(objDef(Code.Var.myContents) && (Code.Var.myContents.length > 0)) {		
+		var nextOpenFileindex = Code.Var.myContents.indexOf(file) - 1;
+		var nextFile = Code.Var.myContents.at(nextOpenFileindex);
+		Code.Var.openFileId = nextFile.get("id");			
+		if(objDef(nextFile)) {
+		    Code.Logic.openFile(Code.Var.openFileId);
+		} else {
+		    if(Code.Var.myContents.length > 0) {
+			Code.Var.openFileId = Code.Var.myContents.at(0).get("_id");			
+			Code.Logic.openFile(Code.Var.openFileId);
+		    }		    
+		}
+		Code.Logic.save_file(true);
 	    }
-	});    
+	    file.destroy({
+		success: function(model, response) {     
+		    Code.Logic.updateMyContentHash();
+		    Code.Logic.prepareFileList();	    
+		},
+		error: function (model, response) {
+		    ele_show("error-div");
+		}
+	    });    
+	}
     }
 };
 
@@ -405,12 +427,11 @@ Code.Logic.compileCode = function() {
     ele_show("compile");
     if(objDef(Code.Var.openFileId)) {
 	var fileObj = Code.Var.myContentHash[Code.Var.openFileId];
-	ele("compileStatus").innerHTML = "Testing <i>"+fileObj.get("name")+"</i>";
+	ele("compileStatus").innerHTML = fileObj.get("name");
+	ele("output-window").innerHTML = "Compiling '"+fileObj.get("name")+"'...";
 	ele("cfile_id").value = Code.Var.openFileId;
     }
     ele_show("compileStatus");
-    ele_hide("output-window");
-    ele_show("compileLoad");   
     submit_ajax_form("compile_code");
 };
 
@@ -571,19 +592,33 @@ Code.Event = {
 	$('body').bind('keydown mouseup',
 		       function(e) {
 			   var code = e.keyCode || e.which;
-			   if(e.ctrlKey && e.shiftKey) {
-			       if(code == 67) {
+			   if(code == 67) {
+			       if(e.ctrlKey && e.shiftKey) {				   
+				   e.preventDefault();
 				   Code.Logic.compileCode();
-			       } else if(code == 79) {
+			       } 
+			   } else if(code == 79) {
+			       if(e.ctrlKey && e.shiftKey) {				   
+				   e.preventDefault();
 				   Code.Logic.showOutput();
-			       }			 
-			   }      
-			   if(code == 27) { // esc
+			       }			 		        
+			   } else if(code == 83) {
+			       if(e.ctrlKey) {
+				   e.preventDefault();
+				   Code.Logic.save_file(false);				   
+			       }			 		        
+			   } else if(code == 84) {
+			       if(e.ctrlKey && e.shiftKey) {				   
+				   e.preventDefault();
+				   Code.Logic.openTemplates();				   
+			       }
+			   } else if(code == 27) { // esc
 			       ele_hide('compile');
+			       Code.Logic.closeTemplates();
 			       hideTrans();    
 			   }
-		       });    
-    },    
+		      });    
+},    
     Scheduled: function() {
 	setInterval(function() {
 	    Code.Logic.save_file(false);

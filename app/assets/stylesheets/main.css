@@ -278,20 +278,22 @@ body {
 }
 
 #output-window {
-    width: 60%;
+    width: 70%;
     min-width: 300px;
-    min-height: 350px;
+    min-height: 400px;
     background: #2B2B2B;
+    border: 10px solid #34495E;
     color: #ffffff;
     text-align: left;
     overflow: auto;
 }
 
 #template-popup {
-    position: absolute;
-    top: 30px;
-    margin: 0px auto;
-    width: 95%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
     padding: 10px;
     background: #e0e0e0;
     z-index: 22;

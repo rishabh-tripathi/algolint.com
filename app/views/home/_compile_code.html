@@ -5,17 +5,16 @@
       <button class="btn btn-info" title="Hide Output" onclick="ele_hide('compile');hideTrans();"><span class="fui-cross"></span></button>
     </div>
     <span id="compileStatus" class="lead" style="display:none;"></span>    
-    <div class="sp30"></div>
-    <img id="compileLoad" src="/assets/loadingBig.gif" style="display:none;" title="loading"/>
-    <div id="output-window" class="p-20" style="display:none;"></div>
+    <div class="sp10"></div>
+    <div id="output-window" class="p-20" style=""></div>
     <div class="sp20"></div>
-    <button class="btn btn-lg btn-info" onclick="ele_hide('compile');hideTrans();" title="Hide Output">Hide Output</button>
+    <span class="lead" style="color:#ffffff;">Press Esc to hide output</span>
   </center>
 </div>
 
 <%= form_remote_tag :url => compile_code_url,                              
-                    :loading => "ele_hide('output-window');ele_show('compileLoad');",                     
-                    :complete => "ele_show('output-window');ele_hide('compileLoad');",
+                    :loading => "",                     
+                    :complete => "",
                     :failure => "alert('error in compiling, this is really bad we know, we will fix it soon');",
                     :update => "output-window",                                 
                     :html => {:id => "compile_code"} %>           

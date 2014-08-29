@@ -48,6 +48,10 @@ class HomeController < ApplicationController
       FileUtils.mkdir_p("#{file_path}")      
       File.open(fileObj.get_file_path, 'w') { |file| file.write(fileObj.get_final_code) }
       @output = fileObj.compile_code      
+      fileObj.compile = 0 if(fileObj.compile.nil?)
+      fileObj.compile = fileObj.compile + 1
+      fileObj.save
+      fileObj.reload
       render(:text => @output)
     else
       render(:text => "No file to compile :(")
@@ -71,6 +75,7 @@ class HomeController < ApplicationController
       end
       @content.view_count += 1 
       @content.save
+      @like_count = Like.get_obj_likes(Like::OBJ_TYPE_CODE, @content.id)
       if(!@content.present?)
         redirect_to profile_url(:uid => params[:uid])
       else
@@ -81,6 +86,17 @@ class HomeController < ApplicationController
     end
   end
 
+  def like_code
+    if(current_user.present?)
+      content = Content.find(params[:code_id])
+      if(content.present?)
+        count = Like.like_obj(Like::OBJ_TYPE_CODE, params[:code_id], current_user.id)             
+        content.like_count = count
+        content.save
+        render(:text => count)      
+      end
+    end
+  end
 
   # Admin Methods ###################################################################
   def admin    
