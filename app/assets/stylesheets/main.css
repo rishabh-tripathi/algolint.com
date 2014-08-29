@@ -289,10 +289,11 @@ body {
 }
 
 #template-popup {
-    position: absolute;
-    top: 30px;
-    margin: 0px auto;
-    width: 95%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
     padding: 10px;
     background: #e0e0e0;
     z-index: 22;

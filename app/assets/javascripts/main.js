@@ -428,6 +428,7 @@ Code.Logic.compileCode = function() {
     if(objDef(Code.Var.openFileId)) {
 	var fileObj = Code.Var.myContentHash[Code.Var.openFileId];
 	ele("compileStatus").innerHTML = fileObj.get("name");
+	ele("output-window").innerHTML = "Compiling '"+fileObj.get("name")+"'...";
 	ele("cfile_id").value = Code.Var.openFileId;
     }
     ele_show("compileStatus");
@@ -606,8 +607,14 @@ Code.Event = {
 				   e.preventDefault();
 				   Code.Logic.save_file(false);				   
 			       }			 		        
+			   } else if(code == 84) {
+			       if(e.ctrlKey && e.shiftKey) {				   
+				   e.preventDefault();
+				   Code.Logic.openTemplates();				   
+			       }
 			   } else if(code == 27) { // esc
 			       ele_hide('compile');
+			       Code.Logic.closeTemplates();
 			       hideTrans();    
 			   }
 		      });    

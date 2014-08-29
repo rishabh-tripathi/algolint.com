@@ -13,7 +13,7 @@
 </div>
 
 <%= form_remote_tag :url => compile_code_url,                              
-                    :loading => "ele('output-window').innerHTML = 'Compiling...'",                     
+                    :loading => "",                     
                     :complete => "",
                     :failure => "alert('error in compiling, this is really bad we know, we will fix it soon');",
                     :update => "output-window",                                 
