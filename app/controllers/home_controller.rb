@@ -48,6 +48,10 @@ class HomeController < ApplicationController
       FileUtils.mkdir_p("#{file_path}")      
       File.open(fileObj.get_file_path, 'w') { |file| file.write(fileObj.get_final_code) }
       @output = fileObj.compile_code      
+      fileObj.compile = 0 if(fileObj.compile.nil?)
+      fileObj.compile = fileObj.compile + 1
+      fileObj.save
+      fileObj.reload
       render(:text => @output)
     else
       render(:text => "No file to compile :(")

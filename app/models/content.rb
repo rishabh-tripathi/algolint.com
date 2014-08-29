@@ -115,9 +115,6 @@ class Content < ActiveRecord::Base
       self.output_text = error_text.gsub("#{self.get_folder_path}","").gsub("/#{self.name}","<br>/#{self.name}")
       self.status = Content::STATUS_ERROR      
     end
-    self.compile += 1
-    self.save
-    self.reload
     return output
   end
 
