@@ -123,8 +123,7 @@ class Content < ActiveRecord::Base
   end
   
   def self.get_all_public_codes(user_id)
-    return Content.find(:all, :conditions => ["user_id = ?", user_id])    
-    # return Content.find(:all, :conditions => ["user_id = ? && sharability = ?", user_id, Content::SHARE_PUBLIC])    
+    return Content.find(:all, :conditions => ["user_id = ? and template = ? and sharability = ?", user_id, Content::TEMPLATE_NO, Content::SHARE_PUBLIC])    
   end
 
   def get_file_name_for_url

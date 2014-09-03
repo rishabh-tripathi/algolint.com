@@ -16,16 +16,24 @@
       <% if(@content.present?) %>
       <div class="pull-right btn-toolbar m-5">
         <div class="btn-group">
-          <a class="btn btn-primary" href="javascript:void(0);"><span class="fui-time"></span>&nbsp;&nbsp;<%= (@content.compile.present?)? @content.compile : 0 %></a>
-          <a class="btn btn-primary" href="javascript:void(0);"><span class="fui-eye"></span>&nbsp;&nbsp;<%= (@content.view_count.present?)? @content.view_count : 0 %></a>
-          <a class="btn btn-primary active" href="javascript:void(0);" <% if(current_user.present?) %>onclick="submit_ajax_form('like_code');"<% end %>><span class="fui-heart"></span>&nbsp;&nbsp;<span id="like_count"><%= (@content.like_count.present?)? @content.like_count : 0 %></span></a>
+          <a class="btn btn-primary active" href="javascript:void(0);"><span class="fui-time"></span>&nbsp;&nbsp;<%= (@content.compile.present?)? @content.compile : 0 %></a>
+          <a class="btn btn-primary active" href="javascript:void(0);"><span class="fui-eye"></span>&nbsp;&nbsp;<%= (@content.view_count.present?)? @content.view_count : 0 %></a>
+          <a class="btn btn-primary<% if(!current_user.present?) %> active<% end %>" href="javascript:void(0);" <% if(current_user.present?) %>onclick="submit_ajax_form('like_code');"<% end %>><span class="fui-heart"></span>&nbsp;&nbsp;<span id="like_count"><%= (@content.like_count.present?)? @content.like_count : 0 %></span></a>
+	  <a class="btn btn-primary" href="<%= root_url(:file => @content.id) %>" title="Edit this file in Editor">
+	    <span class="fui-new"></span>
+	  </a>
+	  <% if(current_user.present?) %>
+	  <a class="btn btn-primary" href="<%= logout_user_path %>" title="Logout" onclick="return confirm('Logout from Algolint, are you sure?');">
+	    <span class="fui-cross"></span>
+	  </a>
+	  <% end %>
         </div>
       </div>
       <% end %>
       <% if(@contents.present?) %>
       <div class="pull-right btn-toolbar m-5">
         <div class="btn-group">
-          <a class="btn btn-primary" href="javascript:void(0);"><span class="fui-cmd"></span>&nbsp;&nbsp;<%= @contents.size %></a>
+          <a class="btn btn-primary active" href="javascript:void(0);"><span class="fui-cmd"></span>&nbsp;&nbsp;<%= @contents.size %></a>
 	  <%
 	     view = 0
 	     like = 0
@@ -34,8 +42,16 @@
 	       like += c.like_count if(!c.like_count.nil?)
 	     end
 	     %>
-          <a class="btn btn-primary" href="javascript:void(0);"><span class="fui-eye"></span>&nbsp;&nbsp;<%= view %></a>
+          <a class="btn btn-primary active" href="javascript:void(0);"><span class="fui-eye"></span>&nbsp;&nbsp;<%= view %></a>
           <a class="btn btn-primary active" href="javascript:void(0);"><span class="fui-heart"></span>&nbsp;&nbsp;<%= like %></a>
+	  <a class="btn btn-primary" href="<%= root_url %>" title="Go to editor">
+	    <span class="fui-new"></span>
+	  </a>
+	  <% if(current_user.present?) %>
+	  <a class="btn btn-primary" href="<%= logout_user_path %>" title="Logout" onclick="return confirm('Logout from Algolint, are you sure?');">
+	    <span class="fui-cross"></span>
+	  </a>
+	  <% end %>
         </div>
       </div>
       <% end %>

@@ -31,6 +31,16 @@ class User < ActiveRecord::Base
   THEME_LIGHT = 0
   THEME_DARK = 10
 
+  
+  DROPBOX_SYNC_NO = 0
+  DROPBOX_SYNC_SUCCESS = 10
+  DROPBOX_SYNC_FAILURE = -10
+  
+  DROPBOX_SYNC_NAMES = {
+    DROPBOX_SYNC_NO => "Not Sync",
+    DROPBOX_SYNC_SUCCESS => "Sync Success",
+    DROPBOX_SYNC_FAILURE => "Sync Failed"
+  }
 
   def set_unique_key
     size = 20

@@ -1,0 +1,18 @@
+<table class="table">
+  <tr>
+    <th></th>
+    <th>email</th>
+    <th>No of files</th>
+  </tr>
+<% 
+   i = 0
+   for u in @all_users 
+     i += 1
+%>
+<tr>
+  <td><%= i %></td>
+  <td><%= u.email %></td>
+  <td><%= u.contents.count %></td>
+</tr>
+<% end %>
+</table>

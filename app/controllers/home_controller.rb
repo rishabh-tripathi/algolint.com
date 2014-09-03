@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_filter :check_for_admin, :only => [:admin, :list_codes, :make_template, :set_template_cat]
+  before_filter :check_for_admin, :only => [:admin, :list_codes, :list_users, :make_template, :set_template_cat]
   
   def check_for_admin
     if(current_user.present? && current_user.is_admin_user)
@@ -15,6 +15,10 @@ class HomeController < ApplicationController
         current_user.set_unique_key
       end
       if(current_user.last_open_file.present?)
+        if(params[:file].present?)
+          current_user.last_open_file = params[:file].to_i
+          current_user.save
+        end
         @file = Content.find(current_user.last_open_file)        
       end
       @all_files = current_user.contents
@@ -104,6 +108,10 @@ class HomeController < ApplicationController
 
   def list_codes
     @all_codes = Content.get_all_codes(current_user.id)
+  end
+
+  def list_users
+    @all_users = User.all
   end
 
   def make_template

@@ -1,0 +1,13 @@
+<table class="table">
+<% 
+   i = 0
+   for u in @all_users 
+     i += 1
+%>
+<tr>
+  <td><%= i %></td>
+  <td><%= u.email %></td>
+  <td><%= u.contents.count %></td>
+</tr>
+<% end %>
+</table>

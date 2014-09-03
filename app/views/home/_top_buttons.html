@@ -6,12 +6,12 @@
     <span class="fui-cmd"></span>&nbsp;&nbsp;Code
   </a>
   <a id="viewFile" class="btn btn-primary" href="javascript:void(0);" title="All Files">
-    <span class="fui-list"></span>
+    <span class="fui-list"></span>&nbsp;&nbsp;Files
   </a>
   <a id="viewSetting" class="btn btn-primary" href="javascript:void(0);" title="Setting" onclick="">
     <span class="fui-gear"></span>
   </a>
-  <a class="btn btn-primary" href="<%= logout_user_path %>" title="Logout">
+  <a class="btn btn-primary" href="<%= logout_user_path %>" title="Logout" onclick="return confirm('Logout from Algolint, are you sure?');">
     <span class="fui-cross"></span>
   </a>
 </div>
