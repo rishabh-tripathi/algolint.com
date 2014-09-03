@@ -62,18 +62,26 @@ AlgolintCom::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'home#homepage'
+
+  # Admin Urls
+  match "/admin" => "home#admin", :as => :admin
+  match "/list-codes-for-template" => "home#list_codes", :as => :list_codes
+  match "/list-users-for-admin" => "home#list_users", :as => :list_users
+  match "/make-tempate/:id" => "home#make_template", :as => :make_template
+  match "/set-tempate-cat/:id/(:cat)" => "home#set_template_cat", :as => :set_template_cat
+
+  # Main Urls
   match "/compile-code" => "home#compile_code", :as => :compile_code
   match "/set-user-config-editor" => "home#set_default_user_editor_setting", :as => :set_default_user_editor_setting
-
   match "/like-code/:code_id" => "home#like_code", :as => :like_code
   match "/:uid" => "home#profile", :as => :profile
   match "/:uid/:file_name-:file_id" => "home#content_public", :as => :content_public
   
-  # Admin Urls
-  match "/admin" => "home#admin", :as => :admin
-  match "/list-codes-for-template" => "home#list_codes", :as => :list_codes
-  match "/make-tempate/:id" => "home#make_template", :as => :make_template
-  match "/set-tempate-cat/:id/(:cat)" => "home#set_template_cat", :as => :set_template_cat
+  # Dropbox Urls
+  get  "dropbox/main"
+  post "dropbox/upload"
+  get  "dropbox/auth_start"
+  get  "dropbox/auth_finish"
   
   # See how all your routes lay out with "rake routes"
 

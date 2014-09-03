@@ -32,7 +32,7 @@
                     :html => {:id => "save-user-pref"} %>           
 <input type="hidden" id="key-pref" name="keybind" value="<%= (current_user.present? && !current_user.default_keybind.nil?)? current_user.default_keybind : '30' %>" />   
 <input type="hidden" id="key-name" value="<%= (current_user.present? && !current_user.default_keybind.nil?)? User::KEY_CODE[current_user.default_keybind] : 'sublime' %>" />   
-<input type="hidden" id="size-pref" name="fontsize" value="<%= (current_user.present? && !current_user.default_font_size.nil?)? current_user.default_font_size : '30' %>" />   
+<input type="hidden" id="size-pref" name="fontsize" value="<%= (current_user.present? && !current_user.default_font_size.nil?)? current_user.default_font_size : '20' %>" />   
 <input type="hidden" id="theme-pref" name="theme" value="<%= (current_user.present? && !current_user.default_theme.nil?)? current_user.default_theme : '0' %>" />   
 <%= end_form %> 
 <div id="setting-res" style="display:none;"></div>

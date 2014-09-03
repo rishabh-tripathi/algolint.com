@@ -1,4 +1,6 @@
-<%= render(:partial => "public_top_nav", :locals => {:user_display_name => @user.get_display_name, :user_profile => nil, :file_name => ""}) %>
+<% if(@user.present?) %>
+  <%= render(:partial => "public_top_nav", :locals => {:user_display_name => @user.get_display_name, :user_profile => nil, :file_name => ""}) %>
+<% end %>
 
 <div class="sp20"></div>
 <% if(@contents.present?) 

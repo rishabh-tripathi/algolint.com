@@ -77,6 +77,9 @@ Code.Logic.loadSuccess = function() {
     Code.Event.Keyboard();
     if(objDef(Code.Var.openFileId)) {
 	Code.Logic.openFile(Code.Var.openFileId);
+    } else {
+	Code.Logic.initEditor("code-editor", "text/plain", "");
+	Code.Logic.nofileState();
     }
     // Setting User Preferences
     Code.Logic.setFontSize(ele('size-pref').value, false);
@@ -91,6 +94,11 @@ Code.Logic.loadSuccess = function() {
 Code.Logic.loadFailure = function() {
     alert("error in loading your files");    
 };
+
+Code.Logic.nofileState = function() {
+    var autonote = _.template($("#howtoNoteTemp").html(), {});	
+    Code.Logic.addNewNote("How To Use","",autonote);
+}
 
 Code.Logic.updateMyContentHash = function() {
     Code.Var.templateHash = {};    
@@ -184,7 +192,7 @@ Code.Logic.setKeyBinding = function(type) {
     submit_ajax_form("save-user-pref");
 };
 
-Code.Logic.initEditor = function(id, mode, value) {
+Code.Logic.initEditor = function(id, mode, value) {    
     Code.Var.codeEditor = CodeMirror.fromTextArea(ele(id), {
 	mode: mode,
 	value: value,
@@ -193,7 +201,7 @@ Code.Logic.initEditor = function(id, mode, value) {
 	indentWithTabs: true,
 	tabSize: 4,
 	lineWrapping: true,
-	lineNumbers: true,
+	lineNumbers: false,
 	autofocus: true,
 	dragDrop: true,
 	autoCloseBrackets: true,
@@ -213,7 +221,12 @@ Code.Logic.loadEditor = function(id, file_type, value) {
     if(Code.Var.codeEditor == null) {	
 	Code.Logic.initEditor(id, mode, value);
     } else {
-	Code.Var.codeEditor.setOption("mode", mode);	
+	Code.Var.codeEditor.setOption("mode", mode);		
+    }
+    if(mode == "text/plain") {
+	Code.Var.codeEditor.setOption("lineNumbers", false);		
+    } else {
+	Code.Var.codeEditor.setOption("lineNumbers", true);			
     }
     Code.Logic.setCode(value);
 }
@@ -231,20 +244,24 @@ Code.Logic.removeFile = function(id) {
 	    destroy = true;
 	}
 	if(destroy) {
-	    if(objDef(Code.Var.myContents) && (Code.Var.myContents.length > 0)) {		
+	    if(objDef(Code.Var.myContents) && (Code.Var.myContents.length > 1)) {		
 		var nextOpenFileindex = Code.Var.myContents.indexOf(file) - 1;
 		var nextFile = Code.Var.myContents.at(nextOpenFileindex);
-		Code.Var.openFileId = nextFile.get("id");			
 		if(objDef(nextFile)) {
+		    Code.Var.openFileId = nextFile.get("id");			
 		    Code.Logic.openFile(Code.Var.openFileId);
 		} else {
-		    if(Code.Var.myContents.length > 0) {
-			Code.Var.openFileId = Code.Var.myContents.at(0).get("_id");			
+		    Code.Var.openFileId = Code.Var.myContents.at(0).get("_id");			
+		    if(Code.Var.openFileId != file.get("_id")) {
 			Code.Logic.openFile(Code.Var.openFileId);
-		    }		    
+		    } else {
+			Code.Logic.nofileState();
+		    }
 		}
-		Code.Logic.save_file(true);
-	    }
+	    } else {
+		Code.Logic.nofileState();
+	    }		    
+	    Code.Logic.save_file(true);
 	    file.destroy({
 		success: function(model, response) {     
 		    Code.Logic.updateMyContentHash();
@@ -276,6 +293,14 @@ Code.Logic.getMyTemplate = function() {
     }    
 };
 
+Code.Logic.getFileSharability = function() {
+    if($("#private-code").is(":checked")) { 
+	return 0;
+    } else {
+	return 10;
+    }    
+}
+
 Code.Logic.save_file = function(force) {
     var desc = ele("desc-area-te").value;
     var content = Code.Logic.getCode();
@@ -283,7 +308,7 @@ Code.Logic.save_file = function(force) {
 	var fileObj = Code.Var.myContentHash[Code.Var.openFileId];
 	if(objDef(fileObj)) {
 	    if(((content != "") && (content.length > 0) && (content != fileObj.get("content"))) || force) {
-		fileObj.set({name: ele("file_name").innerHTML, desc: desc, content: content, template: Code.Logic.getMyTemplate()})
+		fileObj.set({name: ele("file_name").innerHTML, desc: desc, content: content, template: Code.Logic.getMyTemplate(), sharability: Code.Logic.getFileSharability()})
 		fileObj.save({}, {
 		    success: function(model, response) {
 			Code.Logic.prepareFileList();
@@ -317,7 +342,8 @@ Code.Logic.addNewFile = function(type, name, desc, content) {
 	    Code.Var.myContents.push(model);
 	    Code.Logic.updateMyContentHash();
 	    Code.Logic.prepareFileList();
-	    Code.Var.openFileId = model.get("id"); 
+	    Code.Var.openFileId = model.get("id"); 	    
+	    Code.Logic.loadEditor("code-editor", model.get("file_type"), model.get("content"));
 	}, 
 	error: function(response) {
 	    ele_show("error-div");
@@ -325,12 +351,21 @@ Code.Logic.addNewFile = function(type, name, desc, content) {
     });
 };
 
-Code.Logic.addNewNote = function() {
+Code.Logic.addNewNote = function(file_name, desc, content) {
+    if(!objDef(file_name)) {
+	file_name = "New Note";
+    }
+    if(!objDef(desc)) {
+	desc = "";
+    }
+    if(!objDef(content)) {
+	content = "";
+    }
     Code.Logic.save_file(true);
-    Code.Logic.addNewFile(0, "New Note", "", "");
-    Code.Logic.setCode("");
-    ele("file_name").innerHTML = "New Note";
-    ele("desc-area-te").value = "";
+    Code.Logic.addNewFile(0, file_name, desc, content);
+    Code.Logic.setCode(content);
+    ele("file_name").innerHTML = file_name;
+    ele("desc-area-te").value = desc;
     ele_hide("desc-area");
     ele_hide("add-desc-btn");
     Code.Logic.selectBtn("addNote");
@@ -531,6 +566,14 @@ Code.Event = {
 	});
 	$("#viewSetting").click(function() {	   
 	    Code.Logic.viewSettings();
+	    return false;
+	});
+	$("#my-template").click(function() {	   
+	    Code.Logic.save_file(true);
+	    return false;
+	});
+	$("#private-code").click(function() {	   
+	    Code.Logic.save_file(true);
 	    return false;
 	});
 	$("#nf-cpp").click(function() {

@@ -29,13 +29,13 @@
     <tr>
       <td style="font-size:20px;">Small&nbsp;</td>
       <td>
-	<label id="smallFont" class="radio<% if(!current_user.default_font_size.nil? && (current_user.default_font_size == 20)) %> checked<% end %>">
+	<label id="smallFont" class="radio<% if(current_user.default_font_size.nil? || (current_user.default_font_size == 20)) %> checked<% end %>">
 	  <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="font-size" data-toggle="radio">
 	</label>
       </td>
       <td style="font-size:20px;">Medium&nbsp;</td>
       <td>
-	<label id="mediumFont" class="radio<% if(current_user.default_font_size.nil? || (current_user.default_font_size == 30)) %> checked<% end %>">
+	<label id="mediumFont" class="radio<% if(!current_user.default_font_size.nil? && (current_user.default_font_size == 30)) %> checked<% end %>">
 	  <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="font-size" data-toggle="radio">
 	</label>
       </td>
