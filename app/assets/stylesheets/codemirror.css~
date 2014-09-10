@@ -44,7 +44,7 @@
 /* CURSOR */
 
 .CodeMirror div.CodeMirror-cursor {
-  border-left: 1px solid black;
+  border-left: 1px solid #2C3E50;
 }
 /* Shown when moving in bi-directional text */
 .CodeMirror div.CodeMirror-secondarycursor {
@@ -139,8 +139,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   line-height: 1;
   position: relative;
   overflow: hidden;
-  background: #fafafa;
-  font-size: 30px;
+  font-size: inherit;
   font-weight: 300;
   font-family: Lato, Helvetica, Arial, sans-serif;  
   color: #34495E;
@@ -235,6 +234,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: normal;
+  line-height: 1.2;
 }
 
 .CodeMirror-linebackground {

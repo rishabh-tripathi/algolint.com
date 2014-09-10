@@ -71,6 +71,9 @@ AlgolintCom::Application.routes.draw do
   match "/set-tempate-cat/:id/(:cat)" => "home#set_template_cat", :as => :set_template_cat
 
   # Main Urls
+  match "/get-profile-url" => "home#get_profile_name", :as => :get_profile_name
+  match "/check-profile-name-availabilty" => "home#check_profile_name_avail", :as => :check_profile_name_avail
+  match "/save-profile-url" => "home#save_profile_url", :as => :save_profile_name
   match "/compile-code" => "home#compile_code", :as => :compile_code
   match "/set-user-config-editor" => "home#set_default_user_editor_setting", :as => :set_default_user_editor_setting
   match "/like-code/:code_id" => "home#like_code", :as => :like_code

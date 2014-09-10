@@ -1,0 +1,14 @@
+<% if(@avail) %>
+<span class="lead success">Congratulations! profile is available</span>
+<div class="sp10"></div>
+<form action="<%= save_profile_name_url %>">
+  <input type="hidden" name="pro_name" value="<%= @profile_name %>"/>
+  <input type="submit" class="btn btn-lg btn-success" style="font-size:30px;" value="Make this your profile url" />
+</form>
+<div class="sp10"></div>
+<span class="success">
+  http://algolint.com/<b><%= @profile_name %></b>
+</span>
+<% else %>
+<span class="lead error">Sorry, this url is already taken. Please try different name.</div>
+<% end %>

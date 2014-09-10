@@ -1,0 +1,28 @@
+<div class="sp50"></div>
+<center>
+  <h1 class="lead">Enter your profile name</h1>
+  <table>    
+    <tr>
+      <td>
+	<span style="font-size:32px;">http://algolint.com/&nbsp;</span>
+      </td>
+      <td>
+	<%= form_remote_tag :url => check_profile_name_avail_url,                              
+                    :loading => "ele('profile-name-chk-btn').value='Checking ...';",                     
+                    :complete => "ele('profile-name-chk-btn').value='Check Availability';",
+                    :failure => "alert('error!, this is really bad we know, we will fix it soon');",
+                    :update => "avail-chk-res",                                 
+                    :html => {:id => "chk-profile-name-avail-form"} %>           
+	<input type="text" id="profile-name-chk-tb" name="pro_name" style="width:250px;height:50px;font-size:30px;" value="<%= current_user.get_display_name.gsub(".","-") %>"/>&nbsp;
+	<%= end_form %> 
+      </td>
+      <td>
+	<input type="button" id="profile-name-chk-btn" class="btn btn-info" style="width:150px;height:48px;" onclick="submit_ajax_form('chk-profile-name-avail-form');" value="Check&nbsp;Availability"/>
+      </td>
+    </tr>
+  </table>
+  <div class="sp50"></div>
+  <div id="avail-chk-res">
+    
+  </div>
+</center>

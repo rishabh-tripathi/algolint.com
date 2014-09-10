@@ -3,6 +3,8 @@
     <th></th>
     <th>email</th>
     <th>No of files</th>
+    <th>Profile Name</th>
+    <th></th>    
   </tr>
 <% 
    i = 0
@@ -13,6 +15,8 @@
   <td><%= i %></td>
   <td><%= u.email %></td>
   <td><%= u.contents.count %></td>
+  <th><%= u.url_name %></th>
+  <td><a href="<%= profile_url(:uid => u.get_url_name) %>">Profile</a></td>
 </tr>
 <% end %>
 </table>
