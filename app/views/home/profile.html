@@ -2,6 +2,14 @@
   <%= render(:partial => "public_top_nav", :locals => {:user_display_name => @user.get_display_name, :user_profile => nil, :file_name => ""}) %>
 <% end %>
 
+<% if(current_user.present? && (current_user.id == @user.id) && current_user.url_name.blank?) %>
+<div class="sp10"></div>
+<div id="error-div" class="alert alert-info" style="">
+  This is your public profile, make it beautiful like <strong><a href="<%= get_profile_name_url %>">algolint.com/<%= @user.get_display_name %></a></strong>
+  &nbsp;&nbsp;<a href="<%= get_profile_name_url %>" class="btn btn-sm btn-info">Get it now</a>
+</div>
+<% end %>
+
 <div class="sp20"></div>
 <% if(@contents.present?) 
      for c in @contents
@@ -39,7 +47,8 @@
 </a>
 <% 
      end
-   else %>
+   else      
+   %>
 <div class="sp50"></div>
 <center><%= @user.get_display_name %> has not shared any code so far</center>
 <% end %>

@@ -26,6 +26,36 @@ class HomeController < ApplicationController
     end
   end
 
+  def get_profile_name
+    if(current_user.present? && current_user.url_name.blank?)
+      render(:layout => "blank")
+    else
+      redirect_to root_path
+    end
+  end
+
+  def check_profile_name_avail
+    user = User.find(:first, :conditions => ["url_name = ? or unique_key = ?", params[:pro_name], params[:pro_name]])
+    if(user.present?)
+      @avail = false
+    else
+      @avail = true
+      @profile_name = params[:pro_name].to_s.gsub(" ","-").gsub(".","-")
+    end
+    render(:partial => "profile_name_check_res")
+  end
+
+  def save_profile_url
+    user = User.find(:first, :conditions => ["url_name = ? or unique_key = ?", params[:pro_name], params[:pro_name]])
+    if(user.present?)
+      redirect_to get_profile_name_url
+    else
+      current_user.url_name = params[:pro_name]
+      current_user.save
+      redirect_to root_path
+    end    
+  end
+
   def set_default_user_editor_setting
     if(current_user.present?)
       if(params[:keybind].present?)
@@ -63,9 +93,14 @@ class HomeController < ApplicationController
   end
 
   def profile
-    @user = User.find(:first, :conditions => ["email like ?", "#{params[:uid]}%"])
+    @user = User.find(:first, :conditions => ["url_name =  ? or unique_key = ?", params[:uid], params[:uid]])
     if(@user.present?)
       @contents = Content.get_all_public_codes(@user.id)
+      @seo = {
+        :title => "#{@user.get_display_name} Codes",
+        :keyword => "#{@user.get_display_name} Codes, Algorithm Practice Tool",
+        :desc => "#{@user.get_display_name} Codes on Algolint your online algorithm Practice Tool"
+      }
     end
     render :layout => "profile"
   end
@@ -80,6 +115,11 @@ class HomeController < ApplicationController
       @content.view_count += 1 
       @content.save
       @like_count = Like.get_obj_likes(Like::OBJ_TYPE_CODE, @content.id)
+      @seo = {
+        :title => "#{@user.get_display_name} > #{@content.name}",
+        :keyword => "#{@user.get_display_name} Codes, Algorithm Practice Tool",
+        :desc => "#{@user.get_display_name} Codes on Algolint your online algorithm Practice Tool"
+      }
       if(!@content.present?)
         redirect_to profile_url(:uid => params[:uid])
       else

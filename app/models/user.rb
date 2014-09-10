@@ -54,6 +54,10 @@ class User < ActiveRecord::Base
     return self.email.split("@").first
   end
 
+  def get_url_name 
+    return (self.url_name.present?)? "#{self.url_name}" : "#{self.unique_key}"
+  end
+
   def is_admin_user
     return (self.is_admin == User::ADMIN_USER)? true : false
   end

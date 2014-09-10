@@ -1,4 +1,4 @@
-<%= render(:partial => "public_top_nav", :locals => {:user_display_name => @user.get_display_name, :user_profile => profile_url(:uid => @user.get_display_name), :file_name => @content.name }) %>
+<%= render(:partial => "public_top_nav", :locals => {:user_display_name => @user.get_display_name, :user_profile => profile_url(:uid => @user.get_url_name), :file_name => @content.name }) %>
 <div class="sp10"></div>
 <% if(@content.desc.present?) %>
 <p class="lead code-public-desc"><%= @content.desc %></p>  
