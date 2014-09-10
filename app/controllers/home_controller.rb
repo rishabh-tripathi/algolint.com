@@ -52,6 +52,7 @@ class HomeController < ApplicationController
     else
       current_user.url_name = params[:pro_name]
       current_user.save
+      current_user.reload
       redirect_to root_path
     end    
   end
