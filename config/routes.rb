@@ -1,8 +1,6 @@
 AlgolintCom::Application.routes.draw do
-
+  resources :folders
   resources :likes
-
-
   resources :contents
   devise_for :users, :skip => [:sessions]
   as :user do

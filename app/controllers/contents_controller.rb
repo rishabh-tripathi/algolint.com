@@ -59,8 +59,9 @@ class ContentsController < ApplicationController
     @content.file_type = params[:file_type].to_i
     @content.compile = params[:compile].to_i
     @content.status = params[:status].to_i
-    @content.sharability = params[:sharability].to_i       
+    @content.sharability = params[:sharability].to_i           
     @content.template = params[:template].to_i       
+    @content.folder_id = params[:folder_id].to_i if(params[:folder_id].present?)
     respond_to do |format|
       if(@content.save)
         current_user.last_open_file = @content.id
@@ -87,6 +88,7 @@ class ContentsController < ApplicationController
     @content.status = params[:status].to_i
     @content.sharability = params[:sharability].to_i       
     @content.template = params[:template].to_i       
+    @content.folder_id = params[:folder_id].to_i if(params[:folder_id].present?)
     respond_to do |format|
       if(@content.save)
         current_user.last_open_file = @content.id

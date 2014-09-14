@@ -86,8 +86,6 @@ class DropboxController < ApplicationController
     begin
       access_token, user_id, url_state = get_web_auth.finish(params)
       session[:access_token] = access_token
-      logger.info("\n\n\n\n\n\n#{access_token}\n\n\n\n\n");
-      logger.info("\n\n\n\n\n#{user_id}\n\n\n\n");
       if(current_user.present?) 
         current_user.dropbox_uid = user_id
         current_user.dropbox_access_token = access_token
@@ -95,7 +93,7 @@ class DropboxController < ApplicationController
         current_user.save
         current_user.reload
       end
-      redirect_to :action => 'main'
+      redirect_to root_path
     rescue DropboxOAuth2Flow::BadRequestError => e
       render :text => "Error in OAuth 2 flow: Bad request: #{e}"
     rescue DropboxOAuth2Flow::BadStateError => e

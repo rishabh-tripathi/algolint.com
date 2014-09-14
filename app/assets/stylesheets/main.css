@@ -288,7 +288,7 @@ body {
     overflow: auto;
 }
 
-#template-popup {
+.popup {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -313,4 +313,58 @@ body {
     font-size: 25px;
     margin: 0px;
     padding: 5px 30px;
+}
+
+#popup-content {
+    padding: 0px 20px;
+    height: 585px;
+    overflow: auto;    
+}
+
+.manage-icon {
+    width: 150px;
+    margin: 0px 20px 20px 0px;
+    height: 170px;
+    text-align: center;    
+    border: 1px dotted #2C3E50;
+    background: #E0E0E0;
+    float: left;
+    cursor: move;
+}
+
+.manage-icon a {
+    color: #2C3E50; 
+}
+
+.manage-icon a:hover {
+    color: #2C3E50; 
+    text-decoration: underline;
+}
+
+.add-folder {
+    cursor: pointer;
+    border: 1px solid #2C3E50;
+}
+
+.folder-icon {
+    position: relative;
+    border: 1px dashed #2C3E50;
+}
+
+.name-edit-div {
+    width: 148px;
+    height: 168px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #34495E;
+}
+
+.file-drag {
+    background: #95A5A6
+}
+
+.folder-drop-hover {
+    background: #BDC3C7;
+    border: 1px dashed #C0392B;
 }

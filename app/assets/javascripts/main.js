@@ -16,11 +16,14 @@ var Code = {
 Code.Var = {
     myContents: [],
     myContentHash: {},
+    myFolders: [],
+    myFolderHash: {},
     templateHash: {},
     myTemplates: [],
     alTemplateCat : {},
     openFileId: null,
-    codeEditor: null
+    codeEditor: null,
+    currFolder: 0
 };
 
 Code.Def.Model = {
@@ -31,6 +34,13 @@ Code.Def.Model = {
 	    return base + (base.charAt(base.length - 1) == '/' ? '' : '/') + this.id;
 	}
     }),
+    Folder: Backbone.Model.extend({
+	url: function() {
+	    var base = 'folders';
+	    if(this.isNew()) return base;
+	    return base + (base.charAt(base.length - 1) == '/' ? '' : '/') + this.id;
+	}
+    })
 };
 
 Code.Def.Collection = {
@@ -48,7 +58,22 @@ Code.Def.Collection = {
 	setUid: function(uid) {
 	    this.uid = uid;
 	}
-    })	    
+    }),
+    Folders: Backbone.Collection.extend({
+	model: Code.Def.Model.Folder,
+	url: function() {
+	    base_url = '/folders';
+	    if(this.uid != null) 
+		base_url += '?uid='+this.uid;
+	    return base_url;
+	},
+	initialize: function(uid) {
+	    this.uid = uid;
+	},
+	setUid: function(uid) {
+	    this.uid = uid;
+	}
+    })	    	    
 };	    
 
 Code.Logic.load = function() {
@@ -58,7 +83,16 @@ Code.Logic.load = function() {
     Code.Var.myContents.setUid(uid);
     Code.Var.myContents.fetch({
 	success: function() { 
-	    Code.Logic.loadSuccess()
+	    Code.Var.myFolders = new Code.Def.Collection.Folders(uid);
+	    Code.Var.myFolders.setUid(uid);
+	    Code.Var.myFolders.fetch({
+		success: function() { 		    
+		    Code.Logic.loadSuccess()
+		},         
+		error: function() {
+		    Code.Logic.loadFailure();
+		}
+	    });
 	},         
 	error: function() {
 	    Code.Logic.loadFailure();
@@ -68,6 +102,7 @@ Code.Logic.load = function() {
 
 Code.Logic.loadSuccess = function() {        
     Code.Logic.updateMyContentHash();
+    Code.Logic.updateFolderHash();
     Code.Logic.prepareFileList();
     hideTrans();
     ele_hide("loading");
@@ -104,7 +139,7 @@ Code.Logic.updateMyContentHash = function() {
     Code.Var.templateHash = {};    
     Code.Var.myTemplates = [];
     Code.Var.alTemplateCat = {};
-    Code.Var.myContentHash = {};	
+    Code.Var.myContentHash = {};    
     if(Code.Var.myContents.length > 0) {	
 	Code.Var.myContents.each(function(obj) {
 	    if(obj.get("template") == 10) {				
@@ -125,11 +160,21 @@ Code.Logic.updateMyContentHash = function() {
     }
 };
 
+Code.Logic.updateFolderHash = function() {
+    Code.Var.myFolderHash = {};
+    if(Code.Var.myFolders.length > 0) {	
+	Code.Var.myFolders.each(function(obj) {
+	    Code.Var.myFolderHash[obj.get("id")] = obj;
+	});    
+    }    
+};
+
 Code.Logic.prepareFileList = function() {
     var allFileIds = get_hash_keys(Code.Var.myContentHash);
-    var html = "";    
+    var html = "";        
     if(objDef(allFileIds) && (allFileIds.length > 0)) {
-	for(var i=0;i<allFileIds.length;i++) {
+	allFileIds = allFileIds.sort(function(a,b) { return b-a });
+	for(var i=0;i<10;i++) {
 	    var fileObj = Code.Var.myContentHash[allFileIds[i]];
 	    var variable = { file_id: fileObj.get("id"), file_name: fileObj.get("name") };
 	    html += _.template($("#fileLinkTemp").html(), variable);	
@@ -157,6 +202,7 @@ Code.Logic.openFile = function(id) {
 	}
 	Code.Logic.loadEditor("code-editor", file.get("file_type"), content);
 	Code.Var.openFileId = id;
+	Code.Logic.closePopup();
     }
 };
 
@@ -544,6 +590,136 @@ Code.Logic.addDescription = function() {
     ele_toggle("desc-area");
 };
 
+Code.Logic.addNewFolder = function() {
+    var newFolder = new Code.Def.Model.Folder();
+    newFolder.set({name: "New Folder", user_id: uid, parent_id: 0});        
+    newFolder.save({}, {
+	success: function(model, response) {
+	    Code.Var.myFolders.push(model);
+	    Code.Logic.updateFolderHash();
+	    Code.Logic.manageFiles(0);
+	}, 
+	error: function(response) {
+	    ele_show("error-div");
+	}
+    });
+
+};
+
+Code.Logic.openPopup = function() {
+    ele_show('fill-popup');
+};
+
+Code.Logic.closePopup = function() {
+    ele_hide('fill-popup');
+};
+
+Code.Logic.getMangeFileIconImg = function(file_type) { 
+    var mode = "";
+    if(file_type == 0) {
+	mode = "/assets/notes-icon.png";
+    } else if(file_type == 10) {
+	mode = "/assets/cpp-icon.png";
+    } else if(file_type == 20) {    	
+	mode = "/assets/java-icon.png";
+    } else if(file_type == 30) {
+	mode = "/assets/ruby-icon.png";
+    } else if(file_type == 40) {
+	mode = "/assets/py-icon.png";
+    }
+    return mode;
+}
+
+Code.Logic.manageFiles = function(folder_id) {    
+    ele('popup-title').innerHTML = "Manage Your Files";
+    var html = "";    
+    if(folder_id == 0) {
+	Code.Var.currFolder = 0;
+	var allFolderIds = get_hash_keys(Code.Var.myFolderHash);
+	if(objDef(allFolderIds) && (allFolderIds.length > 0)) {
+	    for(var i=0;i<allFolderIds.length;i++) {
+		var fileObj = Code.Var.myFolderHash[allFolderIds[i]];
+		var variable = { div_id: fileObj.get("id"), name: fileObj.get("name") };
+		html += _.template($("#templateManageFolderIcon").html(), variable);	
+	    }
+	}
+    } else {
+	Code.Var.currFolder = folder_id;
+	html += _.template($("#templateBackIcon").html(), {});
+    }
+    var allFileIds = get_hash_keys(Code.Var.myContentHash);   
+    if(objDef(allFileIds) && (allFileIds.length > 0)) {
+	for(var i=0;i<allFileIds.length;i++) {
+	    var fileObj = Code.Var.myContentHash[allFileIds[i]];
+	    if(fileObj.get("folder_id") == folder_id) {
+		var variable = { div_id: fileObj.get("id"), name: fileObj.get("name"), img_src: Code.Logic.getMangeFileIconImg(fileObj.get("file_type")) };
+		html += _.template($("#templateManageFileIcon").html(), variable);	
+	    }
+	}
+    }
+    if(folder_id == 0) {
+	html += _.template($("#templateAddFolderIcon").html(), {});	
+    }
+    html += "<div style='clear:both;'></div>";
+    ele("popup-content").innerHTML = html;    
+    $(".file-icon").draggable({ revert: true });        
+    $(".folder-icon").droppable({
+	accept: ".file-icon",
+	activeClass: "file-drag",
+	hoverClass: "folder-drop-hover",
+	drop: function(event, ui) {
+	    var drop_id = $(this).attr('id');
+	    var drag_id = ui.draggable.context.id
+	    Code.Logic.addFileToFolder(drop_id, drag_id);
+	}
+    });
+    Code.Logic.openPopup();
+};
+
+Code.Logic.addFileToFolder = function(folder_id, file_id) {
+    var fileObj = Code.Var.myContentHash[parseInt(file_id.replace("file-",""))];
+    fileObj.set({folder_id: parseInt(folder_id.replace("folder-",""))});
+    Code.Logic.manageFiles(Code.Var.currFolder);
+    if(objDef(fileObj)) {
+	fileObj.save({}, {
+	    success: function(model, response) {
+	    }, 
+	    error: function(response) {
+	    }
+	});		    		
+    }
+};
+
+Code.Logic.saveFolderName = function(folder_id) {    
+    var folderObj = Code.Var.myFolderHash[folder_id];
+    var newName = ele('edit-name-'+folder_id).value;
+    folderObj.set({name: newName});    
+    Code.Logic.manageFiles(Code.Var.currFolder);
+    if(objDef(folderObj)) {
+	folderObj.save({}, {
+	    success: function(model, response) {
+	    }, 
+	    error: function(response) {
+	    }
+	});
+    }
+};
+
+Code.Logic.saveFileName = function(file_id) {
+    var fileObj = Code.Var.myContentHash[file_id];
+    var newName = ele('edit-file-name-'+file_id).value;
+    fileObj.set({name: newName});    
+    Code.Logic.manageFiles(Code.Var.currFolder);
+    if(objDef(fileObj)) {
+	fileObj.save({}, {
+	    success: function(model, response) {
+	    }, 
+	    error: function(response) {
+	    }
+	});
+    }
+};
+
 Code.Event = {
     Onclick: function() {	    
 	$("#file_name").click(function() {
@@ -606,6 +782,9 @@ Code.Event = {
 	$("#compileBtn").click(function() {
 	    Code.Logic.compileCode();
 	});
+	$("#manageFile").click(function() {
+	    Code.Logic.manageFiles(0);
+	});
 	$("#outputBtn").click(function() {
 	    Code.Logic.showOutput();
 	});
@@ -614,6 +793,9 @@ Code.Event = {
 	});
 	$("#template-popup-close").click(function() {
 	    Code.Logic.closeTemplates();
+	});
+	$("#fill-popup-close").click(function() {
+	    Code.Logic.closePopup();
 	});
 	$("#add-desc-btn").click(function() {
 	    Code.Logic.addDescription();
@@ -655,10 +837,16 @@ Code.Event = {
 				   e.preventDefault();
 				   Code.Logic.openTemplates();				   
 			       }
+			   } else if(code == 77) {
+			       if(e.ctrlKey && e.shiftKey) {				   
+				   e.preventDefault();
+				   Code.Logic.manageFiles(0);				   
+			       }
 			   } else if(code == 27) { // esc
 			       ele_hide('compile');
 			       Code.Logic.closeTemplates();
 			       hideTrans();    
+			       Code.Logic.closePopup();
 			   }
 		      });    
 },    
