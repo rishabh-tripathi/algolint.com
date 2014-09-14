@@ -27,38 +27,54 @@ APP_KEY = "r9oy1smycufztuq"
 APP_SECRET = "bd9wsio75rbtzdi"
 
 class DropboxController < ApplicationController
-  def main
-    client = get_dropbox_client
-    unless client
-      redirect_to(:action => 'auth_start') and return
-    end    
-    account_info = client.account_info    
-    # Show a file upload page
-    render :inline =>
-      "#{account_info['email']} <br/><%= form_tag({:action => :upload}, :multipart => true) do %><%= file_field_tag 'file' %><%= submit_tag 'Upload' %><% end %>"
-  end
-    
-  def upload
-    client = get_dropbox_client
-    unless client
-      redirect_to(:action => 'auth_start') and return
-    end    
-    begin
-      # Upload the POST'd file to Dropbox, keeping the same name
-      resp = client.put_file(params[:file].original_filename, params[:file].read)
-      render :text => "Upload successful.  File now at #{resp['path']}"
-    rescue DropboxAuthError => e
-      session.delete(:access_token)  # An auth error means the access token is probably bad
-      logger.info "Dropbox auth error: #{e}"
-      render :text => "Dropbox auth error"
-    rescue DropboxError => e
-        logger.info "Dropbox API error: #{e}"
-      render :text => "Dropbox API error"
+
+  def upload    
+    if(current_user.present?)
+      contents = Content.get_all_codes(current_user.id)
+      if(contents.present?)
+        client = get_dropbox_client
+        unless client
+          redirect_to(:action => 'auth_start') and return
+        end            
+        for c in contents
+          begin
+            # Upload the POST'd file to Dropbox, keeping the same name            
+            if(c.folder_id != 0)
+              folder = Folder.find(c.folder_id)
+              file_name = "#{folder.name}/#{c.name}"
+            else
+              file_name = "#{c.name}"
+            end
+            resp = client.put_file(file_name, c.get_final_code)
+            current_user.dropbox_sync_status = User::DROPBOX_SYNC_SUCCESS
+            current_user.dropbox_last_sync_at = DateTime.now
+            current_user.save
+            current_user.reload
+            logger.info("Upload successful. File now at #{resp['path']}")
+          rescue DropboxAuthError => e
+            current_user.dropbox_sync_status = User::DROPBOX_SYNC_FAILURE
+            current_user.save
+            current_user.reload
+            session.delete(:access_token)  # An auth error means the access token is probably bad
+            logger.info "Dropbox auth error: #{e}"
+            render :text => "Dropbox auth error"
+          rescue DropboxError => e
+            current_user.dropbox_sync_status = User::DROPBOX_SYNC_FAILURE
+            current_user.save
+            current_user.reload
+            logger.info "Dropbox API error: #{e}"
+            render :text => "Dropbox API error"
+          end          
+        end        
+        render :text => "Last Sync at #{current_user.dropbox_last_sync_at}"
+      end
+    else
+      render :text => "Error"
     end
   end
-  
+
   def get_dropbox_client
-    if session[:access_token]
+    if(session[:access_token])
       begin
         access_token = session[:access_token]
         DropboxClient.new(access_token)
@@ -67,12 +83,21 @@ class DropboxController < ApplicationController
         session.delete(:access_token)
         raise
       end
+    else
+      if(current_user.present? && current_user.dropbox_access_token.present?)        
+        begin
+          DropboxClient.new(current_user.dropbox_access_token)
+        rescue
+          raise
+        end
+      end
     end
   end
   
   def get_web_auth()
-    redirect_uri = url_for(:action => 'auth_finish')
-    DropboxOAuth2Flow.new(APP_KEY, APP_SECRET, redirect_uri, session, :dropbox_auth_csrf_token)
+    redirect_uri = url_for(:action => 'auth_finish')    
+    # DropboxOAuth2Flow.new(APP_KEY, APP_SECRET, redirect_uri, session, :dropbox_auth_csrf_token)
+    DropboxOAuth2FlowNoRedirect.new(APP_KEY, APP_SECRET)
   end
   
   def auth_start
@@ -81,7 +106,24 @@ class DropboxController < ApplicationController
     # authorizes our app, Dropbox will redirect them here with a 'code' parameter.
     redirect_to authorize_url
   end
-  
+
+  def complete_integration
+    begin 
+      access_token, user_id = get_web_auth.finish(params[:access_code])      
+      if(current_user.present?) 
+        current_user.dropbox_uid = user_id
+        current_user.dropbox_access_token = access_token
+        current_user.dropbox_sync_status = User::DROPBOX_SYNC_NO
+        current_user.save
+        current_user.reload
+      end
+      render(:partial => "home/dropbox_status")
+    rescue Exception => e
+      logger.info(e)
+      render(:text => "Error")
+    end
+  end
+    
   def auth_finish
     begin
       access_token, user_id, url_state = get_web_auth.finish(params)
