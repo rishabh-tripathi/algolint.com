@@ -176,8 +176,10 @@ Code.Logic.prepareFileList = function() {
 	allFileIds = allFileIds.sort(function(a,b) { return b-a });
 	for(var i=0;i<10;i++) {
 	    var fileObj = Code.Var.myContentHash[allFileIds[i]];
-	    var variable = { file_id: fileObj.get("id"), file_name: fileObj.get("name") };
-	    html += _.template($("#fileLinkTemp").html(), variable);	
+	    if(objDef(fileObj)) {
+		var variable = { file_id: fileObj.get("id"), file_name: fileObj.get("name") };
+		html += _.template($("#fileLinkTemp").html(), variable);	
+	    }
 	}
     }
     ele("file-list").innerHTML = html;
