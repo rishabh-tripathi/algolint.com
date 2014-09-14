@@ -1,0 +1,7 @@
+<div id="fill-popup" class="popup" style="display:none;">
+  <span id="fill-popup-close" class="fui-cross pull-right pointer" style="margin-right:5px;"></span>
+  <center><span id="popup-title" class="lead"></span></center>  
+  <div class="sp20"></div>
+  <div id="popup-content" class="fill-width">
+  </div>
+</div>

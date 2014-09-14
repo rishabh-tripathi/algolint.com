@@ -68,6 +68,10 @@ AlgolintCom::Application.routes.draw do
   match "/make-tempate/:id" => "home#make_template", :as => :make_template
   match "/set-tempate-cat/:id/(:cat)" => "home#set_template_cat", :as => :set_template_cat
 
+  # Dropbox Urls
+  get "dropbox/auth_start"
+  get "dropbox/auth_finish"
+  
   # Main Urls
   match "/get-profile-url" => "home#get_profile_name", :as => :get_profile_name
   match "/check-profile-name-availabilty" => "home#check_profile_name_avail", :as => :check_profile_name_avail
@@ -75,14 +79,10 @@ AlgolintCom::Application.routes.draw do
   match "/compile-code" => "home#compile_code", :as => :compile_code
   match "/set-user-config-editor" => "home#set_default_user_editor_setting", :as => :set_default_user_editor_setting
   match "/like-code/:code_id" => "home#like_code", :as => :like_code
+  match "/complete-dropbox-integration" => "dropbox#complete_integration", :as => :comp_dropbox_integration  
+  match "/sync-to-dropbox" => "dropbox#upload", :as => :sync_to_dropbox  
   match "/:uid" => "home#profile", :as => :profile
   match "/:uid/:file_name-:file_id" => "home#content_public", :as => :content_public
-  
-  # Dropbox Urls
-  get  "dropbox/main"
-  post "dropbox/upload"
-  get  "dropbox/auth_start"
-  get  "dropbox/auth_finish"
   
   # See how all your routes lay out with "rake routes"
 

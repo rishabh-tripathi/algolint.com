@@ -1,0 +1,13 @@
+<% if((current_user.dropbox_uid.present?) && (current_user.dropbox_access_token.present?)) %>  
+<%= form_remote_tag :url => sync_to_dropbox_url,                              
+                    :loading => "ele('sync-dropbox-btn').innerHTML='Currently Syncing...'",                     
+                    :complete => "",
+                    :failure => "",
+                    :update => "sync-dropbox-btn",                                 
+                    :html => {:id => "sync-dropbox-form"} %>           
+<%= end_form %>   
+<a id="sync-dropbox-btn" href="javascript:void(0);" onclick="submit_ajax_form('sync-dropbox-form');" class="btn btn-block btn-lg btn-success">Sync Now<% if(current_user.dropbox_last_sync_at.present?) %>
+  &nbsp;&nbsp;<small>(<%= current_user.dropbox_last_sync_at.to_formatted_s(:short) %>)</small><% end %></a>
+<% else %>
+<a href="dropbox/auth_start" target="_blank" onclick="ele_show('dropbox-access-code');" class="btn btn-block btn-lg btn-success">Connect with Dropbox</a>
+<% end %>

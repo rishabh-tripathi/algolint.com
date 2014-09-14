@@ -74,7 +74,7 @@ class Content < ActiveRecord::Base
   def get_file_path
     "#{self.get_folder_path}/#{self.name}"
   end
-
+  
   def get_final_code
     content = self.content
     content = content.gsub(/<br>/,"\n").gsub("&nbsp;"," ").gsub("&lt;","<").gsub("&gt;",">").gsub("<div>","").gsub("</div>","")    
