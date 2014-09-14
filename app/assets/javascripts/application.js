@@ -21,6 +21,7 @@
 //= require jquery.tagsinput
 //= require jquery.ui.touch-punch.min
 //= require jquery-ui-1.10.3.custom.min
+//= require jquery-ui
 //= require respond.min
 //= require typeahead
 //= require underscore-min

@@ -62,3 +62,47 @@ for any query or support, contact us (link available at the footer)
     </dl>
   </div>  
 </script>
+
+<script type="text/template" id="templateManageFileIcon">
+  <div id="file-{{= div_id }}" class="manage-icon file-icon" ondblclick="ele_show('edit-file-name-div-{{= div_id }}');">
+    <img src="{{= img_src }}">
+    <div class="sp2"></div>
+    <a href="javascript:void(0);" onclick="Code.Logic.openFile({{= div_id }});">{{= name }}</a>
+    <div id="edit-file-name-div-{{= div_id }}" class="name-edit-div" style="display:none;">
+      <div class="sp30"></div>
+      <input type="text" id="edit-file-name-{{= div_id }}" style="width:130px;height:35px;" value="{{= name }}"/>
+      <div class="sp10"></div>
+      <input type="button" class="btn btn-sm btn-success" onclick="Code.Logic.saveFileName({{= div_id }});" value="Save Change"/>
+    </div>
+  </div>
+</script>
+
+<script type="text/template" id="templateBackIcon">
+  <div id="folder-0" class="manage-icon folder-icon">
+    <img src="/assets/back-icon.png">
+    <div class="sp2"></div>
+    <a href="javascript:void(0);" onclick="Code.Logic.manageFiles(0);">Back to all files</a>
+  </div>
+</script>
+
+<script type="text/template" id="templateManageFolderIcon">
+  <div id="folder-{{= div_id }}" class="manage-icon folder-icon" ondblclick="ele_show('edit-name-div-{{= div_id }}');">    
+    <img src="/assets/folder-icon.png">
+    <div class="sp2"></div>
+    <a href="javascript:void(0);" onclick="Code.Logic.manageFiles({{= div_id }});">{{= name }}</a>
+    <div id="edit-name-div-{{= div_id }}" class="name-edit-div" style="display:none;">
+      <div class="sp30"></div>
+      <input type="text" id="edit-name-{{= div_id }}" style="width:130px;height:35px;" value="{{= name }}"/>
+      <div class="sp10"></div>
+      <input type="button" class="btn btn-sm btn-success" onclick="Code.Logic.saveFolderName({{= div_id }});" value="Save Change"/>
+    </div>
+  </div>
+</script>
+
+<script type="text/template" id="templateAddFolderIcon">
+  <div id="addFolderBtn" class="manage-icon add-folder" onclick="Code.Logic.addNewFolder();">
+    <img src="/assets/folder-add-icon.png">
+    <div class="sp2"></div>
+    <a href="javascript:void(0);">Add New Folder</a>
+  </div>
+</script>
