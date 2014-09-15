@@ -2,11 +2,70 @@
   <%= render(:partial => "home/start") %>
 <% else %>
 <center>
-  <h1>Algorithm Practice Tool</h1>
-  <p class="lead">Simple tool to practice algorithm on C/C++, Java and Ruby. Collect your algoritm code snippets here.</p>
-  <a href="<%= signin_user_url %>" class="btn btn-lg btn-info" style="width:200px;">Start Now</a>
-  &nbsp;&nbsp;<a href="<%= login_user_url %>" class="btn btn-lg btn-default" style="width:200px;">Login</a>
+  <p class="lead">Simple tool to practice algorithm online in C/C++, Java, Ruby or Python. </p>
+  <div class="row demo-tiles">
+    <div class="col-xs-3">
+      <div class="tile" style="height:270px;">
+	<div class="sp20"></div>
+        <img src="/img/retina.svg" alt="Compas" style="height:100px">
+	<div class="sp20"></div>
+        <h3 class="tile-title">Simple Online Practice  Tool</h3>
+	<div class="sp10"></div>
+        <p>Online tool to create and manage your algorithm practice</p>
+      </div>
+    </div>
+    
+    <div class="col-xs-3">
+      <div class="tile" style="height:270px;">
+	<div class="sp20"></div>
+        <img src="/img/clocks.svg" alt="Infinity-Loop">
+	<div class="sp20"></div>
+        <h3 class="tile-title">Speed Up Your Preperation</h3>
+	<div class="sp10"></div>
+        <p>Use templates for base algorithms, save your code as template to use later</p>
+      </div>
+    </div>
+    
+    <div class="col-xs-3">
+      <div class="tile" style="height:270px;">
+	<div class="sp20"></div>
+        <img src="/img/pencils.svg" alt="Pensils">
+	<div class="sp20"></div>
+        <h3 class="tile-title">Sync to Your Storage</h3>
+	<div class="sp10"></div>
+        <p>Add dropbox to your account and sync all your practice codes to your dropbox</p>
+      </div>
+    </div>
+
+    <div class="col-xs-3">
+      <div class="tile" style="height:270px;">
+	<div class="sp20"></div>
+        <img src="/img/chat.svg" alt="Chat" >
+	<div class="sp20"></div>
+        <h3 class="tile-title">Share to the World</h3>
+	<div class="sp10"></div>
+        <p>Create your public profile and share your public codes to the world</p>
+      </div>
+      
+    </div>
+  </div>
+  
 </center>
+<div style="width:100%;height:220px;position:fixed;bottom:0px;left:0px;background:#34495E">
+  <center>
+    <h1 class="lead" style="font-size:60px;color:#ffffff;margin-bottom:15px;">Online Algorithm Practice Tool</h1>
+    <table>
+      <tr>
+	<td class="p-10">
+	  <a href="<%= signin_user_url %>" class="btn btn-lg btn-info" style="width:200px;">Start Now</a>
+	</td>
+	<td class="p-10">
+	  <a href="<%= login_user_url %>" class="btn btn-lg btn-success" style="width:200px;">Login</a>
+	</td>
+      </tr>
+    </table>
+  </center>
+</div>
 <div class="sp100"></div>
 <div class="sp100"></div>
 <% end %>

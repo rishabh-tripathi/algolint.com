@@ -38,7 +38,6 @@ class DropboxController < ApplicationController
         end            
         for c in contents
           begin
-            # Upload the POST'd file to Dropbox, keeping the same name            
             if(c.folder_id != 0)
               folder = Folder.find(c.folder_id)
               file_name = "#{folder.name}/#{c.name}"
@@ -66,7 +65,7 @@ class DropboxController < ApplicationController
             render :text => "Dropbox API error"
           end          
         end        
-        render :text => "Last Sync at #{current_user.dropbox_last_sync_at}"
+        render :text => "Last Sync at #{current_user.dropbox_last_sync_at.to_formatted_s(:short)}"
       end
     else
       render :text => "Error"
