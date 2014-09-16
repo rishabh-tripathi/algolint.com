@@ -142,6 +142,12 @@ class HomeController < ApplicationController
       end
     end
   end
+  
+  def how_to_use
+  end
+
+  def explore
+  end
 
   # Admin Methods ###################################################################
   def admin    
