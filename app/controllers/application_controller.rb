@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :authenticate_user!, :except => [:homepage, :profile, :content_public]
+  before_filter :authenticate_user!, :except => [:homepage, :profile, :content_public, :how_to_use]
   before_filter :set_seo_tag
   
   def set_seo_tag

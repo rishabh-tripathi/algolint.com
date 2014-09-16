@@ -2,7 +2,7 @@
   <%= render(:partial => "home/start") %>
 <% else %>
 <center>
-  <p class="lead">Simple tool to practice algorithm online in C/C++, Java, Ruby or Python. </p>
+  <p class="lead">Simple tool to practice algorithm online in C/C++, Java, Ruby or Python.<% if(false) %> <a href="<%= how_to_use_url %>">/* Learn How */</a><% end %></p>
   <div class="row demo-tiles">
     <div class="col-xs-3">
       <div class="tile" style="height:270px;">
@@ -51,13 +51,19 @@
   </div>
   
 </center>
-<div style="width:100%;height:220px;position:fixed;bottom:0px;left:0px;background:#34495E">
+<div style="position:absolute;top:15px;right:15px;">
+  <a href="https://www.facebook.com/algolint"><img src="/assets/Facebook-icon.png"/></a>
+  <a href="https://twitter.com/algolint"><img src="/assets/Twitter-icon.png"/></a>
+  <% if(false) %><a href=""><img src="/assets/Youtube-icon.png"/></a><% end %>
+  <a href="https://github.com/rishabh-tripathi/algolint.com"><img src="/assets/GitHub-icon.png"/></a>
+</div>
+<div style="width:100%;height:180px;position:absolute;bottom:0px;left:0px;background:#2980B9;">
   <center>
-    <h1 class="lead" style="font-size:60px;color:#ffffff;margin-bottom:15px;">Online Algorithm Practice Tool</h1>
+    <h1 class="lead" style="font-size:45px;color:#ffffff;margin:15px;">Online Algorithm Practice Tool</h1>
     <table>
       <tr>
 	<td class="p-10">
-	  <a href="<%= signin_user_url %>" class="btn btn-lg btn-info" style="width:200px;">Start Now</a>
+	  <a href="<%= signin_user_url %>" class="btn btn-lg btn-danger" style="width:200px;">Start Now</a>
 	</td>
 	<td class="p-10">
 	  <a href="<%= login_user_url %>" class="btn btn-lg btn-success" style="width:200px;">Login</a>
@@ -66,6 +72,4 @@
     </table>
   </center>
 </div>
-<div class="sp100"></div>
-<div class="sp100"></div>
 <% end %>
