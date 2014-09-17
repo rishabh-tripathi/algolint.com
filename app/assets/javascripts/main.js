@@ -77,7 +77,6 @@ Code.Def.Collection = {
 };	    
 
 Code.Logic.load = function() {
-    showTrans();    
     ele_show("loading");
     Code.Var.myContents = new Code.Def.Collection.Contents(uid);
     Code.Var.myContents.setUid(uid);
@@ -104,7 +103,6 @@ Code.Logic.loadSuccess = function() {
     Code.Logic.updateMyContentHash();
     Code.Logic.updateFolderHash();
     Code.Logic.prepareFileList();
-    hideTrans();
     ele_hide("loading");
     Code.Var.openFileId = lastOpenFile;
     Code.Event.Onclick();
