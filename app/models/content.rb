@@ -68,7 +68,7 @@ class Content < ActiveRecord::Base
   
 
   def get_folder_path
-    return "./user_codes/#{self.user_id}/#{Content::TYPE_NAMES[self.file_type]}/#{self.id}"
+    return "../user_codes/#{self.user_id}/#{Content::TYPE_NAMES[self.file_type]}/#{self.id}"
   end
   
   def get_file_path
