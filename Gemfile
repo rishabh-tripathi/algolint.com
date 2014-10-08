@@ -24,6 +24,8 @@ end
 
 gem 'jquery-rails'
 gem 'devise', '~> 2.2.3'
+gem 'google-api-client'
+gem 'whenever', :require => false   # https://github.com/javan/whenever
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

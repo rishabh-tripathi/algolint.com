@@ -68,13 +68,13 @@ class Content < ActiveRecord::Base
   
 
   def get_folder_path
-    return "../user_codes/#{self.user_id}/#{Content::TYPE_NAMES[self.file_type]}/#{self.id}"
+    return "./user_codes/#{self.user_id}/#{Content::TYPE_NAMES[self.file_type]}/#{self.id}"
   end
   
   def get_file_path
     "#{self.get_folder_path}/#{self.name}"
   end
-  
+
   def get_final_code
     content = self.content
     content = content.gsub(/<br>/,"\n").gsub("&nbsp;"," ").gsub("&lt;","<").gsub("&gt;",">").gsub("<div>","").gsub("</div>","")    
@@ -87,7 +87,7 @@ class Content < ActiveRecord::Base
       system("rm #{self.get_folder_path}/#{self.id}.compilestat")
       system("rm #{self.get_folder_path}/#{self.id}.op") 
       system("rm #{self.get_folder_path}/#{self.id}")       
-      system("gcc -o #{self.get_folder_path}/#{self.id} #{self.get_file_path} 2> #{self.get_folder_path}/#{self.id}.compilestat")
+      system("g++ -o #{self.get_folder_path}/#{self.id} #{self.get_file_path} 2> #{self.get_folder_path}/#{self.id}.compilestat")
       system("#{self.get_folder_path}/#{self.id} > #{self.get_folder_path}/#{self.id}.op")      
     elsif(self.file_type == Content::TYPE_CODE_JAVA)
       system("rm #{self.get_folder_path}/#{self.id}.compilestat")
