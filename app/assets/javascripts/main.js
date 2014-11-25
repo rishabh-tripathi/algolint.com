@@ -201,6 +201,12 @@ Code.Logic.openFile = function(id) {
 	    ele_show("add-desc-btn");
 	}
 	Code.Logic.loadEditor("code-editor", file.get("file_type"), content);
+	if(Code.Logic.getFileSharability() != parseInt(file.get("sharability"))) {
+	    $("#codeshare").click();
+	}
+	if(Code.Logic.getMyTemplate() != parseInt(file.get("template"))) {
+	    $("#istemplate").click();
+	}
 	Code.Var.openFileId = id;
 	Code.Logic.closePopup();
     }
@@ -395,6 +401,10 @@ Code.Logic.addNewFile = function(type, name, desc, content) {
 	    ele_show("error-div");
 	}
     });
+    if(Code.Logic.getFileSharability() != 0) 
+	$("#codeshare").click();
+    if(Code.Logic.getMyTemplate() != 0) 
+	$("#istemplate").click();
 };
 
 Code.Logic.addNewNote = function(file_name, desc, content) {
