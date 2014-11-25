@@ -107,7 +107,7 @@ class HomeController < ApplicationController
   end
 
   def content_public
-    @user = User.find(:first, :conditions => ["email like ?", "#{params[:uid]}%"])
+    @user = User.find(:first, :conditions => ["url_name =  ? or unique_key = ?", params[:uid], params[:uid]])
     if(@user.present?)
       @content = Content.find(params[:file_id])
       if(@content.view_count.nil?)
@@ -129,6 +129,24 @@ class HomeController < ApplicationController
     else      
       redirect_to root_path
     end
+  end
+
+  def reuse_code
+    file = Content.find(params[:file_id])
+    if(file.present?)
+      file = Content.new()
+      file.user_id = current_user.id
+      file.name = params[:name]
+      file.desc = params[:desc]
+      file.content = params[:content]
+      file.file_type = params[:file_type].to_i
+      file.sharability = params[:sharability].to_i           
+      if(file.save)
+        current_user.last_open_file = file.id
+        current_user.save
+      end
+    end
+    redirect_to root_path
   end
 
   def like_code
