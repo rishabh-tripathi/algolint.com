@@ -1,0 +1,14 @@
+class SessionsController < Devise::SessionsController
+  def new
+    super
+  end
+
+  def create
+    super
+    # add custom create logic here
+  end
+
+  def destroy
+    super
+  end
+end
