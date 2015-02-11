@@ -67,7 +67,13 @@ class ContentsController < ApplicationController
         current_user.last_open_file = @content.id
         current_user.save
         format.html { redirect_to @content, :notice => 'Content was successfully created.' }
-        format.json { render :json => @content, :status => :created, :location => @content }
+        format.json { 
+          if(params[:cli].present?)
+            render :text => @content.id
+          else
+            render :json => @content, :status => :created, :location => @content         
+          end
+        }
       else
         format.html { render :action => "new" }
         format.json { render :json => @content.errors, :status => :unprocessable_entity }

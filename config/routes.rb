@@ -5,9 +5,9 @@ AlgolintCom::Application.routes.draw do
   devise_for :users, :skip => [:sessions]
   as :user do
     get 'join' => 'devise/registrations#new', :as => :signin_user
-    get 'login' => 'devise/sessions#new', :as => :login_user
-    post 'login' => 'devise/sessions#create', :as => :user_session
-    get 'logout' => 'devise/sessions#destroy', :as => :logout_user
+    get 'login' => 'sessions#new', :as => :login_user
+    post 'login' => 'sessions#create', :as => :user_session
+    get 'logout' => 'sessions#destroy', :as => :logout_user
   end
 
   # The priority is based upon order of creation:
@@ -78,6 +78,7 @@ AlgolintCom::Application.routes.draw do
   match "/explore" => "home#explore", :as => :explore
   match "/check-profile-name-availabilty" => "home#check_profile_name_avail", :as => :check_profile_name_avail
   match "/save-profile-url" => "home#save_profile_url", :as => :save_profile_name
+  match "/reuse-code/:file_Id" => "home#reuse_code", :as => :reuse_code
   match "/compile-code" => "home#compile_code", :as => :compile_code
   match "/set-user-config-editor" => "home#set_default_user_editor_setting", :as => :set_default_user_editor_setting
   match "/like-code/:code_id" => "home#like_code", :as => :like_code

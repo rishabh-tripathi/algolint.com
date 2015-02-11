@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo cp algolint /usr/bin
+algolint clear

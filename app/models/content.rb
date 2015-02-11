@@ -81,7 +81,7 @@ class Content < ActiveRecord::Base
     return content
   end
   
-  def compile_code
+  def compile_code(cli=false)
     output = ""
     if(self.file_type == Content::TYPE_CODE_CPP)
       system("rm #{self.get_folder_path}/#{self.id}.compilestat")
@@ -104,7 +104,10 @@ class Content < ActiveRecord::Base
     end
     output_text = File.read("#{self.get_folder_path}/#{self.id}.op")
     error_text = File.read("#{self.get_folder_path}/#{self.id}.compilestat")
-    output = "<span class='error'>"+error_text+"</span>"      
+    output = ""
+    output += "<span class='error'>" if(!cli)
+    output += error_text
+    output += "</span>" if(!cli)      
     output += output_text      
     output = output.gsub("#{self.get_folder_path}","")
     output = output.gsub("/#{self.name}","<br>/#{self.name}")    
