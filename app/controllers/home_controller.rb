@@ -82,7 +82,8 @@ class HomeController < ApplicationController
       file_path = fileObj.get_folder_path
       FileUtils.mkdir_p("#{file_path}")      
       File.open(fileObj.get_file_path, 'w') { |file| file.write(fileObj.get_final_code) }
-      @output = fileObj.compile_code      
+      cli = (params[:cli].present?)? true : false
+      @output = fileObj.compile_code(cli)      
       fileObj.compile = 0 if(fileObj.compile.nil?)
       fileObj.compile = fileObj.compile + 1
       fileObj.save

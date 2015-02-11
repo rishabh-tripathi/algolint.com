@@ -9,7 +9,7 @@ class SessionsController < Devise::SessionsController
     resource = warden.authenticate!(auth_options)
     sign_in(resource_name, resource)
     if(params[:format].present? && params[:format] == "json")
-      render json: { auth_token: current_user.authentication_token }    
+      render :text => current_user.authentication_token
     else
       redirect_to root_path
     end

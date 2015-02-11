@@ -1,0 +1,4 @@
+def tryme
+  puts "rishabh tripathi"
+end
+tryme
