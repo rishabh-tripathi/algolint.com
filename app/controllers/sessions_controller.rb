@@ -8,7 +8,11 @@ class SessionsController < Devise::SessionsController
   def create    
     resource = warden.authenticate!(auth_options)
     sign_in(resource_name, resource)
-    render json: { auth_token: current_user.authentication_token }    
+    if(params[:format].present? && params[:format] == "json")
+      render json: { auth_token: current_user.authentication_token }    
+    else
+      redirect_to root_path
+    end
   end
   
   def destroy
