@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Thu, 12 Feb 2015 22:12:28 +0530
+Source: algolint
+Binary: algolint
+Architecture: source all
+Version: 1.0-1
+Distribution: unstable
+Urgency: low
+Maintainer: rishabh <rishabh@killermobi.com>
+Changed-By: rishabh <rishabh@unknown>
+Description: 
+ algolint   - <insert up to 60 chars description>
+Changes: 
+ algolint (1.0-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1: 
+ d67f41e7c8c6b91eda62403254f5c43b2a97303d 547 algolint_1.0-1.dsc
+ 76c7721d02d5ea09e5bc6bdbb4c369d9ab77bcbf 3171 algolint_1.0-1.tar.gz
+ dac3c20925e439e09656782a96e37ec1d16ee946 3268 algolint_1.0-1_all.deb
+Checksums-Sha256: 
+ 04775e7d6c003c0e335a326289e64a8d57362d3829dad76c774062ae7f821f86 547 algolint_1.0-1.dsc
+ 850c4787622b1d86b1aaf491ffe6ea4607311030017f0e836907fab64c04b1e6 3171 algolint_1.0-1.tar.gz
+ c706a67b7ebd2f936431dacfe65898f3b8db1cb52252979cb21631c232ff6589 3268 algolint_1.0-1_all.deb
+Files: 
+ 91b67f989ae23dae4512a07995abffac 547 unknown optional algolint_1.0-1.dsc
+ e7cd86197bf72b5921a07a6c47b5bc26 3171 unknown optional algolint_1.0-1.tar.gz
+ 336e533b7c295f49abc96c797e81d885 3268 unknown optional algolint_1.0-1_all.deb
