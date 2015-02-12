@@ -2,7 +2,7 @@
 
 if [ $# -eq 0 ]
 then
-    file=".altoken"
+    file="/tmp/.altoken"
     if [ -f "$file" ]
     then
 	echo "You are already loggedin in Algolint, Use 'algolint <filename>' to compile and test your code"
@@ -23,11 +23,13 @@ then
 else    
     if [ $1 = "clear" ]
     then
+	rm /tmp/.altoken
 	rm .al*
+	echo "Authentication removed from this computer"
     else
 	clear
 	file=$1 
-	auth=`cat .altoken`
+	auth=`cat /tmp/.altoken`
 	ext="${file##*.}"
 	filetype=0
 	ext=$(echo $ext | tr '[:upper:]' '[:lower:]')

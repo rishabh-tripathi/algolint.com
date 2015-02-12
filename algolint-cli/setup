@@ -1,3 +1,7 @@
 #!/bin/bash
+
+echo "Algolint Command Line tool to practice algorithms without having environment setup" 
 sudo cp algolint /usr/bin
 algolint clear
+echo "Configuring algolint for first time use"
+algolint
