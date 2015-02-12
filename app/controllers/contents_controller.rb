@@ -21,7 +21,18 @@ class ContentsController < ApplicationController
     end
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @contents }
+      format.json { 
+        if(params[:cli].present?)
+          output = []
+          for c in @contents
+            output << "#{c.id}:#{c.name}"
+          end
+          op = (output.present?)? output.join(";") : "" 
+          render :text => op
+        else
+          render :json => @contents 
+        end
+      }
     end
   end
 
@@ -29,10 +40,15 @@ class ContentsController < ApplicationController
   # GET /contents/1.json
   def show
     @content = Content.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @content }
+      format.json { 
+        if(params[:cli].present?)
+          render :text => @content.get_final_code
+        else
+          render :json => @content 
+        end
+      }
     end
   end
 
