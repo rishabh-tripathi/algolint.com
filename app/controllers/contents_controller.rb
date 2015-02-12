@@ -6,8 +6,12 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
   def index
-    if(params[:uid].present?)
-      user = User.find_by_unique_key(params[:uid])
+    if(params[:uid].present? || params[:cli].present?)
+      if(params[:cli].present?)
+        user = current_user
+      else
+        user = User.find_by_unique_key(params[:uid])
+      end
       if(user.present?)
         @contents = Content.find(:all, :conditions => ["user_id = ?", user.id])
         @contents += Content.find(:all, :conditions => ["template = ?", Content::TEMPLATE_AL]) 
