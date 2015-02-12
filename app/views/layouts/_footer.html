@@ -1,1 +1,3 @@
-<div class="footer"><small><a target="_blank" href="<%= how_to_use_url %>"><u>Learn how to use</u></a>&nbsp;&nbsp;&copy;&nbsp;AlgoLint.com<% if(current_user.present? && current_user.is_admin_user) %>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%= admin_url %>">Admin</a><% end %></small></div>
+<div class="footer"><small><a target="_blank" href="<%= how_to_use_url %>"><u>Learn how to use</u></a>
+    &nbsp;&nbsp;<a target="_blank" href="<%= cli_url %>"><u>Algolint cli</u></a>
+    &nbsp;&nbsp;&copy;&nbsp;AlgoLint.com<% if(current_user.present? && current_user.is_admin_user) %>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%= admin_url %>">Admin</a><% end %></small></div>

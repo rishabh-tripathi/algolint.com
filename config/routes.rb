@@ -75,6 +75,7 @@ AlgolintCom::Application.routes.draw do
   # Main Urls
   match "/get-profile-url" => "home#get_profile_name", :as => :get_profile_name
   match "/how-to-use" => "home#how_to_use", :as => :how_to_use
+  match "/cli" => "home#cli", :as => :cli
   match "/explore" => "home#explore", :as => :explore
   match "/check-profile-name-availabilty" => "home#check_profile_name_avail", :as => :check_profile_name_avail
   match "/save-profile-url" => "home#save_profile_url", :as => :save_profile_name
