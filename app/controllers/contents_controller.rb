@@ -6,8 +6,12 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
   def index
-    if(params[:uid].present?)
-      user = User.find_by_unique_key(params[:uid])
+    if(params[:uid].present? || params[:cli].present?)
+      if(params[:cli].present?)
+        user = current_user
+      else
+        user = User.find_by_unique_key(params[:uid])
+      end
       if(user.present?)
         @contents = Content.find(:all, :conditions => ["user_id = ?", user.id])
         @contents += Content.find(:all, :conditions => ["template = ?", Content::TEMPLATE_AL]) 
@@ -17,7 +21,18 @@ class ContentsController < ApplicationController
     end
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @contents }
+      format.json { 
+        if(params[:cli].present?)
+          output = []
+          for c in @contents
+            output << "#{c.id}:#{c.name}"
+          end
+          op = (output.present?)? output.join(";") : "" 
+          render :text => op
+        else
+          render :json => @contents 
+        end
+      }
     end
   end
 
@@ -25,10 +40,15 @@ class ContentsController < ApplicationController
   # GET /contents/1.json
   def show
     @content = Content.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @content }
+      format.json { 
+        if(params[:cli].present?)
+          render :text => @content.get_final_code
+        else
+          render :json => @content 
+        end
+      }
     end
   end
 

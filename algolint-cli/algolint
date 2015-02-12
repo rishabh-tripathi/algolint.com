@@ -2,7 +2,7 @@
 
 if [ $# -eq 0 ]
 then
-    file=".altoken"
+    file="/tmp/.altoken"
     if [ -f "$file" ]
     then
 	echo "You are already loggedin in Algolint, Use 'algolint <filename>' to compile and test your code"
@@ -18,16 +18,41 @@ then
 	stty -echo
 	curl -X POST "http://algolint.com/login.json" -d "user[email]=$email&user[password]=$password" -s -o $file
 	stty echo
-	echo "Welcome $email, Use 'algolint <filename>' to compile and test your code"
+	echo "Welcome $email, Use 'algolint <filename>' to compile and test your code. Use 'algolint get all' to fetch all files from your algolint account."
     fi
 else    
     if [ $1 = "clear" ]
     then
+	stty -echo
+	rm /tmp/.altoken
 	rm .al*
+	stty echo
+	echo "Authentication removed from this computer"
+    elif [ $1 = "get" ] 
+    then
+	if [ $2 = "all" ]
+	then	    
+	    auth=`cat /tmp/.altoken`
+	    echo "Getting file information from your algolint account"
+	    curl -X GET "http://algolint.com/contents.json?auth_token=$auth" -d "cli=true" -s -o ".algetall"	    
+	    while IFS=';' read -ra ADDR; do
+		for i in "${ADDR[@]}"; do
+		    id="${i%:*}"
+		    name="${i##*:}"
+		    db=".al-$name"		    
+		    echo "Getting $name"
+		    curl -X GET "http://algolint.com/contents/$id.json?auth_token=$auth" -d "cli=true" -s -o "$name"
+		    echo "$id" > $db
+		done		
+	    done <<< "$(cat .algetall)"	    
+	    echo "File copied from your algolint account to your local machine"
+	else
+	    echo "Please use 'algolint get all' to fetch all files from your algolint account"
+	fi	
     else
 	clear
 	file=$1 
-	auth=`cat .altoken`
+	auth=`cat /tmp/.altoken`
 	ext="${file##*.}"
 	filetype=0
 	ext=$(echo $ext | tr '[:upper:]' '[:lower:]')
@@ -46,11 +71,9 @@ else
 	if [ "$ext" = "py"  ]
 	then
 	    filetype=40
-	fi
-	
+	fi	
 	db=".al-$file"
-	code="$(cat $file)"
-	
+	code="$(cat $file)"	
 	op=".al-op"
 	if [ -f "$db" ]
 	then
