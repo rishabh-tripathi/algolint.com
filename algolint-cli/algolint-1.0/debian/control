@@ -11,5 +11,4 @@ Homepage: http://algolint.com
 Package: algolint
 Architecture: all
 Depends: ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: Algolint is most simple online algorithm practice tool, which gives user a platform to write and test code in C/C++, Java, Ruby or Python online

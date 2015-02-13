@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Fri, 13 Feb 2015 10:30:30 +0530
+Date: Fri, 13 Feb 2015 18:06:12 +0530
 Source: algolint
 Binary: algolint
 Architecture: source all
@@ -9,20 +9,20 @@ Urgency: low
 Maintainer: rishabh <rishabh@killermobi.com>
 Changed-By: rishabh <rishabh@unknown>
 Description: 
- algolint   - <insert up to 60 chars description>
+ algolint   - Algolint is most simple online algorithm practice tool, which giv
 Changes: 
  algolint (1.0-1) unstable; urgency=low
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1: 
- 1a6c61078380d1d37e289d93f3ba6b6495b343cd 528 algolint_1.0-1.dsc
- 3d57c8c23426e85fc390e6d8e427c4aba2811669 3391 algolint_1.0-1.tar.gz
- c5c758b122dcb65440b23c5a289993be778dd0da 3446 algolint_1.0-1_all.deb
+ 4e35af0087bc7f5da6632827213c21d8186fcae4 528 algolint_1.0-1.dsc
+ bd964a43f6a69e4ed2ccfeef758adcc85aaed527 3854 algolint_1.0-1.tar.gz
+ 6adfb4cce47c0bf7a4424280cc40a186c9c484b9 3848 algolint_1.0-1_all.deb
 Checksums-Sha256: 
- 7828a8e1ba28f54870de6491460fd22b96982d0b6a3b212194a356f5ce8e3ca1 528 algolint_1.0-1.dsc
- 3bf633b253b1d5351c156562a70908940de77bd8f51485a817ecdc2ae87d3e4e 3391 algolint_1.0-1.tar.gz
- 33a6b73a96695c17c65c4b46bfa555c8a7434af7741b23c2d1c953e55740953b 3446 algolint_1.0-1_all.deb
+ e131431c504d88afc6007b6303e145a77e396dfc547ee47fa4095164391b1175 528 algolint_1.0-1.dsc
+ acad18a3ce3b5ecca82bb6e654bbc0950d167888912d169c2cc5eca7643aed57 3854 algolint_1.0-1.tar.gz
+ 07d802313b7113ee96de651636c3dc25a36a96dcc524537a81f446b2d1f754a1 3848 algolint_1.0-1_all.deb
 Files: 
- 9f0660a25a1b8e489bfe49f74ea0e07e 528 unknown optional algolint_1.0-1.dsc
- 2e2f1b92f22c3a84f40be023d99d1550 3391 unknown optional algolint_1.0-1.tar.gz
- 093c99084c4d333000e6edf66b04e101 3446 unknown optional algolint_1.0-1_all.deb
+ 481b465fa5dcdbba9deaef1809b538a8 528 unknown optional algolint_1.0-1.dsc
+ 7361b9539e4d3b6b1cbaf458ce91d239 3854 unknown optional algolint_1.0-1.tar.gz
+ c58be9c2770b504727c68a8b0c890f65 3848 unknown optional algolint_1.0-1_all.deb
