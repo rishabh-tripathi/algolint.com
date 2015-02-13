@@ -14,7 +14,14 @@ class ContentsController < ApplicationController
       end
       if(user.present?)
         @contents = Content.find(:all, :conditions => ["user_id = ?", user.id])
-        @contents += Content.find(:all, :conditions => ["template = ?", Content::TEMPLATE_AL]) 
+        if(params[:temp].present?)          
+          templates = Content.find(:all, :conditions => ["template = ?", Content::TEMPLATE_AL]) 
+          templates += Content.find(:all, :conditions => ["template = ? and user_id = ?", Content::TEMPLATE_USER, user.id]) 
+          @contents = templates
+        else
+          templates = Content.find(:all, :conditions => ["template = ?", Content::TEMPLATE_AL]) 
+          @contents += templates
+        end
       end
     else
       @contents = Content.all    
@@ -24,10 +31,17 @@ class ContentsController < ApplicationController
       format.json { 
         if(params[:cli].present?)
           output = []
-          for c in @contents
-            output << "#{c.id}:#{c.name}"
+          if(params[:temp].present?)
+            for c in @contents
+              output << "'#{c.name}' by #{(c.template == Content::TEMPLATE_AL)? 'Algolint' : 'You'}"
+            end
+            op = (output.present?)? output.join("\n") : ""             
+          else
+            for c in @contents
+              output << "#{c.id}:#{c.name}"
+            end
+            op = (output.present?)? output.join(";") : "" 
           end
-          op = (output.present?)? output.join(";") : "" 
           render :text => op
         else
           render :json => @contents 
@@ -80,8 +94,17 @@ class ContentsController < ApplicationController
     @content.compile = params[:compile].to_i
     @content.status = params[:status].to_i
     @content.sharability = params[:sharability].to_i           
-    @content.template = params[:template].to_i       
+    @content.template = params[:template].to_i if(params[:template].present? && (params[:template].to_i != -10))      
     @content.folder_id = params[:folder_id].to_i if(params[:folder_id].present?)
+    if(params[:tempname].present?)      
+      temp = Content.find(:first, :conditions => ["template = ? and user_id = ? and name = ?", Content::TEMPLATE_USER, current_user.id, params[:tempname]]) 
+      if(temp.nil?)
+        temp = Content.find(:first, :conditions => ["template = ? and name = ?", Content::TEMPLATE_AL, params[:tempname]]) 
+      end      
+      if(!temp.nil?)
+        @content.content = temp.content
+      end
+    end
     respond_to do |format|
       if(@content.save)
         current_user.last_open_file = @content.id
@@ -111,9 +134,9 @@ class ContentsController < ApplicationController
     @content.content = params[:content]
     @content.file_type = params[:file_type].to_i
     @content.compile = params[:compile].to_i
-    @content.status = params[:status].to_i
+    @content.status = params[:status].to_i if(params[:status].present?)
     @content.sharability = params[:sharability].to_i       
-    @content.template = params[:template].to_i       
+    @content.template = params[:template].to_i if(params[:template].present? && (params[:template].to_i != -10))             
     @content.folder_id = params[:folder_id].to_i if(params[:folder_id].present?)
     respond_to do |format|
       if(@content.save)
