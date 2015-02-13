@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Thu, 12 Feb 2015 22:12:28 +0530
+Date: Fri, 13 Feb 2015 10:30:30 +0530
 Source: algolint
 Binary: algolint
 Architecture: source all
@@ -15,14 +15,14 @@ Changes:
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1: 
- d67f41e7c8c6b91eda62403254f5c43b2a97303d 547 algolint_1.0-1.dsc
- 76c7721d02d5ea09e5bc6bdbb4c369d9ab77bcbf 3171 algolint_1.0-1.tar.gz
- dac3c20925e439e09656782a96e37ec1d16ee946 3268 algolint_1.0-1_all.deb
+ 1a6c61078380d1d37e289d93f3ba6b6495b343cd 528 algolint_1.0-1.dsc
+ 3d57c8c23426e85fc390e6d8e427c4aba2811669 3391 algolint_1.0-1.tar.gz
+ c5c758b122dcb65440b23c5a289993be778dd0da 3446 algolint_1.0-1_all.deb
 Checksums-Sha256: 
- 04775e7d6c003c0e335a326289e64a8d57362d3829dad76c774062ae7f821f86 547 algolint_1.0-1.dsc
- 850c4787622b1d86b1aaf491ffe6ea4607311030017f0e836907fab64c04b1e6 3171 algolint_1.0-1.tar.gz
- c706a67b7ebd2f936431dacfe65898f3b8db1cb52252979cb21631c232ff6589 3268 algolint_1.0-1_all.deb
+ 7828a8e1ba28f54870de6491460fd22b96982d0b6a3b212194a356f5ce8e3ca1 528 algolint_1.0-1.dsc
+ 3bf633b253b1d5351c156562a70908940de77bd8f51485a817ecdc2ae87d3e4e 3391 algolint_1.0-1.tar.gz
+ 33a6b73a96695c17c65c4b46bfa555c8a7434af7741b23c2d1c953e55740953b 3446 algolint_1.0-1_all.deb
 Files: 
- 91b67f989ae23dae4512a07995abffac 547 unknown optional algolint_1.0-1.dsc
- e7cd86197bf72b5921a07a6c47b5bc26 3171 unknown optional algolint_1.0-1.tar.gz
- 336e533b7c295f49abc96c797e81d885 3268 unknown optional algolint_1.0-1_all.deb
+ 9f0660a25a1b8e489bfe49f74ea0e07e 528 unknown optional algolint_1.0-1.dsc
+ 2e2f1b92f22c3a84f40be023d99d1550 3391 unknown optional algolint_1.0-1.tar.gz
+ 093c99084c4d333000e6edf66b04e101 3446 unknown optional algolint_1.0-1_all.deb

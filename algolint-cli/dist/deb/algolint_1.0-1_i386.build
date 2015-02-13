@@ -47,8 +47,6 @@ E: algolint changes: changed-by-address-malformed rishabh <rishabh@unknown>
 W: algolint source: native-package-with-dash-version
 W: algolint source: dh-make-template-in-source debian/algolint.doc-base.EX
 W: algolint source: package-needs-versioned-debhelper-build-depends 9
-W: algolint source: superfluous-clutter-in-homepage <insert the upstream URL, if relevant>
-W: algolint source: bad-homepage <insert the upstream URL, if relevant>
 W: algolint source: out-of-date-standards-version 3.9.4 (current is 3.9.5)
 W: algolint: wrong-bug-number-in-closes l3:#nnnn
 E: algolint: debian-changelog-file-contains-invalid-email-address rishabh@unknown
@@ -60,8 +58,6 @@ E: algolint: copyright-contains-dh_make-todo-boilerplate
 W: algolint: readme-debian-contains-debmake-template
 E: algolint: description-is-dh_make-template
 E: algolint: section-is-dh_make-template
-W: algolint: superfluous-clutter-in-homepage <insert the upstream URL, if relevant>
-W: algolint: bad-homepage <insert the upstream URL, if relevant>
 W: algolint: binary-without-manpage usr/bin/algolint
 Finished running lintian.
 

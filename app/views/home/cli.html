@@ -10,13 +10,13 @@
   or Install from commad line
   <br>
   <b>Ubuntu/Debian (.deb)</b><br>
-  <code class="p-10">cd ~ && wget -O - "http://algolint.com/cli/algolint_1.0-1_all.deb" | sudo dpkg -i  algolint_1.0-1_all.deb -</code>
+  <code class="p-10">cd /tmp && wget -q "http://algolint.com/cli/algolint_1.0-1_all.deb" && sudo dpkg -i algolint*all.deb && cd -</code>
   <br><br>
   <b>Redhat/Fedora (.rpm)</b><br>
-  <code class="p-10">cd ~ && wget -O - "http://algolint.com/cli/algolint-1.0-2.noarch.rpm" | rpm -ivh algolint-1.0-2.noarch.rpm -</code>
+  <code class="p-10">cd /tmp && wget -q "http://algolint.com/cli/algolint-1.0-2.noarch.rpm" && sudo rpm -i algolint*.rpm && cd -</code>
   <br><br>
   <b>From Source (.tar)</b><br>
-  <code class="p-10">cd ~ && wget -O - "http://algolint.com/cli/algolint-cli.tar.gz" | tar -zxvf algolint-cli.tar.gz | ./setup -</code>
+  <code class="p-10">cd /tmp && wget -q "http://algolint.com/cli/algolint-cli.tar.gz" && tar xvf algolint-cli.tar.gz && ./setup && cd -</code>
   <br><br>
   <b>How to use</b>
   <br>
