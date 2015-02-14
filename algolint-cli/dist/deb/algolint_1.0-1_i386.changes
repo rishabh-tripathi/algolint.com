@@ -15,14 +15,14 @@ Changes:
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1: 
- 4e35af0087bc7f5da6632827213c21d8186fcae4 528 algolint_1.0-1.dsc
- bd964a43f6a69e4ed2ccfeef758adcc85aaed527 3854 algolint_1.0-1.tar.gz
- 6adfb4cce47c0bf7a4424280cc40a186c9c484b9 3848 algolint_1.0-1_all.deb
+ d90d2f998cfd1ef13cbc3423340705bfeeba603a 528 algolint_1.0-1.dsc
+ dd33cfff1a358d9bb0a6f1c093aea8adbbd0a862 3860 algolint_1.0-1.tar.gz
+ 370f00d5d6ff1b8cf13f9958f5cb578c6ea3ffd0 3840 algolint_1.0-1_all.deb
 Checksums-Sha256: 
- e131431c504d88afc6007b6303e145a77e396dfc547ee47fa4095164391b1175 528 algolint_1.0-1.dsc
- acad18a3ce3b5ecca82bb6e654bbc0950d167888912d169c2cc5eca7643aed57 3854 algolint_1.0-1.tar.gz
- 07d802313b7113ee96de651636c3dc25a36a96dcc524537a81f446b2d1f754a1 3848 algolint_1.0-1_all.deb
+ d2766d6c361a9e91f22ef5455c428fc6f4b96fe7e0a2e1e9ccf5feedd1ac86fa 528 algolint_1.0-1.dsc
+ 295c8e0fb57e41791d526fcd6c5f0a779e6ce4dfd14d60953da438cdfcd6464e 3860 algolint_1.0-1.tar.gz
+ 070cb17e1a4020a0d46c2a898886a29828bcfedebdffb386ccf38692864ffcb9 3840 algolint_1.0-1_all.deb
 Files: 
- 481b465fa5dcdbba9deaef1809b538a8 528 unknown optional algolint_1.0-1.dsc
- 7361b9539e4d3b6b1cbaf458ce91d239 3854 unknown optional algolint_1.0-1.tar.gz
- c58be9c2770b504727c68a8b0c890f65 3848 unknown optional algolint_1.0-1_all.deb
+ 57c269394e6ecee23e14c3271157bfb3 528 unknown optional algolint_1.0-1.dsc
+ 85041351b0fa789acc88cbaaa6758567 3860 unknown optional algolint_1.0-1.tar.gz
+ 5fb35d8e2100305469ade9e10d517d26 3840 unknown optional algolint_1.0-1_all.deb

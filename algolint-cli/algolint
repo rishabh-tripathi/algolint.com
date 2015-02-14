@@ -1,6 +1,6 @@
 #!/bin/bash
 
-domain="localhost:3000"
+domain="algolint.com"
 if [ $# -eq 0 ]
 then
     file="/tmp/.altoken"
