@@ -165,6 +165,9 @@ class HomeController < ApplicationController
   def how_to_use
   end
 
+  def cli
+  end
+
   def explore
   end
 

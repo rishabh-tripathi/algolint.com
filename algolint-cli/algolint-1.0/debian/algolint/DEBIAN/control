@@ -1,0 +1,9 @@
+Package: algolint
+Version: 1.0-1
+Architecture: all
+Maintainer: rishabh <rishabh@killermobi.com>
+Installed-Size: 37
+Section: unknown
+Priority: optional
+Homepage: http://algolint.com
+Description: Algolint is most simple online algorithm practice tool, which gives user a platform to write and test code in C/C++, Java, Ruby or Python online

@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Fri, 13 Feb 2015 18:06:12 +0530
+Source: algolint
+Binary: algolint
+Architecture: source all
+Version: 1.0-1
+Distribution: unstable
+Urgency: low
+Maintainer: rishabh <rishabh@killermobi.com>
+Changed-By: rishabh <rishabh@unknown>
+Description: 
+ algolint   - Algolint is most simple online algorithm practice tool, which giv
+Changes: 
+ algolint (1.0-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1: 
+ d90d2f998cfd1ef13cbc3423340705bfeeba603a 528 algolint_1.0-1.dsc
+ dd33cfff1a358d9bb0a6f1c093aea8adbbd0a862 3860 algolint_1.0-1.tar.gz
+ 370f00d5d6ff1b8cf13f9958f5cb578c6ea3ffd0 3840 algolint_1.0-1_all.deb
+Checksums-Sha256: 
+ d2766d6c361a9e91f22ef5455c428fc6f4b96fe7e0a2e1e9ccf5feedd1ac86fa 528 algolint_1.0-1.dsc
+ 295c8e0fb57e41791d526fcd6c5f0a779e6ce4dfd14d60953da438cdfcd6464e 3860 algolint_1.0-1.tar.gz
+ 070cb17e1a4020a0d46c2a898886a29828bcfedebdffb386ccf38692864ffcb9 3840 algolint_1.0-1_all.deb
+Files: 
+ 57c269394e6ecee23e14c3271157bfb3 528 unknown optional algolint_1.0-1.dsc
+ 85041351b0fa789acc88cbaaa6758567 3860 unknown optional algolint_1.0-1.tar.gz
+ 5fb35d8e2100305469ade9e10d517d26 3840 unknown optional algolint_1.0-1_all.deb

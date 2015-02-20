@@ -1,0 +1,14 @@
+Source: algolint
+Section: unknown
+Priority: optional
+Maintainer: rishabh <rishabh@killermobi.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: http://algolint.com
+#Vcs-Git: git://git.debian.org/collab-maint/algolint.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/algolint.git;a=summary
+
+Package: algolint
+Architecture: all
+Depends: ${misc:Depends}
+Description: Algolint is most simple online algorithm practice tool, which gives user a platform to write and test code in C/C++, Java, Ruby or Python online
