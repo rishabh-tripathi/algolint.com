@@ -1,5 +1,6 @@
 #!/bin/bash
 
+domain="algolint.com"
 if [ $# -eq 0 ]
 then
     file="/tmp/.altoken"
@@ -16,9 +17,17 @@ then
 	stty echo
 	echo "Checking Credentials on Algolint.com"
 	stty -echo
-	curl -X POST "http://algolint.com/login.json" -d "user[email]=$email&user[password]=$password" -s -o $file
+	curl -X POST "http://$domain/login.json" -d "user[email]=$email&user[password]=$password" -s -o $file	
+	auth=0
+	cat $file | grep "error" && auth=0 || auth=1
 	stty echo
-	echo "Welcome $email, Use 'algolint <filename>' to compile and test your code. Use 'algolint get all' to fetch all files from your algolint account."
+	if [ $auth -eq 1 ]
+	then
+	    echo "Welcome $email, Use 'algolint <filename>' to compile and test your code. Use 'algolint get all' to fetch all files from your algolint account."
+	else
+	    echo "Bad Login, Try again"
+	    rm $file	    
+	fi
     fi
 else    
     if [ $1 = "clear" ]
@@ -32,74 +41,196 @@ else
     then
 	if [ $2 = "all" ]
 	then	    
-	    auth=`cat /tmp/.altoken`
-	    echo "Getting file information from your algolint account"
-	    curl -X GET "http://algolint.com/contents.json?auth_token=$auth" -d "cli=true" -s -o ".algetall"	    
-	    while IFS=';' read -ra ADDR; do
-		for i in "${ADDR[@]}"; do
-		    id="${i%:*}"
-		    name="${i##*:}"
-		    db=".al-$name"		    
-		    echo "Getting $name"
-		    curl -X GET "http://algolint.com/contents/$id.json?auth_token=$auth" -d "cli=true" -s -o "$name"
-		    echo "$id" > $db
-		done		
-	    done <<< "$(cat .algetall)"	    
-	    echo "File copied from your algolint account to your local machine"
+	    if [ -f "/tmp/.altoken" ]
+	    then
+		auth=`cat /tmp/.altoken`
+		login=0
+		cat '/tmp/.altoken' | grep "error" && login=0 || login=1
+		if [ $login -eq 1 ]
+		then
+		    echo "Getting file information from your algolint account"
+		    curl -X GET "http://$domain/contents.json?auth_token=$auth" -d "cli=true" -s -o ".algetall"	    
+		    while IFS=';' read -ra ADDR; do
+			for i in "${ADDR[@]}"; do
+			    id="${i%:*}"
+			    name="${i##*:}"
+			    db=".al-$name"		    
+			    echo "Getting $name"
+			    curl -X GET "http://$domain/contents/$id.json?auth_token=$auth" -d "cli=true" -s -o "$name"
+			    echo "$id" > $db
+			done		
+		    done <<< "$(cat .algetall)"	    
+		    echo "File copied from your algolint account to your local machine"
+		else
+		    echo "Please use 'algolint get all' to fetch all files from your algolint account"
+		fi	
+	    else
+		echo "You are not logged in here, please login first"
+		algolint
+	    fi
 	else
-	    echo "Please use 'algolint get all' to fetch all files from your algolint account"
-	fi	
+	    echo "You are not logged in here, please login first"
+	    algolint	    
+	fi
+    elif [ $1 = "list-templates" ]
+    then
+	if [ -f "/tmp/.altoken" ]
+	then
+	    auth=`cat /tmp/.altoken`
+	    login=0
+	    cat '/tmp/.altoken' | grep "error" && login=0 || login=1
+	    if [ $login -eq 1 ]
+	    then	    
+		curl -X GET "http://$domain/contents.json?auth_token=$auth" -d "cli=true&temp=1" -s -o ".allisttemp"
+		echo "$(cat .allisttemp)"
+		rm .allisttemp
+		echo "please use template"
+	    else
+		echo "You are not logged in here, please login first"
+	    fi
+	else
+	    echo "You are not logged in here, please login first"
+	fi	    
+    elif [ $1 = "create" ]
+    then
+	if [ -f "/tmp/.altoken" ]
+	then
+	    auth=`cat /tmp/.altoken`
+	    login=0
+	    cat '/tmp/.altoken' | grep "error" && login=0 || login=1
+	    if [ $login -eq 1 ]
+	    then	    
+		if [ -z "$2" ]
+		then
+		    echo "Please provide file name to create on your algolint, to use template use --template=<template name>"
+		else
+		    file=$2
+		    ext="${file##*.}"
+		    filetype=0
+		    ext=$(echo $ext | tr '[:upper:]' '[:lower:]')
+		    if [ "$ext" = "cpp"  ]
+		    then
+			filetype=10
+		    fi
+		    if [ "$ext" = "java"  ]
+		    then
+			filetype=20
+		    fi
+		    if [ "$ext" = "rb"  ]
+		    then
+			filetype=30
+		    fi
+		    if [ "$ext" = "py"  ]
+		    then
+			filetype=40
+		    fi			    
+		    if [ -z "$3" ]			
+		    then
+			db=".al-$file"
+			echo "Creating this file in algolint"
+			curl -X POST "http://$domain/contents.json?auth_token=$auth&compile=0&desc=&file_type=$filetype&folder_id=0&name=$file&sharability=0&status=0&cli=true" --data-urlencode "content=" -s -o $db
+			echo "File saved in your algolint account"
+			echo "" > $file
+		    else
+			if [ $3 = "--template" ]			
+			then
+			    if [ -z "$4" ]			
+			    then
+				echo "Please provide template name to use, 'algolint list-templates' to list all template"
+			    else
+				db=".al-$4"
+				echo "Creating this file in algolint using template '$4'"
+				curl -X POST "http://$domain/contents.json?auth_token=$auth&compile=0&desc=&file_type=$filetype&folder_id=0&name=$file&sharability=0&status=0&cli=true" --data-urlencode "tempname=$4" -s -o $db			     
+				id="$(cat $db)" 				
+				curl -X GET "http://$domain/contents/$id.json?auth_token=$auth" -d "cli=true" -s -o "$file"
+				echo "File saved in your algolint account"
+			    fi
+			else
+			    echo "use --template <template name> to use template"
+			fi
+		    fi
+		fi
+	    else
+		echo "You are not logged in here, please login first"
+	    fi
+	else
+	    echo "You are not logged in here, please login first"
+	fi	    
     else
 	clear
 	file=$1 
-	auth=`cat /tmp/.altoken`
-	ext="${file##*.}"
-	filetype=0
-	ext=$(echo $ext | tr '[:upper:]' '[:lower:]')
-	if [ "$ext" = "cpp"  ]
+	if [ -f "/tmp/.altoken" ]
 	then
-	    filetype=10
-	fi
-	if [ "$ext" = "java"  ]
-	then
-	    filetype=20
-	fi
-	if [ "$ext" = "rb"  ]
-	then
-	    filetype=30
-	fi
-	if [ "$ext" = "py"  ]
-	then
-	    filetype=40
-	fi	
-	db=".al-$file"
-	code="$(cat $file)"	
-	op=".al-op"
-	if [ -f "$db" ]
-	then
-	    echo "Updating this file in algolint"
-	    fileid="$(cat $db)"
-	    curl -X PUT "http://algolint.com/contents/$fileid.json?auth_token=$auth&compile=0&desc=&file_type=$filetype&folder_id=0&name=$file&sharability=0&status=0&cli=true" --data-urlencode "content=$code"
-	    echo "File updated in your algolint account"
-	    if [ ! $filetype = 0  ]
-	    then
-		echo "compiling $file"
-		curl -X GET "http://algolint.com/compile-code?auth_token=$auth" -d "file_id=$fileid&cli=true" -s -o $op
-		echo "Output:"
-		echo `cat $op`
+	    auth=`cat /tmp/.altoken`
+	    login=0
+	    cat '/tmp/.altoken' | grep "error" && login=0 || login=1
+	    if [ $login -eq 1 ]
+	    then	    
+		ext="${file##*.}"
+		filetype=0
+		ext=$(echo $ext | tr '[:upper:]' '[:lower:]')
+		if [ "$ext" = "cpp"  ]
+		then
+		    filetype=10
+		fi
+		if [ "$ext" = "java"  ]
+		then
+		    filetype=20
+		fi
+		if [ "$ext" = "rb"  ]
+		then
+		    filetype=30
+		fi
+		if [ "$ext" = "py"  ]
+		then
+		    filetype=40
+		fi	
+		db=".al-$file"
+		code="$(cat $file)"	
+		op=".al-op"
+		template=-10
+		if [ -z "$2" ]
+		then
+		    echo "To make this file a template use --make-template"
+		else
+		    if [ $2 = "--make-template" ]
+		    then
+			template=20
+		    fi
+		fi
+		if [ -f "$db" ]
+		then
+		    echo "Updating this file in algolint"
+		    fileid="$(cat $db)"
+		    curl -X PUT "http://$domain/contents/$fileid.json?auth_token=$auth&compile=0&desc=&file_type=$filetype&folder_id=0&name=$file&sharability=0&template=$template&cli=true" --data-urlencode "content=$code"
+		    echo "File updated in your algolint account"
+		    if [ ! $filetype = 0  ]
+		    then
+			echo "compiling $file"
+			curl -X GET "http://$domain/compile-code?auth_token=$auth" -d "file_id=$fileid&cli=true" -s -o $op
+			echo "Output:"
+			echo `cat $op`
+		    fi
+		else	
+		    echo "Saving this file in algolint"
+		    curl -X POST "http://$domain/contents.json?auth_token=$auth&compile=0&desc=&file_type=$filetype&folder_id=0&name=$file&sharability=0&status=0&template=$template&cli=true" --data-urlencode "content=$code" -s -o $db
+		    echo "File saved in your algolint account"
+		    if [ ! $filetype = 0  ]
+		    then
+			echo "compiling $file"
+			fileid="$(cat $db)"
+			curl -X GET "http://$domain/compile-code?auth_token=$auth" -d "file_id=$fileid&cli=true" -s -o $op
+			echo "Output:"
+			echo `cat $op`
+		    fi
+		fi    
+	    else
+		echo "Plese login first to compile this file"
+		algolint
 	    fi
-	else	
-	    echo "Saving this file in algolint"
-	    curl -X POST "http://algolint.com/contents.json?auth_token=$auth&compile=0&desc=&file_type=$filetype&folder_id=0&name=$file&sharability=0&status=0&cli=true" --data-urlencode "content=$code" -s -o $db
-	    echo "File saved in your algolint account"
-	    if [ ! $filetype = 0  ]
-	    then
-		echo "compiling $file"
-		fileid="$(cat $db)"
-		curl -X GET "http://algolint.com/compile-code?auth_token=$auth" -d "file_id=$fileid&cli=true" -s -o $op
-		echo "Output:"
-		echo `cat $op`
-	    fi
-	fi    
+	else
+	    echo "Plese login first to compile this file"
+	    algolint
+	fi
     fi
 fi
