@@ -88,6 +88,7 @@ class HomeController < ApplicationController
       fileObj.compile = fileObj.compile + 1
       fileObj.save
       fileObj.reload
+      FileUtils.remove_dir("#{file_path}")
       render(:text => @output)
     else
       render(:text => "No file to compile :(")
