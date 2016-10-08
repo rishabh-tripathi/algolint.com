@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @container.type %>
+</p>
+
+<p>
+  <b>Stack:</b>
+  <%= @container.stack_id %>
+</p>
+
+<p>
+  <b>Host:</b>
+  <%= @container.host %>
+</p>
+
+<p>
+  <b>Port:</b>
+  <%= @container.port %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @container.image_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @container.status %>
+</p>
+
+<p>
+  <b>Assigned to:</b>
+  <%= @container.assigned_to %>
+</p>
+
+
+<%= link_to 'Edit', edit_container_path(@container) %> |
+<%= link_to 'Back', containers_path %>

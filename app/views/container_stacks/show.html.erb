@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @container_stack.name %>
+</p>
+
+<p>
+  <b>Image type:</b>
+  <%= @container_stack.image_type %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @container_stack.language_id %>
+</p>
+
+<p>
+  <b>Compiler:</b>
+  <%= @container_stack.compiler_id %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @container_stack.image_id %>
+</p>
+
+<p>
+  <b>Count:</b>
+  <%= @container_stack.count %>
+</p>
+
+<p>
+  <b>Dependency:</b>
+  <%= @container_stack.dependency %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @container_stack.status %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @container_stack.created_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_container_stack_path(@container_stack) %> |
+<%= link_to 'Back', container_stacks_path %>

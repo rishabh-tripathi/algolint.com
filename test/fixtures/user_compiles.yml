@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 
+  content_id: 
+  language_id: 
+  compiler_id: 
+  status: 
+  dependency: 
+
+two:
+  user_id: 
+  content_id: 
+  language_id: 
+  compiler_id: 
+  status: 
+  dependency: 

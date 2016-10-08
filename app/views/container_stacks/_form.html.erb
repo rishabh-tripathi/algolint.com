@@ -1,0 +1,73 @@
+<%= form_for(@container_stack) do |f| %>
+  <% if @container_stack.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@container_stack.errors.count, "error") %> prohibited this container_stack from being saved:</h2>
+
+      <ul>
+      <% @container_stack.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image_type %><br />
+    <select name="container_stack[image_type]">
+      <% ContainerStack::IMAGE_TYPE_NAMES.each do |key, value| %>
+      <option value="<%= key %>"><%= value %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="field">
+    <%= f.label :language_id %><br />
+    <select name="container_stack[language_id]">
+      <% language = Language.all
+	 for lang in language
+	 %>
+      <option value="<%= lang.id %>"><%= lang.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="field">
+    <%= f.label :compiler_id %><br />
+    <select name="container_stack[compiler_id]">
+      <% compiler = Compiler.all
+	 for comp in compiler
+	 %>
+      <option value="<%= comp.id %>"><%= comp.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="field">
+    <%= f.label :image_id %><br />
+    <%= f.text_field :image_id %>
+  </div>
+  <div class="field">
+    <%= f.label :count %><br />
+    <%= f.text_field :count %>
+  </div>
+  <div class="field">
+    <%= f.label :dependency %><br />
+    <%= f.text_field :dependency %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <select name="container_stack[status]">
+      <% ContainerStack::STATUS_NAMES.each do |key, value| %>
+      <option value="<%= key %>"><%= value %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="field">
+    <%= f.label :created_by %><br />
+    <%= f.text_field :created_by, :value => "-1" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

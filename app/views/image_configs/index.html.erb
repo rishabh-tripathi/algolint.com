@@ -1,0 +1,33 @@
+<h5>Listing image_configs</h5>
+
+<table class="table">
+  <tr>
+    <th>Image type</th>
+    <th>Image</th>
+    <th>Dockerfile</th>
+    <th>Startup config</th>
+    <th>Access config</th>
+    <th>Default port</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @image_configs.each do |image_config| %>
+  <tr>
+    <td><%= image_config.image_type %></td>
+    <td><%= image_config.image_id %></td>
+    <td><%= image_config.dockerfile %></td>
+    <td><%= image_config.startup_config %></td>
+    <td><%= image_config.access_config %></td>
+    <td><%= image_config.default_port %></td>
+    <td><%= link_to 'Show', image_config %></td>
+    <td><%= link_to 'Edit', edit_image_config_path(image_config) %></td>
+    <td><%= link_to 'Destroy', image_config, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Image config', new_image_config_path %>

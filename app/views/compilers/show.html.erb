@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @compiler.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @compiler.description %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @compiler.language_id %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @compiler.image_id %>
+</p>
+
+<p>
+  <b>Run config:</b>
+  <%= @compiler.run_config %>
+</p>
+
+
+<%= link_to 'Edit', edit_compiler_path(@compiler) %> |
+<%= link_to 'Back', compilers_path %>

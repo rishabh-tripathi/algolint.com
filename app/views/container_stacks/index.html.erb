@@ -1,0 +1,52 @@
+<h5>Listing container_stacks</h5>
+<%
+   lang = Language.all
+   lang_hash = {}
+   for l in lang
+   lang_hash[l.id] = l
+   end
+   
+   comp = Compiler.all
+   comp_hash = {}
+   for c in comp
+   comp_hash[c.id] = c
+   end
+   %>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Image type</th>
+    <th>Language</th>
+    <th>Compiler</th>
+    <th>Image</th>
+    <th>Count</th>
+    <th>Dependency</th>
+    <th>Status</th>
+    <th>Created by</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @container_stacks.each do |container_stack| %>
+  <tr>
+    <td><%= container_stack.name %></td>
+    <td><%= ContainerStack::IMAGE_TYPE_NAMES[container_stack.image_type] %></td>
+    <td><%= lang_hash[container_stack.language_id].name %></td>
+    <td><%= comp_hash[container_stack.compiler_id].name %></td>
+    <td><%= container_stack.image_id %></td>
+    <td><%= container_stack.count %></td>
+    <td><%= container_stack.dependency %></td>
+    <td><%= ContainerStack::STATUS_NAMES[container_stack.status] %></td>
+    <td><%= (container_stack.created_by == -1)? "System" : "User" %></td>
+    <td><%= link_to 'Show', container_stack %></td>
+    <td><%= link_to 'Edit', edit_container_stack_path(container_stack) %></td>
+    <td><%= link_to 'Destroy', container_stack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Container stack', new_container_stack_path %>

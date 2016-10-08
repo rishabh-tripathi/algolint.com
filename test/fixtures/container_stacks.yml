@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: 
+  image_type: 
+  language_id: 
+  compiler_id: 
+  image_id: 
+  count: 
+  dependency: 
+  status: 
+  created_by: 
+
+two:
+  name: 
+  image_type: 
+  language_id: 
+  compiler_id: 
+  image_id: 
+  count: 
+  dependency: 
+  status: 
+  created_by: 

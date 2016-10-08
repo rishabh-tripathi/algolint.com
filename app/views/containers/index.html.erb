@@ -1,0 +1,35 @@
+<h5>Listing containers</h5>
+
+<table class="table">
+  <tr>
+    <th>Type</th>
+    <th>Stack</th>
+    <th>Host</th>
+    <th>Port</th>
+    <th>Image</th>
+    <th>Status</th>
+    <th>Assigned to</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @containers.each do |container| %>
+  <tr>
+    <td><%= container.type %></td>
+    <td><%= container.stack_id %></td>
+    <td><%= container.host %></td>
+    <td><%= container.port %></td>
+    <td><%= container.image_id %></td>
+    <td><%= container.status %></td>
+    <td><%= container.assigned_to %></td>
+    <td><%= link_to 'Show', container %></td>
+    <td><%= link_to 'Edit', edit_container_path(container) %></td>
+    <td><%= link_to 'Destroy', container, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Container', new_container_path %>

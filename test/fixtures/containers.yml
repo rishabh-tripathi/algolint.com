@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  stack_id: 
+  host: 
+  port: 
+  image_id: 
+  status: 
+  assigned_to: 
+
+two:
+  type: 
+  stack_id: 
+  host: 
+  port: 
+  image_id: 
+  status: 
+  assigned_to: 

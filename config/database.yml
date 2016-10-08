@@ -6,10 +6,11 @@
 development:
   adapter: mysql2  
   encoding: utf8
-  database: algolint_dev
+  database: algolint_prod
   pool: 5
   username: root
-  password:
+  password: algolint
+  host: algolint_prod
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -22,6 +23,7 @@ test:
   pool: 5
   username: root
   password:
+  host: algolint_prod
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -30,5 +32,6 @@ production:
   database: algolint_prod
   pool: 5
   username: root
-  password:
+  password: algolint
+  host: algolint_prod
   socket: /var/run/mysqld/mysqld.sock

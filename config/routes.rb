@@ -1,4 +1,13 @@
 AlgolintCom::Application.routes.draw do
+  resources :user_compiles
+  resources :image_configs
+  resources :packages
+  resources :containers
+  resources :container_stacks
+  resources :networks
+  resources :compilers
+  resources :languages
+
   resources :folders
   resources :likes
   resources :contents

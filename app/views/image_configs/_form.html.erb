@@ -1,0 +1,41 @@
+<%= form_for(@image_config) do |f| %>
+  <% if @image_config.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image_config.errors.count, "error") %> prohibited this image_config from being saved:</h2>
+
+      <ul>
+      <% @image_config.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image_type %><br />
+    <%= f.text_field :image_type %>
+  </div>
+  <div class="field">
+    <%= f.label :image_id %><br />
+    <%= f.text_field :image_id %>
+  </div>
+  <div class="field">
+    <%= f.label :dockerfile %><br />
+    <%= f.text_field :dockerfile %>
+  </div>
+  <div class="field">
+    <%= f.label :startup_config %><br />
+    <%= f.text_field :startup_config %>
+  </div>
+  <div class="field">
+    <%= f.label :access_config %><br />
+    <%= f.text_field :access_config %>
+  </div>
+  <div class="field">
+    <%= f.label :default_port %><br />
+    <%= f.text_field :default_port %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

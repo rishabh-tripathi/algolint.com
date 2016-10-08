@@ -1,0 +1,43 @@
+<%= form_for(@compiler) do |f| %>
+  <% if @compiler.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@compiler.errors.count, "error") %> prohibited this compiler from being saved:</h2>
+
+      <ul>
+      <% @compiler.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :language_id %><br />
+    <select name="compiler[language_id]">
+      <% language = Language.all
+	 for lang in language
+	 %>
+      <option value="<%= lang.id %>"><%= lang.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="field">
+    <%= f.label :image_id %><br />
+    <%= f.text_field :image_id %>
+  </div>
+  <div class="field">
+    <%= f.label :run_config %><br />
+    <%= f.text_field :run_config %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,9 @@
 database.yml
+tmp/
+*~
+*#
+*.DS_Store
+*.lock
 # Compiled source #
 ###################
 *.com

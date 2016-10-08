@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: 
+  description: 
+  type: 
+  version: 
+  access: 
+  how_to: 
+
+two:
+  name: 
+  description: 
+  type: 
+  version: 
+  access: 
+  how_to: 

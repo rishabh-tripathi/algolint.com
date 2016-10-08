@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @user_compile.user_id %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @user_compile.content_id %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @user_compile.language_id %>
+</p>
+
+<p>
+  <b>Compiler:</b>
+  <%= @user_compile.compiler_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @user_compile.status %>
+</p>
+
+<p>
+  <b>Dependency:</b>
+  <%= @user_compile.dependency %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_compile_path(@user_compile) %> |
+<%= link_to 'Back', user_compiles_path %>

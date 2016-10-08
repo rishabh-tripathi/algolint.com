@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Image type:</b>
+  <%= @image_config.image_type %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @image_config.image_id %>
+</p>
+
+<p>
+  <b>Dockerfile:</b>
+  <%= @image_config.dockerfile %>
+</p>
+
+<p>
+  <b>Startup config:</b>
+  <%= @image_config.startup_config %>
+</p>
+
+<p>
+  <b>Access config:</b>
+  <%= @image_config.access_config %>
+</p>
+
+<p>
+  <b>Default port:</b>
+  <%= @image_config.default_port %>
+</p>
+
+
+<%= link_to 'Edit', edit_image_config_path(@image_config) %> |
+<%= link_to 'Back', image_configs_path %>

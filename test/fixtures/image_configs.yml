@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  image_type: 
+  image_id: 
+  dockerfile: 
+  startup_config: 
+  access_config: 
+  default_port: 
+
+two:
+  image_type: 
+  image_id: 
+  dockerfile: 
+  startup_config: 
+  access_config: 
+  default_port: 
